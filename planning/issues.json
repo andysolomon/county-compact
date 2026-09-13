@@ -1,0 +1,387 @@
+[
+  {
+    "body": "## Why\n\nThe entire campaign depends on an accurate, attributable 159-county foundation. Establish the historical roster before rendering or balancing territories.\n\n## Scope and acceptance criteria\n\n- [ ] Produce a manifest of exactly 159 unique county identities with official names, stable IDs, historical reference date, and source citations.\n- [ ] Crosswalk historical identifiers to modern Census codes without claiming those codes existed in 1942.\n- [ ] Inspect Newberry Georgia download metadata and its CC0 terms; record Census provenance and notices.\n- [ ] Resolve or document historical changes, including former Campbell and Milton territory; keep unresolved geography out of release-ready status.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 3.1–3.2, 12.\n\n## Delivery gate\n\nA — Historical map foundation · P0\n\n## Dependencies\n\nNone.\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-01 -->\n",
+    "dependencies": [],
+    "gate": "A — Historical map foundation",
+    "key": "CC-01",
+    "number": 1,
+    "priority": "P0",
+    "title": "Verify the 1942 Georgia county roster and geographic provenance",
+    "url": "https://github.com/andysolomon/county-compact/issues/1"
+  },
+  {
+    "body": "## Why\n\nCreate a faithful Georgia board without invented borders or false movement neighbors.\n\n## Scope and acceptance criteria\n\n- [ ] Bundle dated county geometry with recognizable state outline and Atlantic coast; preserve all county records and multipart geometry.\n- [ ] Validate polygon coverage, shared boundaries, overlaps, gaps, and geometry validity.\n- [ ] Build a symmetric geographic adjacency graph; corner-only contacts do not create movement edges.\n- [ ] Provide reproducible preparation steps and source/version metadata; keep geometric adjacency separate from passable routes.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 3.1–3.2, 10.3.\n\n## Delivery gate\n\nA — Historical map foundation · P0\n\n## Dependencies\n\n[#1](https://github.com/andysolomon/county-compact/issues/1)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-02 -->\n",
+    "dependencies": [
+      "CC-01"
+    ],
+    "gate": "A — Historical map foundation",
+    "key": "CC-02",
+    "number": 2,
+    "priority": "P0",
+    "title": "Prepare county geometry and validate geographic adjacency",
+    "url": "https://github.com/andysolomon/county-compact/issues/2"
+  },
+  {
+    "body": "## Why\n\nTransport and facility history must make Georgia strategically meaningful without importing modern infrastructure.\n\n## Scope and acceptance criteria\n\n- [ ] Date-source important roads, rail corridors, river crossings, seats, and settlements; distinguish evidence from scenario abstractions.\n- [ ] Define passable edges, crossing tags, terrain classes, and protected facility records.\n- [ ] Use period-correct names and dates; exclude modern interstate overlays and unverified reservoirs.\n- [ ] Review Cobb–Fulton access, Rickenbacker naming, and federal ownership; record unresolved research questions.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 3.1–3.3, 12 Q2.\n\n## Delivery gate\n\nA — Historical map foundation · P1\n\n## Dependencies\n\n[#1](https://github.com/andysolomon/county-compact/issues/1), [#2](https://github.com/andysolomon/county-compact/issues/2)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-03 -->\n",
+    "dependencies": [
+      "CC-01",
+      "CC-02"
+    ],
+    "gate": "A — Historical map foundation",
+    "key": "CC-03",
+    "number": 3,
+    "priority": "P1",
+    "title": "Research period transport, terrain, settlements, and federal facilities",
+    "url": "https://github.com/andysolomon/county-compact/issues/3"
+  },
+  {
+    "body": "## Why\n\nAny-county selection requires complete baseline data, rather than only six hand-authored starts.\n\n## Scope and acceptance criteria\n\n- [ ] Populate the essential county-stat model for every county, marking historical counts separately from estimated gameplay ranks.\n- [ ] Encode the exact Cobb opening and eight fictional coalitions: 30 affiliated counties and 129 independent counties.\n- [ ] Give every start a valid civilian allocation whose recurring income exceeds essential spending by at least 2 credits.\n- [ ] Author the six contrast profiles and county-specific baseline objectives; validate affiliations, authority, and usable route connectivity.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 3.3, 4.\n\n## Delivery gate\n\nA — Historical map foundation · P0\n\n## Dependencies\n\n[#1](https://github.com/andysolomon/county-compact/issues/1), [#3](https://github.com/andysolomon/county-compact/issues/3)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-04 -->\n",
+    "dependencies": [
+      "CC-01",
+      "CC-03"
+    ],
+    "gate": "A — Historical map foundation",
+    "key": "CC-04",
+    "number": 4,
+    "priority": "P0",
+    "title": "Author complete starting data for all 159 counties",
+    "url": "https://github.com/andysolomon/county-compact/issues/4"
+  },
+  {
+    "body": "## Why\n\nProvide the technical foundation required by the design without beginning with unrelated game systems.\n\n## Scope and acceptance criteria\n\n- [ ] Create a Vite application using strict TypeScript, Three.js, and HTML/CSS UI.\n- [ ] Choose and document module boundaries for scenario data, simulation, renderer, UI, and persistence.\n- [ ] Bundle runtime assets and fonts with attribution; require no backend, paid service, API key, or outside asset download.\n- [ ] Provide reproducible local development/build commands and a build/typecheck CI gate.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections Design Feasibility; 10.2.\n\n## Delivery gate\n\nB — Economic vertical slice · P1\n\n## Dependencies\n\nNone.\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-05 -->\n",
+    "dependencies": [],
+    "gate": "B — Economic vertical slice",
+    "key": "CC-05",
+    "number": 5,
+    "priority": "P1",
+    "title": "Establish the local browser project and bundled-asset baseline",
+    "url": "https://github.com/andysolomon/county-compact/issues/5"
+  },
+  {
+    "body": "## Why\n\nA stable rules engine prevents rendering speed and reloads from altering campaign outcomes.\n\n## Scope and acceptance criteria\n\n- [ ] Model ownership, occupation, coalitions, dependencies, and economic influence as distinct relationships.\n- [ ] Implement real calendar dates, daily stepping, month/quarter boundaries, pause, and 1/4/12-day-per-second speeds.\n- [ ] Apply the documented phase order and stable tie-breaking; render timing cannot mutate outcomes.\n- [ ] Replay the same seed and orders identically; document event scheduling, ruleset versions, and fixed-precision behavior.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 5, 6.5.\n\n## Delivery gate\n\nB — Economic vertical slice · P0\n\n## Dependencies\n\n[#4](https://github.com/andysolomon/county-compact/issues/4), [#5](https://github.com/andysolomon/county-compact/issues/5)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-06 -->\n",
+    "dependencies": [
+      "CC-04",
+      "CC-05"
+    ],
+    "gate": "B — Economic vertical slice",
+    "key": "CC-06",
+    "number": 6,
+    "priority": "P0",
+    "title": "Specify and implement deterministic campaign state and calendar",
+    "url": "https://github.com/andysolomon/county-compact/issues/6"
+  },
+  {
+    "body": "## Why\n\nThe map is the primary interface, with reliable selection even for small counties.\n\n## Scope and acceptance criteria\n\n- [ ] Render all 159 counties in a mostly flat orthographic view with batched geometry and stable-ID selection.\n- [ ] Provide pan, pointer-centered zoom, reset, hover, and selection treatments.\n- [ ] Use bounded collision-aware labels; update political appearance without reconstructing all geometry.\n- [ ] Provide keyboard/search/list access equivalent to polygon selection and clear WebGL-unavailable feedback.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 8.1, 8.5, 10.2.\n\n## Delivery gate\n\nB — Economic vertical slice · P1\n\n## Dependencies\n\n[#2](https://github.com/andysolomon/county-compact/issues/2), [#5](https://github.com/andysolomon/county-compact/issues/5), [#6](https://github.com/andysolomon/county-compact/issues/6)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-07 -->\n",
+    "dependencies": [
+      "CC-02",
+      "CC-05",
+      "CC-06"
+    ],
+    "gate": "B — Economic vertical slice",
+    "key": "CC-07",
+    "number": 7,
+    "priority": "P1",
+    "title": "Render the Georgia strategic map and accessible county selection",
+    "url": "https://github.com/andysolomon/county-compact/issues/7"
+  },
+  {
+    "body": "## Why\n\nThe player must understand recurring income and the opportunity costs of staffing.\n\n## Scope and acceptance criteria\n\n- [ ] Implement credits, materials, fractional workforce allocation, productive staffing limits, services, and infrastructure upkeep.\n- [ ] Calculate taxes, compliance, autonomy shares, contract income, dues, and national obligations as separately inspectable lines.\n- [ ] Reproduce Cobb’s initial 22-credit income, 14-credit expense, and +8 surplus; no Bell production income at start.\n- [ ] Prevent duplicate workforce assignments and resource creation through ownership changes; show actual and forecast budgets.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.1–6.2, 9.2.\n\n## Delivery gate\n\nB — Economic vertical slice · P0\n\n## Dependencies\n\n[#6](https://github.com/andysolomon/county-compact/issues/6)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-08 -->\n",
+    "dependencies": [
+      "CC-06"
+    ],
+    "gate": "B — Economic vertical slice",
+    "key": "CC-08",
+    "number": 8,
+    "priority": "P0",
+    "title": "Implement workforce allocation and the monthly county budget",
+    "url": "https://github.com/andysolomon/county-compact/issues/8"
+  },
+  {
+    "body": "## Why\n\nDevelopment must respect materials, staffing, project capacity, and future upkeep.\n\n## Scope and acceptance criteria\n\n- [ ] Implement the six local project types with cost, duration, prerequisites, one county slot, and workforce reservation.\n- [ ] Apply cancellation refunds and occupation pauses correctly; protected national milestones use their separately specified timeline.\n- [ ] Enforce material purchase prices, routes, limits, and Standing gates; treaty trade must draw from actual stock.\n- [ ] Implement emergency notes, maturity/restructure limits, payment ordering, and visible arrears consequences.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.1.\n\n## Delivery gate\n\nB — Economic vertical slice · P1\n\n## Dependencies\n\n[#8](https://github.com/andysolomon/county-compact/issues/8), [#3](https://github.com/andysolomon/county-compact/issues/3)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-09 -->\n",
+    "dependencies": [
+      "CC-08",
+      "CC-03"
+    ],
+    "gate": "B — Economic vertical slice",
+    "key": "CC-09",
+    "number": 9,
+    "priority": "P1",
+    "title": "Implement construction, procurement, debt, and arrears",
+    "url": "https://github.com/andysolomon/county-compact/issues/9"
+  },
+  {
+    "body": "## Why\n\nCampaign progress must survive reloads and failed imports without online services.\n\n## Scope and acceptance criteria\n\n- [ ] Save the complete seed, ruleset version, calendar, resources, relationships, queues, and event ledger.\n- [ ] Provide rotating month-end autosaves, manual saves, local export/import, and paused reload.\n- [ ] Reject malformed and unsupported save versions without overwriting the last good save.\n- [ ] Add extension checks for mid-event, mid-project, and mid-battle roundtrips as those systems land.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.5, 8.5, 10.2–10.3.\n\n## Delivery gate\n\nB — Economic vertical slice · P0\n\n## Dependencies\n\n[#6](https://github.com/andysolomon/county-compact/issues/6)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-10 -->\n",
+    "dependencies": [
+      "CC-06"
+    ],
+    "gate": "B — Economic vertical slice",
+    "key": "CC-10",
+    "number": 10,
+    "priority": "P0",
+    "title": "Add versioned local saves, export/import, and recovery",
+    "url": "https://github.com/andysolomon/county-compact/issues/10"
+  },
+  {
+    "body": "## Why\n\nExpansion must impose governance costs instead of simply increasing income.\n\n## Scope and acceptance criteria\n\n- [ ] Implement administration load/capacity, office contribution, disconnected territory penalties, and overload.\n- [ ] Apply support, service pressure, unrest, noncooperation, autonomy changes, and petition states with explained causes.\n- [ ] Implement one sponsored integration process, costs, progress gates, and distinct peaceful versus forced starting values.\n- [ ] Implement bounded quarterly workforce migration; distinguish external authored inflows and avoid demographic productivity modifiers.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.2.\n\n## Delivery gate\n\nC — Peaceful regional game · P1\n\n## Dependencies\n\n[#8](https://github.com/andysolomon/county-compact/issues/8), [#9](https://github.com/andysolomon/county-compact/issues/9), [#3](https://github.com/andysolomon/county-compact/issues/3)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-11 -->\n",
+    "dependencies": [
+      "CC-08",
+      "CC-09",
+      "CC-03"
+    ],
+    "gate": "C — Peaceful regional game",
+    "key": "CC-11",
+    "number": 11,
+    "priority": "P1",
+    "title": "Implement public support, administrative reach, and territorial integration",
+    "url": "https://github.com/andysolomon/county-compact/issues/11"
+  },
+  {
+    "body": "## Why\n\nPlayers need useful cooperation before integration becomes available.\n\n## Scope and acceptance criteria\n\n- [ ] Implement relations, trust, diplomatic slots, action durations/cooldowns, and the documented acceptance score with hard gates.\n- [ ] Support nonaggression, separate civil/military access, economic agreements, and alliances.\n- [ ] Track actual obligations and fulfilled transfers; prevent repeat tiny-transfer influence farming.\n- [ ] Show why a proposal is accepted, rejected, or unavailable, and apply treaty expiration/revocation without granting illegal movement.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.3.\n\n## Delivery gate\n\nC — Peaceful regional game · P1\n\n## Dependencies\n\n[#6](https://github.com/andysolomon/county-compact/issues/6), [#8](https://github.com/andysolomon/county-compact/issues/8), [#3](https://github.com/andysolomon/county-compact/issues/3)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-12 -->\n",
+    "dependencies": [
+      "CC-06",
+      "CC-08",
+      "CC-03"
+    ],
+    "gate": "C — Peaceful regional game",
+    "key": "CC-12",
+    "number": 12,
+    "priority": "P1",
+    "title": "Implement treaties and explainable diplomatic acceptance",
+    "url": "https://github.com/andysolomon/county-compact/issues/12"
+  },
+  {
+    "body": "## Why\n\nCoalition leadership must not silently grant ownership or control of member resources.\n\n## Scope and acceptance criteria\n\n- [ ] Instantiate the eight fictional opening coalitions with independent member ownership and budgets.\n- [ ] Implement majority/two-thirds motions, annual chair elections, cohesion, departure, dues, and the common fund.\n- [ ] Require individual consent to transfer member legal control; merged administrations cannot retain duplicate votes.\n- [ ] Enforce project and military delegation authority; the chair cannot spend member treasury or command undelegated formations.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 4.1, 4.3, 6.3.\n\n## Delivery gate\n\nC — Peaceful regional game · P1\n\n## Dependencies\n\n[#12](https://github.com/andysolomon/county-compact/issues/12), [#8](https://github.com/andysolomon/county-compact/issues/8)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-13 -->\n",
+    "dependencies": [
+      "CC-12",
+      "CC-08"
+    ],
+    "gate": "C — Peaceful regional game",
+    "key": "CC-13",
+    "number": 13,
+    "priority": "P1",
+    "title": "Implement coalitions, voting, common budgets, and delegated authority",
+    "url": "https://github.com/andysolomon/county-compact/issues/13"
+  },
+  {
+    "body": "## Why\n\nDifferent routes to regional power need distinct legal, economic, and political consequences.\n\n## Scope and acceptance criteria\n\n- [ ] Implement dependency tribute from positive taxable income and separate dependent budgets/forces.\n- [ ] Enforce union gates for relations, trust, influence, support, peace, cooperation duration, and consent.\n- [ ] Transfer remaining stocks, debts, and obligations once; reserved transition spending must not be duplicated or refunded into annexed treasury.\n- [ ] Apply expansion alarm and decay; show post-transfer load, autonomy, integration, income, and authority before confirmation.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.2–6.3, E15.\n\n## Delivery gate\n\nC — Peaceful regional game · P1\n\n## Dependencies\n\n[#11](https://github.com/andysolomon/county-compact/issues/11), [#12](https://github.com/andysolomon/county-compact/issues/12), [#13](https://github.com/andysolomon/county-compact/issues/13)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-14 -->\n",
+    "dependencies": [
+      "CC-11",
+      "CC-12",
+      "CC-13"
+    ],
+    "gate": "C — Peaceful regional game",
+    "key": "CC-14",
+    "number": 14,
+    "priority": "P1",
+    "title": "Implement dependency, negotiated union, and expansion alarm",
+    "url": "https://github.com/andysolomon/county-compact/issues/14"
+  },
+  {
+    "body": "## Why\n\nAI needs understandable strategies and equal access to rules and resources.\n\n## Scope and acceptance criteria\n\n- [ ] Implement industrial, agricultural, defensive, expansionist, and commercial priorities with budget/capacity hard limits.\n- [ ] Use the specified monthly/weekly/daily cadences and bounded strategic commitments.\n- [ ] Communicate treaty reasons and react to expansion alarm; do not rely on hidden resource advantages.\n- [ ] Extend the same planner to military supply, attack feasibility, retreat, and peace when those systems land; retain deterministic decisions.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.5.\n\n## Delivery gate\n\nC — Peaceful regional game · P1\n\n## Dependencies\n\n[#9](https://github.com/andysolomon/county-compact/issues/9), [#11](https://github.com/andysolomon/county-compact/issues/11), [#12](https://github.com/andysolomon/county-compact/issues/12), [#13](https://github.com/andysolomon/county-compact/issues/13), [#14](https://github.com/andysolomon/county-compact/issues/14)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-15 -->\n",
+    "dependencies": [
+      "CC-09",
+      "CC-11",
+      "CC-12",
+      "CC-13",
+      "CC-14"
+    ],
+    "gate": "C — Peaceful regional game",
+    "key": "CC-15",
+    "number": 15,
+    "priority": "P1",
+    "title": "Implement constrained AI planning and visible priorities",
+    "url": "https://github.com/andysolomon/county-compact/issues/15"
+  },
+  {
+    "body": "## Why\n\nCounty warfare needs explicit workforce and logistics constraints.\n\n## Scope and acceptance criteria\n\n- [ ] Implement three formation types with costs, staffing, support requirements, and the regional recruitment cap.\n- [ ] Compute legal paths, travel time, access expiry, and supply independently from geography alone.\n- [ ] Provide movement/arrival/supply previews and keyboard/visible-button equivalents to right-click.\n- [ ] Keep federal facilities non-targetable and exclude their assets from player troops; implement reinforcement/retirement and workforce recovery.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.4.\n\n## Delivery gate\n\nD — Limited conflict · P1\n\n## Dependencies\n\n[#3](https://github.com/andysolomon/county-compact/issues/3), [#8](https://github.com/andysolomon/county-compact/issues/8), [#12](https://github.com/andysolomon/county-compact/issues/12)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-16 -->\n",
+    "dependencies": [
+      "CC-03",
+      "CC-08",
+      "CC-12"
+    ],
+    "gate": "D — Limited conflict",
+    "key": "CC-16",
+    "number": 16,
+    "priority": "P1",
+    "title": "Implement recruitment, formations, movement, and supply",
+    "url": "https://github.com/andysolomon/county-compact/issues/16"
+  },
+  {
+    "body": "## Why\n\nWinning a battle must never automatically transfer legal county control.\n\n## Scope and acceptance criteria\n\n- [ ] Implement stack limits, terrain/river/supply modifiers, simultaneous daily losses, morale, reserves, retreat, and surrender.\n- [ ] Ensure actor iteration order does not change battle results; show the calculation breakdown.\n- [ ] Implement timed occupation, engineer benefit, incomplete-progress decay, recapture, and real garrison requirements.\n- [ ] Remove occupied county income/capacity from its legal owner without granting it to the occupier; render hatching over owner colors.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.4.\n\n## Delivery gate\n\nD — Limited conflict · P1\n\n## Dependencies\n\n[#16](https://github.com/andysolomon/county-compact/issues/16), [#6](https://github.com/andysolomon/county-compact/issues/6)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-17 -->\n",
+    "dependencies": [
+      "CC-16",
+      "CC-06"
+    ],
+    "gate": "D — Limited conflict",
+    "key": "CC-17",
+    "number": 17,
+    "priority": "P1",
+    "title": "Implement simultaneous county battles and occupation",
+    "url": "https://github.com/andysolomon/county-compact/issues/17"
+  },
+  {
+    "body": "## Why\n\nThe fictional compact needs enforceable limits that discourage permanent warfare.\n\n## Scope and acceptance criteria\n\n- [ ] Implement registered goals, claim petitions, treaty-breach conditions, and the one-offensive-war rule.\n- [ ] Apply declared Standing costs, compliance recovery, contract restrictions, intervention notices, and receivership conditions.\n- [ ] Implement exhaustion gains/recovery and support effects without conflating national WWII dates with local wars.\n- [ ] Confirm unregistered attacks and treaty breaches with full consequences; never declare war through an ordinary move click.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 2.2, 6.4.\n\n## Delivery gate\n\nD — Limited conflict · P1\n\n## Dependencies\n\n[#12](https://github.com/andysolomon/county-compact/issues/12), [#16](https://github.com/andysolomon/county-compact/issues/16), [#17](https://github.com/andysolomon/county-compact/issues/17)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-18 -->\n",
+    "dependencies": [
+      "CC-12",
+      "CC-16",
+      "CC-17"
+    ],
+    "gate": "D — Limited conflict",
+    "key": "CC-18",
+    "number": 18,
+    "priority": "P1",
+    "title": "Implement war goals, Federal Standing, exhaustion, and intervention",
+    "url": "https://github.com/andysolomon/county-compact/issues/18"
+  },
+  {
+    "body": "## Why\n\nTerritorial transfers need explicit legal settlement and a governable postwar state.\n\n## Scope and acceptance criteria\n\n- [ ] Implement war score and eligible terms with visible acceptance, cost, and hard-gate explanations.\n- [ ] Enforce occupied/claimed cession eligibility, two-county maximum, debt/obligation rules, and federal facility exclusions.\n- [ ] Implement day-180 arbitration, white peace, evacuation-only access, and 24-month truces.\n- [ ] Apply forced-cession support/autonomy/integration penalties and show postwar administrative load before sending an offer.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 6.4, 8.4 wireframe E.\n\n## Delivery gate\n\nD — Limited conflict · P1\n\n## Dependencies\n\n[#17](https://github.com/andysolomon/county-compact/issues/17), [#18](https://github.com/andysolomon/county-compact/issues/18), [#14](https://github.com/andysolomon/county-compact/issues/14)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-19 -->\n",
+    "dependencies": [
+      "CC-17",
+      "CC-18",
+      "CC-14"
+    ],
+    "gate": "D — Limited conflict",
+    "key": "CC-19",
+    "number": 19,
+    "priority": "P1",
+    "title": "Implement peace negotiation, arbitration, and cession rules",
+    "url": "https://github.com/andysolomon/county-compact/issues/19"
+  },
+  {
+    "body": "## Why\n\nEvents must affect simulation without forcing invalid history after local divergence.\n\n## Scope and acceptance criteria\n\n- [ ] Support external historical, conditional historical, and dynamic alternate-history categories with explicit labels.\n- [ ] Implement preconditions, windows, affordability, immediate/duration effects, deadlines, defaults, cooldowns, and once-only ledgers.\n- [ ] Expose source notes separately from invented numerical effects and campaign outcomes.\n- [ ] Persist pending/resolved choices and dependent stages; invalid historical prerequisites suppress or defer only as specified.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 7.1, 6.5.\n\n## Delivery gate\n\nE — Historical campaign · P1\n\n## Dependencies\n\n[#6](https://github.com/andysolomon/county-compact/issues/6), [#8](https://github.com/andysolomon/county-compact/issues/8), [#10](https://github.com/andysolomon/county-compact/issues/10)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-20 -->\n",
+    "dependencies": [
+      "CC-06",
+      "CC-08",
+      "CC-10"
+    ],
+    "gate": "E — Historical campaign",
+    "key": "CC-20",
+    "number": 20,
+    "priority": "P1",
+    "title": "Build the historical and dynamic event framework",
+    "url": "https://github.com/andysolomon/county-compact/issues/20"
+  },
+  {
+    "body": "## Why\n\nCobb’s flagship opening must reflect the gap between selection, construction, operation, and closure.\n\n## Scope and acceptance criteria\n\n- [ ] Author selection on February 19, 1942, construction conditions, and operation no earlier than 1943.\n- [ ] Handle liaison/production workforce reservations, transport prerequisites, migration, services, and training-access choices.\n- [ ] Remove wartime contract payments at the 1945 transition; retain federal ownership and no early Lockheed reopening.\n- [ ] Check interrupted construction, occupation, lost prerequisites, AI-controlled Cobb, and the design’s 82-credit first-year ledger.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections E01–E05, E08, E11–E12; S1.\n\n## Delivery gate\n\nE — Historical campaign · P1\n\n## Dependencies\n\n[#20](https://github.com/andysolomon/county-compact/issues/20), [#9](https://github.com/andysolomon/county-compact/issues/9), [#11](https://github.com/andysolomon/county-compact/issues/11), [#12](https://github.com/andysolomon/county-compact/issues/12)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-21 -->\n",
+    "dependencies": [
+      "CC-20",
+      "CC-09",
+      "CC-11",
+      "CC-12"
+    ],
+    "gate": "E — Historical campaign",
+    "key": "CC-21",
+    "number": 21,
+    "priority": "P1",
+    "title": "Author and validate the Bell industrial transformation chain",
+    "url": "https://github.com/andysolomon/county-compact/issues/21"
+  },
+  {
+    "body": "## Why\n\nAny-county campaigns need meaningful historical pressures beyond the Cobb storyline.\n\n## Scope and acceptance criteria\n\n- [ ] Complete the 16 specified events and expand only to the scoped 20–24 release definitions with clear purposes.\n- [ ] Implement rationing, farm labor pressure, coastal opportunities, veteran assistance, fictional compact renewal, union petitions, and charter disputes.\n- [ ] Validate location/date-specific claims and label fictional timing/effects; track remaining research rather than invent exact facts.\n- [ ] Review segregation, unequal benefits, and civic agency with qualified historical/sensitivity input; avoid oppression bonuses or erasing unresolved harms.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections E06–E07, E09–E10, E13–E16, 12.\n\n## Delivery gate\n\nE — Historical campaign · P1\n\n## Dependencies\n\n[#20](https://github.com/andysolomon/county-compact/issues/20), [#13](https://github.com/andysolomon/county-compact/issues/13), [#14](https://github.com/andysolomon/county-compact/issues/14)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-22 -->\n",
+    "dependencies": [
+      "CC-20",
+      "CC-13",
+      "CC-14"
+    ],
+    "gate": "E — Historical campaign",
+    "key": "CC-22",
+    "number": 22,
+    "priority": "P1",
+    "title": "Author statewide events, coastal contracts, and postwar adjustment",
+    "url": "https://github.com/andysolomon/county-compact/issues/22"
+  },
+  {
+    "body": "## Why\n\nEvery Georgia county must be selectable with understandable authority and difficulty.\n\n## Scope and acceptance criteria\n\n- [ ] Provide flagship Cobb and any-county starts for all 159 records using the same scenario date/rules.\n- [ ] Display search, seat, strengths, budget, authority, affiliation, objectives, and visible difficulty factors.\n- [ ] Provide the two ambitions and the one pre-1944 change rule.\n- [ ] Polish Cobb, Fulton, Chatham, Muscogee, Dougherty, and Rabun; do not lock other counties behind missing profiles.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 4, 5, 8.3–8.4.\n\n## Delivery gate\n\nF — Complete first playable · P1\n\n## Dependencies\n\n[#4](https://github.com/andysolomon/county-compact/issues/4), [#7](https://github.com/andysolomon/county-compact/issues/7), [#8](https://github.com/andysolomon/county-compact/issues/8), [#13](https://github.com/andysolomon/county-compact/issues/13)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-23 -->\n",
+    "dependencies": [
+      "CC-04",
+      "CC-07",
+      "CC-08",
+      "CC-13"
+    ],
+    "gate": "F — Complete first playable",
+    "key": "CC-23",
+    "number": 23,
+    "priority": "P1",
+    "title": "Create campaign selection, ambitions, and six opening profiles",
+    "url": "https://github.com/andysolomon/county-compact/issues/23"
+  },
+  {
+    "body": "## Why\n\nA readable atlas interface must explain resources and authority while leaving the map usable.\n\n## Scope and acceptance criteria\n\n- [ ] Implement the eleven specified screens and six initial map modes using the five wireframes as layout requirements.\n- [ ] Preserve at least the specified usable map space at 1280×720; replace/overlay side panels at smaller desktop widths.\n- [ ] Use ownership, occupation, selection, and danger treatments that survive grayscale; validate contrast and locally bundled fonts.\n- [ ] Explain disabled actions, forecasts, historical labels, and consequential confirmations without adding confirmation to routine allocation.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 8.\n\n## Delivery gate\n\nF — Complete first playable · P1\n\n## Dependencies\n\n[#7](https://github.com/andysolomon/county-compact/issues/7), [#8](https://github.com/andysolomon/county-compact/issues/8), [#11](https://github.com/andysolomon/county-compact/issues/11), [#13](https://github.com/andysolomon/county-compact/issues/13), [#19](https://github.com/andysolomon/county-compact/issues/19), [#20](https://github.com/andysolomon/county-compact/issues/20)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-24 -->\n",
+    "dependencies": [
+      "CC-07",
+      "CC-08",
+      "CC-11",
+      "CC-13",
+      "CC-19",
+      "CC-20"
+    ],
+    "gate": "F — Complete first playable",
+    "key": "CC-24",
+    "number": 24,
+    "priority": "P1",
+    "title": "Build the strategic UI, map modes, and consequential-action flows",
+    "url": "https://github.com/andysolomon/county-compact/issues/24"
+  },
+  {
+    "body": "## Why\n\nTeach the core loop without forcing a fictional opening war or accelerating normal integration gates.\n\n## Scope and acceptance criteria\n\n- [ ] Implement all eight contextual lessons with observable completion and dismiss/resume support.\n- [ ] Teach membership versus ownership, +8 surplus, construction, historical stages, treaty authority, and legal movement.\n- [ ] Allow expansion/integration lessons to resume months later when genuine prerequisites hold.\n- [ ] Keep optional combat training in a separate copied scenario/save; it cannot alter campaign resources or history.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 9.\n\n## Delivery gate\n\nF — Complete first playable · P1\n\n## Dependencies\n\n[#23](https://github.com/andysolomon/county-compact/issues/23), [#24](https://github.com/andysolomon/county-compact/issues/24), [#21](https://github.com/andysolomon/county-compact/issues/21), [#19](https://github.com/andysolomon/county-compact/issues/19)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-25 -->\n",
+    "dependencies": [
+      "CC-23",
+      "CC-24",
+      "CC-21",
+      "CC-19"
+    ],
+    "gate": "F — Complete first playable",
+    "key": "CC-25",
+    "number": 25,
+    "priority": "P1",
+    "title": "Implement Cobb onboarding and an isolated optional combat tutorial",
+    "url": "https://github.com/andysolomon/county-compact/issues/25"
+  },
+  {
+    "body": "## Why\n\nA complete first playable must support a coherent ending, not only economic and military mechanics.\n\n## Scope and acceptance criteria\n\n- [ ] Implement six-month sustained Regional Union and Commonwealth requirements with unique county counting.\n- [ ] Exclude mere occupation/influence/dependency from direct-control victory; verify independent member requirements.\n- [ ] Implement receivership, restoration period, financial defeat, capital relocation, and December 31, 1948 review.\n- [ ] Provide map/history/governance summaries and optional sandbox with an explicit end-of-authored-history notice.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 5, 8.3.\n\n## Delivery gate\n\nF — Complete first playable · P1\n\n## Dependencies\n\n[#11](https://github.com/andysolomon/county-compact/issues/11), [#13](https://github.com/andysolomon/county-compact/issues/13), [#18](https://github.com/andysolomon/county-compact/issues/18), [#20](https://github.com/andysolomon/county-compact/issues/20), [#23](https://github.com/andysolomon/county-compact/issues/23)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-26 -->\n",
+    "dependencies": [
+      "CC-11",
+      "CC-13",
+      "CC-18",
+      "CC-20",
+      "CC-23"
+    ],
+    "gate": "F — Complete first playable",
+    "key": "CC-26",
+    "number": 26,
+    "priority": "P1",
+    "title": "Implement victory, defeat, campaign summary, and sandbox continuation",
+    "url": "https://github.com/andysolomon/county-compact/issues/26"
+  },
+  {
+    "body": "## Why\n\nThe desktop experience must remain usable with all counties and a busy campaign.\n\n## Scope and acceptance criteria\n\n- [ ] Test keyboard and screen-reader list parity, tooltip focus, reduced motion, and equivalent visible movement controls.\n- [ ] Validate 1280×720 and 1920×1080 layouts, text contrast, county access, and panel behavior.\n- [ ] Measure navigation/input, simulation, load, label counts, asset size, and offline network behavior on a declared reference device.\n- [ ] Report results against proposed targets with concrete fixes for misses; do not label unmeasured targets achieved.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 8.5, 10.2.\n\n## Delivery gate\n\nF — Complete first playable · P1\n\n## Dependencies\n\n[#24](https://github.com/andysolomon/county-compact/issues/24), [#25](https://github.com/andysolomon/county-compact/issues/25), [#26](https://github.com/andysolomon/county-compact/issues/26)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-27 -->\n",
+    "dependencies": [
+      "CC-24",
+      "CC-25",
+      "CC-26"
+    ],
+    "gate": "F — Complete first playable",
+    "key": "CC-27",
+    "number": 27,
+    "priority": "P1",
+    "title": "Validate keyboard accessibility, responsive layouts, and performance",
+    "url": "https://github.com/andysolomon/county-compact/issues/27"
+  },
+  {
+    "body": "## Why\n\nThe release needs evidence that every start works and both expansion paths are understandable.\n\n## Scope and acceptance criteria\n\n- [ ] Run complete 159-county roster, access, topology, baseline-solvency, and authority checks.\n- [ ] Validate resource conservation, coalition limits, peace legality, event invariants, and mid-operation save/reload.\n- [ ] Conduct the eight-player Cobb onboarding round plus six contrast starts and twelve additional sampled counties.\n- [ ] Evaluate both ambitions and the 6–10-hour pacing target; record balance findings and unresolved release blockers.\n\n## Design reference\n\n[Game design](https://github.com/andysolomon/county-compact/blob/main/docs/game-design.md), sections 10.3–10.4.\n\n## Delivery gate\n\nF — Complete first playable · P1\n\n## Dependencies\n\n[#15](https://github.com/andysolomon/county-compact/issues/15), [#19](https://github.com/andysolomon/county-compact/issues/19), [#22](https://github.com/andysolomon/county-compact/issues/22), [#25](https://github.com/andysolomon/county-compact/issues/25), [#26](https://github.com/andysolomon/county-compact/issues/26), [#27](https://github.com/andysolomon/county-compact/issues/27)\n\n## Validation\n\nDemonstrate the behavior against the acceptance criteria. Add focused invariant/regression checks where data integrity or simulation correctness is at risk. Record historical uncertainty and measured results explicitly.\n\n## Scope boundary\n\nGeorgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.\n\n<!-- planning-id: CC-28 -->\n",
+    "dependencies": [
+      "CC-15",
+      "CC-19",
+      "CC-22",
+      "CC-25",
+      "CC-26",
+      "CC-27"
+    ],
+    "gate": "F — Complete first playable",
+    "key": "CC-28",
+    "number": 28,
+    "priority": "P1",
+    "title": "Run all-county correctness gates and campaign playtests",
+    "url": "https://github.com/andysolomon/county-compact/issues/28"
+  }
+]
