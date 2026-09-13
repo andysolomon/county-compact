@@ -6,9 +6,17 @@ The player develops local industry and agriculture, negotiates coalitions, expan
 
 ## Status
 
-Design and planning. No playable application is implemented yet. County wars and sovereign regional arrangements are explicitly fictional alternate history; historical background and game values are distinguished throughout the design.
+Early development. A local browser application now covers the first interaction loop: select Cobb, inspect the budget, fund a transport improvement, advance time, see it complete with updated finances, answer the Bell decisions, run a coalition admission motion, and negotiate a peace settlement in a training scenario. See [implementation notes](docs/implementation-notes.md) for what exists and what is deferred. County wars and sovereign regional arrangements are explicitly fictional alternate history; historical background and game values are distinguished throughout the design.
+
+```sh
+npm install
+npm run dev     # local app at http://localhost:5173
+npm test        # rule tests replaying the design's first-year ledger
+npm run build   # strict typecheck and production bundle
+```
 
 - [Game design document](docs/game-design.md)
+- [Implementation notes](docs/implementation-notes.md)
 - [GitHub issues](https://github.com/andysolomon/county-compact/issues)
 - [Implementation backlog](planning/backlog.md)
 - [Machine-readable issue plan](planning/issues.json)

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# Design-tool export kept locally: a generated canvas runtime that embeds a
+# personal Mapbox access token. Screens are specified in docs/game-design.md §8.
+County Compact game design*/

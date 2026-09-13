@@ -1,0 +1,93 @@
+/* County Compact visual tokens — GDD §8.1 art direction.
+   A 1940s strategic atlas on a planning table: warm paper, precise ink,
+   restrained amber for selection, alert red paired with text. Single committed
+   light look; colors are explicit everywhere. */
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --paper: #eee7d8;
+  --paper-raised: #f4efe4;
+  --paper-sunk: #e9e2d2;
+  --table: #ddd6c4;
+  --map-ground: #e1dac8;
+  --map-outside: #d6cfbc;
+  --water: #a9bbc0;
+
+  /* Ink */
+  --ink: #252a2d;
+  --ink-muted: #5a6066;
+  --ink-faint: #8a9095;
+  --rule: rgba(37, 42, 45, 0.3);
+  --rule-strong: rgba(37, 42, 45, 0.55);
+  --rule-soft: rgba(37, 42, 45, 0.12);
+  --scrim: rgba(37, 42, 45, 0.32);
+
+  /* Accents */
+  --atlantic: #527887;
+  --amber: #b5802b;
+  --amber-wash: rgba(181, 128, 43, 0.12);
+  --alert: #8a3f35;
+  --alert-wash: rgba(138, 63, 53, 0.1);
+  --ok: #3f6c68;
+
+  /* Political fills */
+  --fill-player: #3f6c68;
+  --fill-player-owned: #6d9491;
+  --fill-independent: #e6decb;
+  --fill-member: #d9d8d0;
+  --fill-occupied-hatch: rgba(37, 42, 45, 0.55);
+
+  /* Coalition identity fills — never the sole authority cue */
+  --coal-teal: #6f9793;
+  --coal-slate: #7d8998;
+  --coal-ochre: #bfa05a;
+  --coal-olive: #8e9463;
+  --coal-clay: #b77e62;
+  --coal-plum: #8c6e86;
+  --coal-sage: #9aa88a;
+  --coal-steel: #7a8aa3;
+
+  /* Economy ranks */
+  --econ-industry-hi: #9c7a3a;
+  --econ-industry: #c4a669;
+  --econ-agri: #dcd2ae;
+  --econ-low: #e9e2d0;
+
+  /* Integration / terrain */
+  --integ-full: #3f6c68;
+  --integ-partial: #a3b8b6;
+  --integ-none: #d9c9b6;
+  --terrain-mountain: #c9c2b0;
+  --terrain-piedmont: #e3dcc8;
+  --terrain-coastal: #ece6d4;
+  --terrain-wetland: #cfd6cf;
+
+  /* Type */
+  --font-serif: "Source Serif 4", Georgia, "DejaVu Serif", serif;
+  --font-sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif;
+  --fs-11: 11px; --fs-12: 12px; --fs-13: 13px; --fs-14: 14px; --fs-15: 15px;
+  --fs-16: 16px; --fs-18: 18px; --fs-20: 20px; --fs-22: 22px; --fs-28: 28px;
+  --tracking-caps: 0.12em;
+
+  /* Spacing and shape */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 22px;
+  --radius: 2px;
+  --shadow-panel: 0 2px 12px rgba(37, 42, 45, 0.15);
+  --shadow-modal: 0 14px 44px rgba(37, 42, 45, 0.4);
+
+  /* Shell geometry — 1280×720 baseline (GDD §8.4) */
+  --topbar-h: 56px;
+  --bottombar-h: 56px;
+  --left-w: 288px;
+  --select-left-w: 280px;
+  --select-right-w: 320px;
+  --rail-w: 72px;
+
+  /* Motion */
+  --ease: 120ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --ease: 0ms; }
+}
