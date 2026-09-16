@@ -1,0 +1,3750 @@
+{
+ "US-GA-13001": {
+  "id": "US-GA-13001",
+  "modernFips": "13001",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13003": {
+  "id": "US-GA-13003",
+  "modernFips": "13003",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.539,
+   "flag": "mixed-province;wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "mixed-province",
+   "wetland-from-modern-gnis-nwi-signal",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13005": {
+  "id": "US-GA-13005",
+  "modernFips": "13005",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13007": {
+  "id": "US-GA-13007",
+  "modernFips": "13007",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13009": {
+  "id": "US-GA-13009",
+  "modernFips": "13009",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.536,
+   "flag": "mixed-province;disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "mixed-province",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13011": {
+  "id": "US-GA-13011",
+  "modernFips": "13011",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13013": {
+  "id": "US-GA-13013",
+  "modernFips": "13013",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13015": {
+  "id": "US-GA-13015",
+  "modernFips": "13015",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.756,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13017": {
+  "id": "US-GA-13017",
+  "modernFips": "13017",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.755,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13019": {
+  "id": "US-GA-13019",
+  "modernFips": "13019",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13021": {
+  "id": "US-GA-13021",
+  "modernFips": "13021",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.543,
+   "flag": "mixed-province;disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "mixed-province",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13023": {
+  "id": "US-GA-13023",
+  "modernFips": "13023",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.887,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13025": {
+  "id": "US-GA-13025",
+  "modernFips": "13025",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13027": {
+  "id": "US-GA-13027",
+  "modernFips": "13027",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13029": {
+  "id": "US-GA-13029",
+  "modernFips": "13029",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.971,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.029)"
+  },
+  "federalFacilitiesInCounty": [
+   "fort-stewart"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "fenneman-unclassified-fraction(0.029)",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13031": {
+  "id": "US-GA-13031",
+  "modernFips": "13031",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13033": {
+  "id": "US-GA-13033",
+  "modernFips": "13033",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13035": {
+  "id": "US-GA-13035",
+  "modernFips": "13035",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13037": {
+  "id": "US-GA-13037",
+  "modernFips": "13037",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13039": {
+  "id": "US-GA-13039",
+  "modernFips": "13039",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.912,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.088)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "fenneman-unclassified-fraction(0.088)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13043": {
+  "id": "US-GA-13043",
+  "modernFips": "13043",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13045": {
+  "id": "US-GA-13045",
+  "modernFips": "13045",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13047": {
+  "id": "US-GA-13047",
+  "modernFips": "13047",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.976,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13049": {
+  "id": "US-GA-13049",
+  "modernFips": "13049",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13051": {
+  "id": "US-GA-13051",
+  "modernFips": "13051",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.907,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.093)"
+  },
+  "federalFacilitiesInCounty": [
+   "hunter-field-savannah"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "fenneman-unclassified-fraction(0.093)",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13053": {
+  "id": "US-GA-13053",
+  "modernFips": "13053",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [
+   "fort-benning"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13055": {
+  "id": "US-GA-13055",
+  "modernFips": "13055",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.787,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13057": {
+  "id": "US-GA-13057",
+  "modernFips": "13057",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13059": {
+  "id": "US-GA-13059",
+  "modernFips": "13059",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13061": {
+  "id": "US-GA-13061",
+  "modernFips": "13061",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13063": {
+  "id": "US-GA-13063",
+  "modernFips": "13063",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13065": {
+  "id": "US-GA-13065",
+  "modernFips": "13065",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.565,
+   "flag": "mixed-province;wetland-from-modern-gnis-nwi-signal"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "mixed-province",
+   "wetland-from-modern-gnis-nwi-signal",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13067": {
+  "id": "US-GA-13067",
+  "modernFips": "13067",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "documented",
+   "primaryUSRoute": "US 41",
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+ "federalFacilitiesInCounty": [],
+ "flags": [
+  "license-caveat:see issue-3-unresolved.md#license-caveat",
+    "roads-bracketed-1940-1944-not-1942-verified",
+    "cobb-no-federal-facility-1942-02-01"
+ ]
+ },
+ "US-GA-13069": {
+  "id": "US-GA-13069",
+  "modernFips": "13069",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.858,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13071": {
+  "id": "US-GA-13071",
+  "modernFips": "13071",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13073": {
+  "id": "US-GA-13073",
+  "modernFips": "13073",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.604,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13075": {
+  "id": "US-GA-13075",
+  "modernFips": "13075",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13077": {
+  "id": "US-GA-13077",
+  "modernFips": "13077",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13079": {
+  "id": "US-GA-13079",
+  "modernFips": "13079",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.629,
+   "flag": "disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13081": {
+  "id": "US-GA-13081",
+  "modernFips": "13081",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13083": {
+  "id": "US-GA-13083",
+  "modernFips": "13083",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "APPALACHIAN PLATEAUS / CUMBERLAND PLATEAU",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13085": {
+  "id": "US-GA-13085",
+  "modernFips": "13085",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.78,
+   "flag": "partial-mountain-province(0.22);disagrees-with-roster.ts(mountain)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "partial-mountain-province(0.22)",
+   "disagrees-with-roster.ts(mountain)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13087": {
+  "id": "US-GA-13087",
+  "modernFips": "13087",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13089": {
+  "id": "US-GA-13089",
+  "modernFips": "13089",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13091": {
+  "id": "US-GA-13091",
+  "modernFips": "13091",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.91,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13093": {
+  "id": "US-GA-13093",
+  "modernFips": "13093",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13095": {
+  "id": "US-GA-13095",
+  "modernFips": "13095",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13097": {
+  "id": "US-GA-13097",
+  "modernFips": "13097",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13099": {
+  "id": "US-GA-13099",
+  "modernFips": "13099",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13101": {
+  "id": "US-GA-13101",
+  "modernFips": "13101",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.996,
+   "flag": "wetland-from-modern-gnis-nwi-signal"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13103": {
+  "id": "US-GA-13103",
+  "modernFips": "13103",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13105": {
+  "id": "US-GA-13105",
+  "modernFips": "13105",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13107": {
+  "id": "US-GA-13107",
+  "modernFips": "13107",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13109": {
+  "id": "US-GA-13109",
+  "modernFips": "13109",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [
+   "fort-stewart"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13111": {
+  "id": "US-GA-13111",
+  "modernFips": "13111",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13113": {
+  "id": "US-GA-13113",
+  "modernFips": "13113",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13115": {
+  "id": "US-GA-13115",
+  "modernFips": "13115",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13117": {
+  "id": "US-GA-13117",
+  "modernFips": "13117",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13119": {
+  "id": "US-GA-13119",
+  "modernFips": "13119",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13121": {
+  "id": "US-GA-13121",
+  "modernFips": "13121",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13123": {
+  "id": "US-GA-13123",
+  "modernFips": "13123",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 0.593,
+   "flag": "mixed-province"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "mixed-province",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13125": {
+  "id": "US-GA-13125",
+  "modernFips": "13125",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13127": {
+  "id": "US-GA-13127",
+  "modernFips": "13127",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.894,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.106)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "fenneman-unclassified-fraction(0.106)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13129": {
+  "id": "US-GA-13129",
+  "modernFips": "13129",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.991,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13131": {
+  "id": "US-GA-13131",
+  "modernFips": "13131",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13133": {
+  "id": "US-GA-13133",
+  "modernFips": "13133",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13135": {
+  "id": "US-GA-13135",
+  "modernFips": "13135",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13137": {
+  "id": "US-GA-13137",
+  "modernFips": "13137",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.898,
+   "flag": "disagrees-with-roster.ts(mountain)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(mountain)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13139": {
+  "id": "US-GA-13139",
+  "modernFips": "13139",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13141": {
+  "id": "US-GA-13141",
+  "modernFips": "13141",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.786,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13143": {
+  "id": "US-GA-13143",
+  "modernFips": "13143",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13145": {
+  "id": "US-GA-13145",
+  "modernFips": "13145",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13147": {
+  "id": "US-GA-13147",
+  "modernFips": "13147",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13149": {
+  "id": "US-GA-13149",
+  "modernFips": "13149",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13151": {
+  "id": "US-GA-13151",
+  "modernFips": "13151",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13153": {
+  "id": "US-GA-13153",
+  "modernFips": "13153",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [
+   "robins-field-warner-robins"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13155": {
+  "id": "US-GA-13155",
+  "modernFips": "13155",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.972,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13157": {
+  "id": "US-GA-13157",
+  "modernFips": "13157",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13159": {
+  "id": "US-GA-13159",
+  "modernFips": "13159",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13161": {
+  "id": "US-GA-13161",
+  "modernFips": "13161",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13163": {
+  "id": "US-GA-13163",
+  "modernFips": "13163",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13165": {
+  "id": "US-GA-13165",
+  "modernFips": "13165",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13167": {
+  "id": "US-GA-13167",
+  "modernFips": "13167",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13169": {
+  "id": "US-GA-13169",
+  "modernFips": "13169",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.822,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13171": {
+  "id": "US-GA-13171",
+  "modernFips": "13171",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13173": {
+  "id": "US-GA-13173",
+  "modernFips": "13173",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13175": {
+  "id": "US-GA-13175",
+  "modernFips": "13175",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13177": {
+  "id": "US-GA-13177",
+  "modernFips": "13177",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13179": {
+  "id": "US-GA-13179",
+  "modernFips": "13179",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.957,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.043)"
+  },
+  "federalFacilitiesInCounty": [
+   "fort-stewart"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "fenneman-unclassified-fraction(0.043)",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13181": {
+  "id": "US-GA-13181",
+  "modernFips": "13181",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13183": {
+  "id": "US-GA-13183",
+  "modernFips": "13183",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal"
+  },
+  "federalFacilitiesInCounty": [
+   "fort-stewart"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13185": {
+  "id": "US-GA-13185",
+  "modernFips": "13185",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13187": {
+  "id": "US-GA-13187",
+  "modernFips": "13187",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.573,
+   "flag": "partial-mountain-province(0.43);mixed-province;disagrees-with-roster.ts(mountain)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "partial-mountain-province(0.43)",
+   "mixed-province",
+   "disagrees-with-roster.ts(mountain)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13189": {
+  "id": "US-GA-13189",
+  "modernFips": "13189",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.562,
+   "flag": "mixed-province;disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "mixed-province",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13191": {
+  "id": "US-GA-13191",
+  "modernFips": "13191",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.885,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.115)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "fenneman-unclassified-fraction(0.115)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13193": {
+  "id": "US-GA-13193",
+  "modernFips": "13193",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13195": {
+  "id": "US-GA-13195",
+  "modernFips": "13195",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13197": {
+  "id": "US-GA-13197",
+  "modernFips": "13197",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13199": {
+  "id": "US-GA-13199",
+  "modernFips": "13199",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13201": {
+  "id": "US-GA-13201",
+  "modernFips": "13201",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13205": {
+  "id": "US-GA-13205",
+  "modernFips": "13205",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13207": {
+  "id": "US-GA-13207",
+  "modernFips": "13207",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13209": {
+  "id": "US-GA-13209",
+  "modernFips": "13209",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13211": {
+  "id": "US-GA-13211",
+  "modernFips": "13211",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13213": {
+  "id": "US-GA-13213",
+  "modernFips": "13213",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.806,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13215": {
+  "id": "US-GA-13215",
+  "modernFips": "13215",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.774,
+   "flag": "disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [
+   "fort-benning"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(coastal)",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13217": {
+  "id": "US-GA-13217",
+  "modernFips": "13217",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13219": {
+  "id": "US-GA-13219",
+  "modernFips": "13219",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13221": {
+  "id": "US-GA-13221",
+  "modernFips": "13221",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13223": {
+  "id": "US-GA-13223",
+  "modernFips": "13223",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.974,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13225": {
+  "id": "US-GA-13225",
+  "modernFips": "13225",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13227": {
+  "id": "US-GA-13227",
+  "modernFips": "13227",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(mountain)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(mountain)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13229": {
+  "id": "US-GA-13229",
+  "modernFips": "13229",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13231": {
+  "id": "US-GA-13231",
+  "modernFips": "13231",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13233": {
+  "id": "US-GA-13233",
+  "modernFips": "13233",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.68,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13235": {
+  "id": "US-GA-13235",
+  "modernFips": "13235",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.955,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13237": {
+  "id": "US-GA-13237",
+  "modernFips": "13237",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13239": {
+  "id": "US-GA-13239",
+  "modernFips": "13239",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13241": {
+  "id": "US-GA-13241",
+  "modernFips": "13241",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 0.998,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13243": {
+  "id": "US-GA-13243",
+  "modernFips": "13243",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13245": {
+  "id": "US-GA-13245",
+  "modernFips": "13245",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.998,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [
+   "fort-gordon"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13247": {
+  "id": "US-GA-13247",
+  "modernFips": "13247",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13249": {
+  "id": "US-GA-13249",
+  "modernFips": "13249",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13251": {
+  "id": "US-GA-13251",
+  "modernFips": "13251",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13253": {
+  "id": "US-GA-13253",
+  "modernFips": "13253",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13255": {
+  "id": "US-GA-13255",
+  "modernFips": "13255",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13257": {
+  "id": "US-GA-13257",
+  "modernFips": "13257",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(mountain)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(mountain)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13259": {
+  "id": "US-GA-13259",
+  "modernFips": "13259",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13261": {
+  "id": "US-GA-13261",
+  "modernFips": "13261",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13263": {
+  "id": "US-GA-13263",
+  "modernFips": "13263",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.833,
+   "flag": "disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13265": {
+  "id": "US-GA-13265",
+  "modernFips": "13265",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13267": {
+  "id": "US-GA-13267",
+  "modernFips": "13267",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [
+   "fort-stewart"
+  ],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "contains-nontargetable-federal-facility",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13269": {
+  "id": "US-GA-13269",
+  "modernFips": "13269",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.886,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13271": {
+  "id": "US-GA-13271",
+  "modernFips": "13271",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.991,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13273": {
+  "id": "US-GA-13273",
+  "modernFips": "13273",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13275": {
+  "id": "US-GA-13275",
+  "modernFips": "13275",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13277": {
+  "id": "US-GA-13277",
+  "modernFips": "13277",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13279": {
+  "id": "US-GA-13279",
+  "modernFips": "13279",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13281": {
+  "id": "US-GA-13281",
+  "modernFips": "13281",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13283": {
+  "id": "US-GA-13283",
+  "modernFips": "13283",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13285": {
+  "id": "US-GA-13285",
+  "modernFips": "13285",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13287": {
+  "id": "US-GA-13287",
+  "modernFips": "13287",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13289": {
+  "id": "US-GA-13289",
+  "modernFips": "13289",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.93,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13291": {
+  "id": "US-GA-13291",
+  "modernFips": "13291",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13293": {
+  "id": "US-GA-13293",
+  "modernFips": "13293",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13295": {
+  "id": "US-GA-13295",
+  "modernFips": "13295",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "APPALACHIAN PLATEAUS / CUMBERLAND PLATEAU",
+   "physioFraction": 0.624,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13297": {
+  "id": "US-GA-13297",
+  "modernFips": "13297",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13299": {
+  "id": "US-GA-13299",
+  "modernFips": "13299",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13301": {
+  "id": "US-GA-13301",
+  "modernFips": "13301",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.726,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13303": {
+  "id": "US-GA-13303",
+  "modernFips": "13303",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "disagrees-with-roster.ts(piedmont)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "disagrees-with-roster.ts(piedmont)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13305": {
+  "id": "US-GA-13305",
+  "modernFips": "13305",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": "wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "wetland-from-modern-gnis-nwi-signal",
+   "disagrees-with-roster.ts(coastal)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13307": {
+  "id": "US-GA-13307",
+  "modernFips": "13307",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13309": {
+  "id": "US-GA-13309",
+  "modernFips": "13309",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13311": {
+  "id": "US-GA-13311",
+  "modernFips": "13311",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.668,
+   "flag": "partial-mountain-province(0.33);disagrees-with-roster.ts(mountain)"
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "partial-mountain-province(0.33)",
+   "disagrees-with-roster.ts(mountain)",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13313": {
+  "id": "US-GA-13313",
+  "modernFips": "13313",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13315": {
+  "id": "US-GA-13315",
+  "modernFips": "13315",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13317": {
+  "id": "US-GA-13317",
+  "modernFips": "13317",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13319": {
+  "id": "US-GA-13319",
+  "modernFips": "13319",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ },
+ "US-GA-13321": {
+  "id": "US-GA-13321",
+  "modernFips": "13321",
+  "roads": {
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null
+  },
+  "terrain": {
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "flag": null
+  },
+  "federalFacilitiesInCounty": [],
+  "flags": [
+   "license-caveat:see issue-3-unresolved.md#license-caveat",
+   "roads-bracketed-1940-1944-not-1942-verified",
+   "roads-not-transcribed"
+  ]
+ }
+}

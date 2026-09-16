@@ -1,0 +1,92 @@
+{
+  "issue": "CC-03",
+  "document": "docs/historical-research/issue-3-source-map.md",
+  "probe_date": "2026-09-16",
+  "coverage_scale": {
+    "None": "nothing retrievable today for the target date",
+    "Partial": "retrievable material brackets or approximates 1942-02-01",
+    "Full": "retrievable material directly covers 1942-02-01"
+  },
+  "facets": [
+    {
+      "id": "roads",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "Rand McNally Road map, Georgia (Rumsey via Internet Archive)", "url": "https://archive.org/details/dr_rand-mcnally-road-map-georgia-copyright-by-rand-mcnally--company-chicag-5969027", "years": "1940", "coverage": "Partial", "license": "Images may be downloaded and used following Creative Commons CC BY-NC-SA 3.0 license. Image credit should be given to \"David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries.\"  Please contact the David Rumsey Map Collection for commercial use.", "http": 200, "bytes": 5430, "retrieved": "2026-09-16"},
+        {"source": "Rand McNally Road map: Georgia (Rumsey via IA)", "url": "https://archive.org/details/dr_rand-mcnally-road-map-georgia-copyright-by-rand-mcnally--company-chicag-6825024", "years": "1939", "coverage": "Partial", "license": "same CC BY-NC-SA 3.0 string", "http": 200, "bytes": 5231, "retrieved": "2026-09-16"},
+        {"source": "State Farm Road map: Georgia (Rumsey via IA)", "url": "https://archive.org/details/dr_state-farm-road-map-georgia-copyright-by-rand-mcnally--company-chicago-4246020", "years": "1944", "coverage": "Partial", "license": "same CC BY-NC-SA 3.0 string", "http": 200, "bytes": 4681, "retrieved": "2026-09-16"},
+        {"source": "GeorgiaInfo Historical Atlas of Georgia Counties", "url": "https://georgiainfo.galileo.usg.edu/histcountymaps/", "years": "formerly 1777-2000", "coverage": "None", "license": null, "http": 200, "bytes": 9080, "access_issue": "site retired; redirects to https://dlg.galileo.usg.edu/gainfo/ ('The GeorgiaInfo site is no longer available.'); Wayback API 429, CDX 503, 2018 capture 404"},
+        {"source": "GDOT maps page", "url": "https://www.dot.ga.gov/GDOT/Pages/Maps.aspx", "years": "2025-2026", "coverage": "None", "license": null, "http": 200, "bytes": 176780, "access_issue": "no historical map links; guessed HistoricalMaps.aspx 404"},
+        {"source": "Library of Congress maps search API", "url": "https://www.loc.gov/maps/?q=georgia+highway+map+1941&fo=json", "years": null, "coverage": "None", "license": "You should determine for yourself whether or not an item is protected by copyright or in the public domain, and then satisfy any copyright or use restrictions when publishing or distributing materials from our collections.", "http": 503, "bytes": 84903, "access_issue": "503 then timeout; alternate queries returned only 1964-2014 items"},
+        {"source": "David Rumsey Luna search API", "url": "https://www.davidrumsey.com/luna/servlet/as/search?q=georgia+highway+1942", "years": null, "coverage": "None", "license": "The digital images and associated descriptive data are copyright Cartography Associates.", "http": 200, "bytes": 1089, "access_issue": "totalResults 0; UI-only search"},
+        {"source": "Digital Library of Georgia / UGA MAGIL", "url": "https://dlg.usg.edu/search?q=georgia+highway+map+1941", "years": null, "coverage": "None", "license": null, "http": 200, "bytes": 15462, "access_issue": "Turnstile captive check; search.json 500; MAGIL landing has no listing; hmap timeout"},
+        {"source": "USGS topoView / HTMC", "url": "https://ngmdb.usgs.gov/topoview/", "years": "per-quad", "coverage": "Unverified", "license": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.", "http": 200, "bytes": 21325, "access_issue": "TNM products API 504 for Marietta bbox"}
+      ],
+      "feasibility": "Bracketed by 1939/1940/1944 sheets; no official 1941-1943 State Highway Department map found online; GeorgiaInfo loss affects Issue #1 U-1."
+    },
+    {
+      "id": "rail",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "Leahy's Railway Distance Map of Georgia (Rumsey via IA)", "url": "https://archive.org/details/dr_leahys-hotel-guide-and-railway-distance-map-of-the-state-of-georgia-publi-0425025", "years": "1934", "coverage": "Partial", "license": "Rumsey dr_ series; item string not fetched", "http": 200, "bytes": 3676, "retrieved": "2026-09-16"},
+        {"source": "IA Official Guide of the Railways 1940-1943", "url": "https://archive.org/advancedsearch.php?q=title%3A%28%22official+guide+of+the+railways%22%29+AND+year%3A%5B1940+TO+1943%5D&output=json", "coverage": "None", "http": 200, "bytes": 341, "access_issue": "numFound 0"},
+        {"source": "HathiTrust catalog", "url": "https://catalog.hathitrust.org/Search/Home?lookfor=%22official+guide+of+the+railways%22&type=title", "coverage": "Unverified", "http": 403, "bytes": 5815, "access_issue": "automated-access block"},
+        {"source": "LOC maps search, Georgia railroads", "url": "https://www.loc.gov/maps/?q=georgia+railroad+map+1940&fo=json", "coverage": "None", "http": 200, "bytes": 12827, "access_issue": "0 results"},
+        {"source": "HABS/HAER Western & Atlantic", "url": "https://www.loc.gov/pictures/search/?q=western%20atlantic%20railroad%20georgia&co=hh&fo=json", "coverage": "Partial", "http": 200, "bytes": 13571, "retrieved": "2026-09-16"},
+        {"source": "NARA catalog API v2", "url": "https://catalog.archives.gov/api/v2/records/search?q=Marietta%20Army%20Air%20Field", "coverage": "Unverified", "http": 200, "bytes": 5454, "access_issue": "HTML shell, API key required"}
+      ],
+      "feasibility": "Thin; corridor set not confirmable for 1942 from open sources retrieved today."
+    },
+    {
+      "id": "rivers-crossings",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "USGS NHD", "url": "https://www.usgs.gov/national-hydrography/national-hydrography-dataset", "years": "modern (retired 2023)", "coverage": "Partial", "license": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.", "http": 200, "bytes": 88238, "retrieved": "2026-09-16"},
+        {"source": "HABS/HAER Chattahoochee bridges", "url": "https://www.loc.gov/pictures/search/?q=georgia%20bridge%20chattahoochee&co=hh&fo=json", "coverage": "Partial", "http": 200, "bytes": 26590, "retrieved": "2026-09-16"},
+        {"source": "NPS National Register spatial data", "url": "https://www.nps.gov/subjects/nationalregister/data-downloads.htm", "coverage": "Partial", "license": "The National Park Service Cultural Resources GIS program has created spatial data from the unrestricted National Register of Historic Places database (NRIS) inventory in a file geodatabase format using ESRI's ArcMap 10.", "http": 200, "bytes": 44955, "retrieved": "2026-09-16"},
+        {"source": "USACE Mobile District Allatoona", "url": "https://www.sam.usace.army.mil/Missions/Civil-Works/Recreation/Allatoona-Lake/", "coverage": "Unverified", "http": 403, "bytes": 451, "access_issue": "Access Denied for two user agents; Lanier page 403 too"},
+        {"source": "GDOT historic bridges (guessed)", "url": "https://www.dot.ga.gov/GDOT/Pages/HistoricBridges.aspx", "coverage": "None", "http": 404, "bytes": 677}
+      ],
+      "feasibility": "Geometry yes; 1942 crossings need topoView UI, NRIS attributes and road maps."
+    },
+    {
+      "id": "terrain-classes",
+      "overall_coverage": "Full",
+      "sources": [
+        {"source": "USGS Fenneman & Johnson 1946 physiographic divisions shapefile", "url": "https://water.usgs.gov/GIS/dsdl/physio_shp.zip", "years": "1946", "coverage": "Full", "license": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.", "http": 200, "bytes": 451315, "retrieved": "2026-09-16", "note": "HEAD; Last-Modified 2015-02-27; metadata at sciencebase item 631405bbd34e36012efa304e (200, 48930 bytes)"},
+        {"source": "USFWS National Wetlands Inventory", "url": "https://www.fws.gov/program/national-wetlands-inventory", "years": "modern", "coverage": "Partial", "http": 200, "bytes": 116323, "retrieved": "2026-09-16"},
+        {"source": "Georgia GIS Clearinghouse", "url": "https://data.georgiaspatial.org/", "coverage": "Unverified", "http": 200, "bytes": 2599, "access_issue": "cookie-gated redirect to no_cookies.html"}
+      ],
+      "feasibility": "Answerable with Fenneman bands plus modern proxies for wetlands."
+    },
+    {
+      "id": "federal-facilities",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "NGE Bell Bomber", "url": "https://www.georgiaencyclopedia.org/articles/government-politics/bell-bomber/", "coverage": "Partial (secondary)", "license": "Fair use of copyrighted material includes the use of protected materials for noncommercial educational purposes. The use of text and images from the NGE website for such purposes does not require express permission from the NGE.", "http": 200, "bytes": 245289, "retrieved": "2026-09-16", "last_edited": "2020-11-03"},
+        {"source": "NGE Dobbins Air Reserve Base", "url": "https://www.georgiaencyclopedia.org/articles/government-politics/dobbins-air-reserve-base/", "coverage": "Partial (secondary)", "http": 200, "bytes": 238001, "last_edited": "2017-01-21"},
+        {"source": "NGE Fort Benning", "url": "https://www.georgiaencyclopedia.org/articles/government-politics/fort-benning/", "coverage": "Partial (secondary)", "http": 200, "bytes": 227605, "last_edited": "2025-05-28"},
+        {"source": "NGE Fort Stewart", "url": "https://www.georgiaencyclopedia.org/articles/government-politics/fort-stewart/", "coverage": "Partial (secondary)", "http": 200, "bytes": 217669, "last_edited": "2020-08-14"},
+        {"source": "NGE Fort Gordon", "url": "https://www.georgiaencyclopedia.org/articles/government-politics/fort-gordon/", "coverage": "Partial (secondary)", "http": 200, "bytes": 203504, "last_edited": "2025-10-13"},
+        {"source": "NGE World War II in Georgia", "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/world-war-ii-in-georgia/", "coverage": "Partial (secondary)", "http": 200, "bytes": 321743, "last_edited": "2020-07-15", "note": "liberty-ships and hunter-army-airfield slugs 404; 'Savannah PN depot' label unmatched"},
+        {"source": "HABS/HAER Fort Benning", "url": "https://www.loc.gov/pictures/search/?q=fort%20benning&co=hh&fo=json", "coverage": "Partial", "http": 200, "bytes": 35141, "hits": 458},
+        {"source": "NARA catalog API v2", "url": "https://catalog.archives.gov/api/v2/records/search?q=fort%20benning", "coverage": "Unverified", "http": 200, "bytes": 5454, "access_issue": "HTML shell, API key required"}
+      ],
+      "feasibility": "Existence and naming chronology from NGE (restricted) with HAER/NRIS corroboration; 1942-02-01 ownership status not verifiable from open primaries today."
+    },
+    {
+      "id": "settlement-labels",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "1940 Census Vol. I Georgia chapter", "url": "https://www2.census.gov/library/publications/decennial/1940/population-volume-1/33973538v1ch04.pdf", "years": "1940", "coverage": "Partial", "license": "U.S. Government work; no license text on directory", "http": 200, "bytes": 23390865, "retrieved": "2026-09-16", "note": "ch03.pdf 200, 19956558 bytes, Last-Modified 2016-03-01"},
+        {"source": "USGS GNIS Domestic Names, Georgia", "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/DomesticNames/DomesticNames_GA_Text.zip", "years": "current", "coverage": "Partial", "license": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.", "http": 200, "bytes": 926404, "retrieved": "2026-09-16", "note": "HEAD; Last-Modified 2026-08-28"},
+        {"source": "LOC Sanborn Marietta", "url": "https://www.loc.gov/collections/sanborn-maps/?q=marietta+georgia&fo=json", "years": "1885-1948", "coverage": "Partial", "http": 200, "bytes": 91629, "access_issue": "item rights JSON 503 twice; collection rights page 403"},
+        {"source": "LOC Sanborn Savannah", "url": "https://www.loc.gov/collections/sanborn-maps/?q=savannah+georgia&fo=json", "years": "1888-1966", "coverage": "Partial", "http": 200, "bytes": 121178},
+        {"source": "DLG Sanborn collection", "url": "https://dlg.usg.edu/collection/dlg_sanb", "years": "1884-1922", "coverage": "None", "http": 200, "bytes": 15448, "access_issue": "Turnstile captive check"},
+        {"source": "Georgia Archives county pages", "url": "https://www.georgiaarchives.org/research/counties", "coverage": "None", "http": 404, "bytes": 18216}
+      ],
+      "feasibility": "Seats and places from 1940 Census plus GNIS; protected/open status is a scenario abstraction."
+    }
+  ],
+  "license_caveat": "See issue-1-newberry-audit.md: Newberry BY-NC-SA 2.5 or 'any lawful purpose'; Rumsey CC BY-NC-SA 3.0; NGE non-commercial fair use; none is CC0."
+}
