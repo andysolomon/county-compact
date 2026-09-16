@@ -1,0 +1,615 @@
+schema_version: "1"
+slug: county-compact-issues
+repository:
+  id: county-compact
+  path: .
+items:
+  - id: gate-a
+    kind: group
+    title: A — Historical map foundation
+    parent_id: null
+    nesting_depth: 0
+    dependencies: []
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-01
+    kind: leaf
+    title: Verify the 1942 Georgia county roster and geographic provenance
+    parent_id: gate-a
+    nesting_depth: 1
+    outcome: "Issue #1 (P0): Verify the 1942 Georgia county roster and geographic provenance. Source: https://github.com/andysolomon/county-compact/issues/1"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Produce a manifest of exactly 159 unique county identities with official names, stable IDs, historical reference date, and source citations.
+      - Crosswalk historical identifiers to modern Census codes without claiming those codes existed in 1942.
+      - Inspect Newberry Georgia download metadata and license (CC BY-NC-SA 2.5 in bundled deed; "any lawful purpose" on current download pages; not CC0); record Census provenance and notices. See docs/historical-research/issue-1-newberry-audit.md.
+      - Resolve or document historical changes, including former Campbell and Milton territory; keep unresolved geography out of release-ready status.
+    dependencies: []
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-02
+    kind: leaf
+    title: Prepare county geometry and validate geographic adjacency
+    parent_id: gate-a
+    nesting_depth: 1
+    outcome: "Issue #2 (P0): Prepare county geometry and validate geographic adjacency. Source: https://github.com/andysolomon/county-compact/issues/2"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Bundle dated county geometry with recognizable state outline and Atlantic coast; preserve all county records and multipart geometry.
+      - Validate polygon coverage, shared boundaries, overlaps, gaps, and geometry validity.
+      - Build a symmetric geographic adjacency graph; corner-only contacts do not create movement edges.
+      - Provide reproducible preparation steps and source/version metadata; keep geometric adjacency separate from passable routes.
+    dependencies:
+      - CC-01
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: ready
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-03
+    kind: leaf
+    title: Research period transport, terrain, settlements, and federal facilities
+    parent_id: gate-a
+    nesting_depth: 1
+    outcome: "Issue #3 (P1): Research period transport, terrain, settlements, and federal facilities. Source: https://github.com/andysolomon/county-compact/issues/3"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Date-source important roads, rail corridors, river crossings, seats, and settlements; distinguish evidence from scenario abstractions.
+      - Define passable edges, crossing tags, terrain classes, and protected facility records.
+      - Use period-correct names and dates; exclude modern interstate overlays and unverified reservoirs.
+      - Review Cobb–Fulton access, Rickenbacker naming, and federal ownership; record unresolved research questions.
+    dependencies:
+      - CC-01
+      - CC-02
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: ready
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-04
+    kind: leaf
+    title: Author complete starting data for all 159 counties
+    parent_id: gate-a
+    nesting_depth: 1
+    outcome: "Issue #4 (P0): Author complete starting data for all 159 counties. Source: https://github.com/andysolomon/county-compact/issues/4"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Populate the essential county-stat model for every county, marking historical counts separately from estimated gameplay ranks.
+      - "Encode the exact Cobb opening and eight fictional coalitions: 30 affiliated counties and 129 independent counties."
+      - Give every start a valid civilian allocation whose recurring income exceeds essential spending by at least 2 credits.
+      - Author the six contrast profiles and county-specific baseline objectives; validate affiliations, authority, and usable route connectivity.
+    dependencies:
+      - CC-01
+      - CC-03
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: gate-b
+    kind: group
+    title: B — Economic vertical slice
+    parent_id: null
+    nesting_depth: 0
+    dependencies: []
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-05
+    kind: leaf
+    title: Establish the local browser project and bundled-asset baseline
+    parent_id: gate-b
+    nesting_depth: 1
+    outcome: "Issue #5 (P1): Establish the local browser project and bundled-asset baseline. Source: https://github.com/andysolomon/county-compact/issues/5"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Create a Vite application using strict TypeScript, Three.js, and HTML/CSS UI.
+      - Choose and document module boundaries for scenario data, simulation, renderer, UI, and persistence.
+      - Bundle runtime assets and fonts with attribution; require no backend, paid service, API key, or outside asset download.
+      - Provide reproducible local development/build commands and a build/typecheck CI gate.
+    dependencies: []
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-06
+    kind: leaf
+    title: Specify and implement deterministic campaign state and calendar
+    parent_id: gate-b
+    nesting_depth: 1
+    outcome: "Issue #6 (P0): Specify and implement deterministic campaign state and calendar. Source: https://github.com/andysolomon/county-compact/issues/6"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Model ownership, occupation, coalitions, dependencies, and economic influence as distinct relationships.
+      - Implement real calendar dates, daily stepping, month/quarter boundaries, pause, and 1/4/12-day-per-second speeds.
+      - Apply the documented phase order and stable tie-breaking; render timing cannot mutate outcomes.
+      - Replay the same seed and orders identically; document event scheduling, ruleset versions, and fixed-precision behavior.
+    dependencies:
+      - CC-04
+      - CC-05
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-07
+    kind: leaf
+    title: Render the Georgia strategic map and accessible county selection
+    parent_id: gate-b
+    nesting_depth: 1
+    outcome: "Issue #7 (P1): Render the Georgia strategic map and accessible county selection. Source: https://github.com/andysolomon/county-compact/issues/7"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Render all 159 counties in a mostly flat orthographic view with batched geometry and stable-ID selection.
+      - Provide pan, pointer-centered zoom, reset, hover, and selection treatments.
+      - Use bounded collision-aware labels; update political appearance without reconstructing all geometry.
+      - Provide keyboard/search/list access equivalent to polygon selection and clear WebGL-unavailable feedback.
+    dependencies:
+      - CC-02
+      - CC-05
+      - CC-06
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-08
+    kind: leaf
+    title: Implement workforce allocation and the monthly county budget
+    parent_id: gate-b
+    nesting_depth: 1
+    outcome: "Issue #8 (P0): Implement workforce allocation and the monthly county budget. Source: https://github.com/andysolomon/county-compact/issues/8"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement credits, materials, fractional workforce allocation, productive staffing limits, services, and infrastructure upkeep.
+      - Calculate taxes, compliance, autonomy shares, contract income, dues, and national obligations as separately inspectable lines.
+      - Reproduce Cobb’s initial 22-credit income, 14-credit expense, and +8 surplus; no Bell production income at start.
+      - Prevent duplicate workforce assignments and resource creation through ownership changes; show actual and forecast budgets.
+    dependencies:
+      - CC-06
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-09
+    kind: leaf
+    title: Implement construction, procurement, debt, and arrears
+    parent_id: gate-b
+    nesting_depth: 1
+    outcome: "Issue #9 (P1): Implement construction, procurement, debt, and arrears. Source: https://github.com/andysolomon/county-compact/issues/9"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement the six local project types with cost, duration, prerequisites, one county slot, and workforce reservation.
+      - Apply cancellation refunds and occupation pauses correctly; protected national milestones use their separately specified timeline.
+      - Enforce material purchase prices, routes, limits, and Standing gates; treaty trade must draw from actual stock.
+      - Implement emergency notes, maturity/restructure limits, payment ordering, and visible arrears consequences.
+    dependencies:
+      - CC-08
+      - CC-03
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-10
+    kind: leaf
+    title: Add versioned local saves, export/import, and recovery
+    parent_id: gate-b
+    nesting_depth: 1
+    outcome: "Issue #10 (P0): Add versioned local saves, export/import, and recovery. Source: https://github.com/andysolomon/county-compact/issues/10"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Save the complete seed, ruleset version, calendar, resources, relationships, queues, and event ledger.
+      - Provide rotating month-end autosaves, manual saves, local export/import, and paused reload.
+      - Reject malformed and unsupported save versions without overwriting the last good save.
+      - Add extension checks for mid-event, mid-project, and mid-battle roundtrips as those systems land.
+    dependencies:
+      - CC-06
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: gate-c
+    kind: group
+    title: C — Peaceful regional game
+    parent_id: null
+    nesting_depth: 0
+    dependencies: []
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-11
+    kind: leaf
+    title: Implement public support, administrative reach, and territorial integration
+    parent_id: gate-c
+    nesting_depth: 1
+    outcome: "Issue #11 (P1): Implement public support, administrative reach, and territorial integration. Source: https://github.com/andysolomon/county-compact/issues/11"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement administration load/capacity, office contribution, disconnected territory penalties, and overload.
+      - Apply support, service pressure, unrest, noncooperation, autonomy changes, and petition states with explained causes.
+      - Implement one sponsored integration process, costs, progress gates, and distinct peaceful versus forced starting values.
+      - Implement bounded quarterly workforce migration; distinguish external authored inflows and avoid demographic productivity modifiers.
+    dependencies:
+      - CC-08
+      - CC-09
+      - CC-03
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-12
+    kind: leaf
+    title: Implement treaties and explainable diplomatic acceptance
+    parent_id: gate-c
+    nesting_depth: 1
+    outcome: "Issue #12 (P1): Implement treaties and explainable diplomatic acceptance. Source: https://github.com/andysolomon/county-compact/issues/12"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement relations, trust, diplomatic slots, action durations/cooldowns, and the documented acceptance score with hard gates.
+      - Support nonaggression, separate civil/military access, economic agreements, and alliances.
+      - Track actual obligations and fulfilled transfers; prevent repeat tiny-transfer influence farming.
+      - Show why a proposal is accepted, rejected, or unavailable, and apply treaty expiration/revocation without granting illegal movement.
+    dependencies:
+      - CC-06
+      - CC-08
+      - CC-03
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-13
+    kind: leaf
+    title: Implement coalitions, voting, common budgets, and delegated authority
+    parent_id: gate-c
+    nesting_depth: 1
+    outcome: "Issue #13 (P1): Implement coalitions, voting, common budgets, and delegated authority. Source: https://github.com/andysolomon/county-compact/issues/13"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Instantiate the eight fictional opening coalitions with independent member ownership and budgets.
+      - Implement majority/two-thirds motions, annual chair elections, cohesion, departure, dues, and the common fund.
+      - Require individual consent to transfer member legal control; merged administrations cannot retain duplicate votes.
+      - Enforce project and military delegation authority; the chair cannot spend member treasury or command undelegated formations.
+    dependencies:
+      - CC-12
+      - CC-08
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-14
+    kind: leaf
+    title: Implement dependency, negotiated union, and expansion alarm
+    parent_id: gate-c
+    nesting_depth: 1
+    outcome: "Issue #14 (P1): Implement dependency, negotiated union, and expansion alarm. Source: https://github.com/andysolomon/county-compact/issues/14"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement dependency tribute from positive taxable income and separate dependent budgets/forces.
+      - Enforce union gates for relations, trust, influence, support, peace, cooperation duration, and consent.
+      - Transfer remaining stocks, debts, and obligations once; reserved transition spending must not be duplicated or refunded into annexed treasury.
+      - Apply expansion alarm and decay; show post-transfer load, autonomy, integration, income, and authority before confirmation.
+    dependencies:
+      - CC-11
+      - CC-12
+      - CC-13
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-15
+    kind: leaf
+    title: Implement constrained AI planning and visible priorities
+    parent_id: gate-c
+    nesting_depth: 1
+    outcome: "Issue #15 (P1): Implement constrained AI planning and visible priorities. Source: https://github.com/andysolomon/county-compact/issues/15"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement industrial, agricultural, defensive, expansionist, and commercial priorities with budget/capacity hard limits.
+      - Use the specified monthly/weekly/daily cadences and bounded strategic commitments.
+      - Communicate treaty reasons and react to expansion alarm; do not rely on hidden resource advantages.
+      - Extend the same planner to military supply, attack feasibility, retreat, and peace when those systems land; retain deterministic decisions.
+    dependencies:
+      - CC-09
+      - CC-11
+      - CC-12
+      - CC-13
+      - CC-14
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: gate-d
+    kind: group
+    title: D — Limited conflict
+    parent_id: null
+    nesting_depth: 0
+    dependencies: []
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-16
+    kind: leaf
+    title: Implement recruitment, formations, movement, and supply
+    parent_id: gate-d
+    nesting_depth: 1
+    outcome: "Issue #16 (P1): Implement recruitment, formations, movement, and supply. Source: https://github.com/andysolomon/county-compact/issues/16"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement three formation types with costs, staffing, support requirements, and the regional recruitment cap.
+      - Compute legal paths, travel time, access expiry, and supply independently from geography alone.
+      - Provide movement/arrival/supply previews and keyboard/visible-button equivalents to right-click.
+      - Keep federal facilities non-targetable and exclude their assets from player troops; implement reinforcement/retirement and workforce recovery.
+    dependencies:
+      - CC-03
+      - CC-08
+      - CC-12
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-17
+    kind: leaf
+    title: Implement simultaneous county battles and occupation
+    parent_id: gate-d
+    nesting_depth: 1
+    outcome: "Issue #17 (P1): Implement simultaneous county battles and occupation. Source: https://github.com/andysolomon/county-compact/issues/17"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement stack limits, terrain/river/supply modifiers, simultaneous daily losses, morale, reserves, retreat, and surrender.
+      - Ensure actor iteration order does not change battle results; show the calculation breakdown.
+      - Implement timed occupation, engineer benefit, incomplete-progress decay, recapture, and real garrison requirements.
+      - Remove occupied county income/capacity from its legal owner without granting it to the occupier; render hatching over owner colors.
+    dependencies:
+      - CC-16
+      - CC-06
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-18
+    kind: leaf
+    title: Implement war goals, Federal Standing, exhaustion, and intervention
+    parent_id: gate-d
+    nesting_depth: 1
+    outcome: "Issue #18 (P1): Implement war goals, Federal Standing, exhaustion, and intervention. Source: https://github.com/andysolomon/county-compact/issues/18"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement registered goals, claim petitions, treaty-breach conditions, and the one-offensive-war rule.
+      - Apply declared Standing costs, compliance recovery, contract restrictions, intervention notices, and receivership conditions.
+      - Implement exhaustion gains/recovery and support effects without conflating national WWII dates with local wars.
+      - Confirm unregistered attacks and treaty breaches with full consequences; never declare war through an ordinary move click.
+    dependencies:
+      - CC-12
+      - CC-16
+      - CC-17
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-19
+    kind: leaf
+    title: Implement peace negotiation, arbitration, and cession rules
+    parent_id: gate-d
+    nesting_depth: 1
+    outcome: "Issue #19 (P1): Implement peace negotiation, arbitration, and cession rules. Source: https://github.com/andysolomon/county-compact/issues/19"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement war score and eligible terms with visible acceptance, cost, and hard-gate explanations.
+      - Enforce occupied/claimed cession eligibility, two-county maximum, debt/obligation rules, and federal facility exclusions.
+      - Implement day-180 arbitration, white peace, evacuation-only access, and 24-month truces.
+      - Apply forced-cession support/autonomy/integration penalties and show postwar administrative load before sending an offer.
+    dependencies:
+      - CC-17
+      - CC-18
+      - CC-14
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: gate-e
+    kind: group
+    title: E — Historical campaign
+    parent_id: null
+    nesting_depth: 0
+    dependencies: []
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-20
+    kind: leaf
+    title: Build the historical and dynamic event framework
+    parent_id: gate-e
+    nesting_depth: 1
+    outcome: "Issue #20 (P1): Build the historical and dynamic event framework. Source: https://github.com/andysolomon/county-compact/issues/20"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Support external historical, conditional historical, and dynamic alternate-history categories with explicit labels.
+      - Implement preconditions, windows, affordability, immediate/duration effects, deadlines, defaults, cooldowns, and once-only ledgers.
+      - Expose source notes separately from invented numerical effects and campaign outcomes.
+      - Persist pending/resolved choices and dependent stages; invalid historical prerequisites suppress or defer only as specified.
+    dependencies:
+      - CC-06
+      - CC-08
+      - CC-10
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-21
+    kind: leaf
+    title: Author and validate the Bell industrial transformation chain
+    parent_id: gate-e
+    nesting_depth: 1
+    outcome: "Issue #21 (P1): Author and validate the Bell industrial transformation chain. Source: https://github.com/andysolomon/county-compact/issues/21"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Author selection on February 19, 1942, construction conditions, and operation no earlier than 1943.
+      - Handle liaison/production workforce reservations, transport prerequisites, migration, services, and training-access choices.
+      - Remove wartime contract payments at the 1945 transition; retain federal ownership and no early Lockheed reopening.
+      - Check interrupted construction, occupation, lost prerequisites, AI-controlled Cobb, and the design’s 82-credit first-year ledger.
+    dependencies:
+      - CC-20
+      - CC-09
+      - CC-11
+      - CC-12
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-22
+    kind: leaf
+    title: Author statewide events, coastal contracts, and postwar adjustment
+    parent_id: gate-e
+    nesting_depth: 1
+    outcome: "Issue #22 (P1): Author statewide events, coastal contracts, and postwar adjustment. Source: https://github.com/andysolomon/county-compact/issues/22"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Complete the 16 specified events and expand only to the scoped 20–24 release definitions with clear purposes.
+      - Implement rationing, farm labor pressure, coastal opportunities, veteran assistance, fictional compact renewal, union petitions, and charter disputes.
+      - Validate location/date-specific claims and label fictional timing/effects; track remaining research rather than invent exact facts.
+      - Review segregation, unequal benefits, and civic agency with qualified historical/sensitivity input; avoid oppression bonuses or erasing unresolved harms.
+    dependencies:
+      - CC-20
+      - CC-13
+      - CC-14
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: gate-f
+    kind: group
+    title: F — Complete first playable
+    parent_id: null
+    nesting_depth: 0
+    dependencies: []
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-23
+    kind: leaf
+    title: Create campaign selection, ambitions, and six opening profiles
+    parent_id: gate-f
+    nesting_depth: 1
+    outcome: "Issue #23 (P1): Create campaign selection, ambitions, and six opening profiles. Source: https://github.com/andysolomon/county-compact/issues/23"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Provide flagship Cobb and any-county starts for all 159 records using the same scenario date/rules.
+      - Display search, seat, strengths, budget, authority, affiliation, objectives, and visible difficulty factors.
+      - Provide the two ambitions and the one pre-1944 change rule.
+      - Polish Cobb, Fulton, Chatham, Muscogee, Dougherty, and Rabun; do not lock other counties behind missing profiles.
+    dependencies:
+      - CC-04
+      - CC-07
+      - CC-08
+      - CC-13
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-24
+    kind: leaf
+    title: Build the strategic UI, map modes, and consequential-action flows
+    parent_id: gate-f
+    nesting_depth: 1
+    outcome: "Issue #24 (P1): Build the strategic UI, map modes, and consequential-action flows. Source: https://github.com/andysolomon/county-compact/issues/24"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement the eleven specified screens and six initial map modes using the five wireframes as layout requirements.
+      - Preserve at least the specified usable map space at 1280×720; replace/overlay side panels at smaller desktop widths.
+      - Use ownership, occupation, selection, and danger treatments that survive grayscale; validate contrast and locally bundled fonts.
+      - Explain disabled actions, forecasts, historical labels, and consequential confirmations without adding confirmation to routine allocation.
+    dependencies:
+      - CC-07
+      - CC-08
+      - CC-11
+      - CC-13
+      - CC-19
+      - CC-20
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-25
+    kind: leaf
+    title: Implement Cobb onboarding and an isolated optional combat tutorial
+    parent_id: gate-f
+    nesting_depth: 1
+    outcome: "Issue #25 (P1): Implement Cobb onboarding and an isolated optional combat tutorial. Source: https://github.com/andysolomon/county-compact/issues/25"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement all eight contextual lessons with observable completion and dismiss/resume support.
+      - Teach membership versus ownership, +8 surplus, construction, historical stages, treaty authority, and legal movement.
+      - Allow expansion/integration lessons to resume months later when genuine prerequisites hold.
+      - Keep optional combat training in a separate copied scenario/save; it cannot alter campaign resources or history.
+    dependencies:
+      - CC-23
+      - CC-24
+      - CC-21
+      - CC-19
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-26
+    kind: leaf
+    title: Implement victory, defeat, campaign summary, and sandbox continuation
+    parent_id: gate-f
+    nesting_depth: 1
+    outcome: "Issue #26 (P1): Implement victory, defeat, campaign summary, and sandbox continuation. Source: https://github.com/andysolomon/county-compact/issues/26"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Implement six-month sustained Regional Union and Commonwealth requirements with unique county counting.
+      - Exclude mere occupation/influence/dependency from direct-control victory; verify independent member requirements.
+      - Implement receivership, restoration period, financial defeat, capital relocation, and December 31, 1948 review.
+      - Provide map/history/governance summaries and optional sandbox with an explicit end-of-authored-history notice.
+    dependencies:
+      - CC-11
+      - CC-13
+      - CC-18
+      - CC-20
+      - CC-23
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-27
+    kind: leaf
+    title: Validate keyboard accessibility, responsive layouts, and performance
+    parent_id: gate-f
+    nesting_depth: 1
+    outcome: "Issue #27 (P1): Validate keyboard accessibility, responsive layouts, and performance. Source: https://github.com/andysolomon/county-compact/issues/27"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Test keyboard and screen-reader list parity, tooltip focus, reduced motion, and equivalent visible movement controls.
+      - Validate 1280×720 and 1920×1080 layouts, text contrast, county access, and panel behavior.
+      - Measure navigation/input, simulation, load, label counts, asset size, and offline network behavior on a declared reference device.
+      - Report results against proposed targets with concrete fixes for misses; do not label unmeasured targets achieved.
+    dependencies:
+      - CC-24
+      - CC-25
+      - CC-26
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z
+  - id: CC-28
+    kind: leaf
+    title: Run all-county correctness gates and campaign playtests
+    parent_id: gate-f
+    nesting_depth: 1
+    outcome: "Issue #28 (P1): Run all-county correctness gates and campaign playtests. Source: https://github.com/andysolomon/county-compact/issues/28"
+    scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
+    acceptance_criteria:
+      - Run complete 159-county roster, access, topology, baseline-solvency, and authority checks.
+      - Validate resource conservation, coalition limits, peace legality, event invariants, and mid-operation save/reload.
+      - Conduct the eight-player Cobb onboarding round plus six contrast starts and twelve additional sampled counties.
+      - Evaluate both ambitions and the 6–10-hour pacing target; record balance findings and unresolved release blockers.
+    dependencies:
+      - CC-15
+      - CC-19
+      - CC-22
+      - CC-25
+      - CC-26
+      - CC-27
+    preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
+    checkpoint:
+      state: planned
+      updated_at: 2026-09-16T17:00:00.000Z

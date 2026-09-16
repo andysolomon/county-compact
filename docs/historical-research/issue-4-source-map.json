@@ -1,0 +1,79 @@
+{
+  "issue": "CC-04",
+  "document": "docs/historical-research/issue-4-source-map.md",
+  "probe_date": "2026-09-16",
+  "coverage_scale": {
+    "None": "nothing retrievable today for 1942-02-01",
+    "Partial": "retrievable material brackets or approximates 1942-02-01",
+    "Full": "retrievable material directly covers 1942-02-01",
+    "Gameplay": "GDD or in-repo scenario/code only; not a historical primary"
+  },
+  "code_inspection": {
+    "src/data/scenario.ts": "absent",
+    "src/sim/scenario.ts": "present; Cobb authored; other counties ECONOMIC_TIERS / defaultAllocation",
+    "src/data/coalitions.ts": "eight COALITIONS (30 members); ECONOMIC_TIERS estimates"
+  },
+  "facets": [
+    {
+      "id": "stat-model",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "1940 Census Vol. I Georgia chapter", "url": "https://www2.census.gov/library/publications/decennial/1940/population-volume-1/33973538v1ch04.pdf", "years": "1940", "coverage": "Partial", "http": 200, "bytes": 23390865, "retrieved": "2026-09-16", "note": "not present in /tmp/issue-3-downloads/"},
+        {"source": "Census popest / CO-EST", "url": "https://www2.census.gov/programs-surveys/popest/datasets/", "years": "1970-present", "coverage": "None", "http": 200, "bytes": 20691, "retrieved": "2026-09-16"},
+        {"source": "BEA CAINC1", "url": "https://apps.bea.gov/regional/zip/CAINC1.zip", "years": "1969-2024", "coverage": "None", "http": 200, "bytes": 3467441, "retrieved": "2026-09-16", "note": "no 1940 county personal income file; methods PDF records 1929-1962 selected-year local series not in this zip"},
+        {"source": "1940 Census of Agriculture Georgia", "url": "https://www2.census.gov/library/publications/decennial/1940/agriculture/1940-census-agriculture-vol-1-georgia.pdf", "years": "1940", "coverage": "Partial", "http": 200, "bytes": 24067637, "retrieved": "2026-09-16"},
+        {"source": "Cornell agcensus-usda HHS", "url": "https://agcensus-usda.library.cornell.edu/", "coverage": "None", "http": 0, "access_issue": "DNS NXDOMAIN"},
+        {"source": "USGS Minerals Yearbook 1940 (IA)", "url": "https://archive.org/details/pub_usgov-minerals-yearbook_1940", "years": "1940", "coverage": "Unverified", "http": 200, "bytes": 6761, "retrieved": "2026-09-16", "note": "USGS pubs search recordCount 0 for georgia mineral resources 1940"}
+      ]
+    },
+    {
+      "id": "cobb-opening",
+      "overall_coverage": "Gameplay + Partial secondary",
+      "sources": [
+        {"source": "docs/game-design.md §4.1", "coverage": "Gameplay"},
+        {"source": "src/sim/scenario.ts Cobb branch", "coverage": "Gameplay", "note": "src/data/scenario.ts absent"},
+        {"source": "NGE Cobb County", "url": "https://www.georgiaencyclopedia.org/articles/counties-cities-neighborhoods/cobb-county/", "coverage": "Partial", "http": 200, "bytes": 231957, "retrieved": "2026-09-16"},
+        {"source": "NGE Bell Bomber", "url": "https://www.georgiaencyclopedia.org/articles/government-politics/bell-bomber/", "coverage": "Partial", "http": 200, "bytes": 245289, "retrieved": "2026-09-16"}
+      ]
+    },
+    {
+      "id": "fictional-coalitions",
+      "overall_coverage": "Gameplay",
+      "sources": [
+        {"source": "docs/game-design.md §4.3", "coverage": "Gameplay", "note": "30 affiliated / 129 independent; scenario fiction"},
+        {"source": "src/data/coalitions.ts", "coverage": "Gameplay", "note": "8 coalitions already encoded"}
+      ]
+    },
+    {
+      "id": "civilian-allocation",
+      "overall_coverage": "Gameplay",
+      "sources": [
+        {"source": "docs/game-design.md §4.2 / §6.1", "coverage": "Gameplay"},
+        {"source": "src/sim/scenario.ts defaultAllocation", "coverage": "Gameplay"},
+        {"source": "1940 Census / BEA CAINC1", "coverage": "None", "note": "cannot validate gameplay credits"}
+      ]
+    },
+    {
+      "id": "contrast-profiles",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "docs/game-design.md §4.2", "coverage": "Gameplay"},
+        {"source": "src/sim/scenario.ts baselineFor", "coverage": "Gameplay", "note": "only Cobb fully authored; others tier estimates"},
+        {"source": "NGE six county articles", "coverage": "Partial", "http": 200, "retrieved": "2026-09-16", "bytes": {"cobb": 231957, "fulton": 241572, "chatham": 280675, "muscogee": 227351, "dougherty": 241449, "rabun": 250289}}
+      ]
+    },
+    {
+      "id": "objectives-affiliations-routes",
+      "overall_coverage": "Partial",
+      "sources": [
+        {"source": "src/ui/screens/select.ts objectives()", "coverage": "Gameplay", "note": "non-Cobb objectives are generic templates"},
+        {"source": "Newberry Georgia AHCBP", "url": "https://publications.newberry.org/ahcb/pages/Georgia.html", "years": "1758-2000", "coverage": "Partial", "http": 200, "bytes": 12492, "retrieved": "2026-09-16"},
+        {"source": "Georgia SOS", "url": "https://sos.ga.gov/", "coverage": "None", "http": 403, "bytes": 5528, "access_issue": "Cloudflare challenge"},
+        {"source": "Georgia Archives Vault countycards", "url": "https://vault.georgiaarchives.org/digital/collection/countycards", "coverage": "Partial", "http": 200, "bytes": 29859, "retrieved": "2026-09-16"},
+        {"source": "TIGER/Line 2025 TechDoc Ch.1", "url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2025/TGRSHP2025_TechDoc_Ch1.pdf", "years": "modern", "coverage": "None", "http": 200, "bytes": 150512, "retrieved": "2026-09-16", "note": "modern GEOID/FIPS crosswalk only; FIPS did not exist in 1942"},
+        {"source": "Rumsey/IA Rand McNally Georgia 1940", "url": "https://archive.org/details/dr_rand-mcnally-road-map-georgia-copyright-by-rand-mcnally--company-chicag-5969027", "years": "1940", "coverage": "Partial", "http": 200, "bytes": 5429, "retrieved": "2026-09-16"}
+      ]
+    }
+  ],
+  "license_caveat": "See issue-1-newberry-audit.md and issue-3-source-map.md: Newberry BY-NC-SA 2.5 or 'any lawful purpose'; Rumsey CC BY-NC-SA 3.0; NGE non-commercial fair use; USGS public domain; Census Title 17 U.S.C. §105; USFWS NWI has no license sentence on the program page; BEA citing page has no public-domain sentence. None of Newberry/Rumsey/NGE is CC0. Modern FIPS is a crosswalk only."
+}

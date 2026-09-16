@@ -1,0 +1,3156 @@
+{
+ "issue": "CC-03",
+ "facet": "terrain-classes",
+ "generated": "2026-09-16",
+ "licenseCaveat": "License caveat (applies to every Georgia-archive-derived, Rumsey, and NGE source in this file). Quoted from docs/historical-research/issue-1-newberry-audit.md via issue-3-source-map.md: \"The strongest open statement is the Download pages' \"reused for any lawful purpose, commercial or non-commercial, without licensing or permission fees to the library\" together with the instruction that files containing \"the original, out-of-date copyright license … can be ignored\". That is a permission statement by the copyright holder, not a CC0 dedication.\" and \"Do not relicense. Do not mark Newberry-derived data as CC0 or public domain.\" Extension (issue-3-source-map.md): the Rumsey/IA road and rail maps carry an explicit CC BY-NC-SA 3.0 string with a separate \"contact … for commercial use\" instruction; NGE text is fair-use-only for non-commercial purposes. None of these is CC0; treat all three regimes (Newberry BY-NC-SA 2.5 or \"any lawful purpose\", Rumsey BY-NC-SA 3.0, NGE non-commercial fair use) as incompatible with commercial distribution until written confirmation is obtained. Modern FIPS codes (US-GA-<fips>) are a crosswalk key only; FIPS codes did not exist in 1942.",
+ "primarySource": "Fenneman & Johnson 1946 physiographic divisions (USGS); NWI + GNIS are modern confirmation signals only, transparently labelled",
+ "rules": [
+  "fall-line: Fenneman Piedmont fraction >= 0.20 AND Coastal Plain fraction >= 0.20 (county straddles the Fall Line boundary)",
+  "mountain: Blue Ridge + Valley and Ridge + Appalachian Plateaus fraction >= 0.50",
+  "piedmont: Piedmont fraction >= 0.50, or Piedmont+mountain-province >= 0.50 with Coastal Plain < 0.20",
+  "wetland: otherwise Coastal Plain AND modern GNIS swamp features >= 10 AND modern NWI polygon density >= 5.5 per km2 (modern signal only; not a 1942 observation)",
+  "coastal: all remaining Coastal Plain counties",
+  "UNCLASSIFIED Fenneman fraction (open water/coast) is excluded from province sums but reported as a flag"
+ ],
+ "existingRoster": {
+  "MOUNTAIN": [
+   "Catoosa",
+   "Chattooga",
+   "Dade",
+   "Dawson",
+   "Fannin",
+   "Gilmer",
+   "Gordon",
+   "Habersham",
+   "Lumpkin",
+   "Murray",
+   "Pickens",
+   "Rabun",
+   "Stephens",
+   "Towns",
+   "Union",
+   "Walker",
+   "White",
+   "Whitfield"
+  ],
+  "WETLAND": [
+   "Brantley",
+   "Bryan",
+   "Camden",
+   "Charlton",
+   "Chatham",
+   "Clinch",
+   "Echols",
+   "Glynn",
+   "Liberty",
+   "Long",
+   "McIntosh",
+   "Ware"
+  ],
+  "PIEDMONT_MIN_LAT": 32.95,
+  "terrainForLogic": "src/sim/scenario.ts terrainFor(): MOUNTAIN -> mountain; WETLAND -> wetland; centroidLat >= PIEDMONT_MIN_LAT -> piedmont; else coastal. No fall-line class exists in code.",
+  "centroidBasis": "centroidLat taken from /tmp/issue-3-downloads/gnis-signals.json (prior-worker county centroid); may differ slightly from src/data/geometry.ts runtime centroid."
+ },
+ "citations": [
+  {
+   "key": "physio",
+   "sourceUrl": "https://water.usgs.gov/GIS/dsdl/physio_shp.zip",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 451315,
+   "licenseQuote": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.",
+   "cacheFile": "/tmp/issue-3-downloads/physio_shp.zip",
+   "httpCodeBasis": "issue-3-source-map.json log (HEAD); cached zip size 451315",
+   "notes": "Fenneman & Johnson 1946 physiographic divisions. Per-county fractions precomputed by prior worker in physio-county-fractions.json (21362 bytes; point-sample overlap, \"samples\" field)."
+  },
+  {
+   "key": "usgs-rights",
+   "sourceUrl": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 81841,
+   "licenseQuote": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.",
+   "cacheFile": "/tmp/issue-3-downloads/usgs-copyrights-v3.html",
+   "httpCodeBasis": "cache body is the live policy page (status not separately logged)",
+   "notes": null
+  },
+  {
+   "key": "gnis",
+   "sourceUrl": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/DomesticNames/DomesticNames_GA_Text.zip",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 926404,
+   "licenseQuote": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain.",
+   "cacheFile": "/tmp/issue-3-downloads/DomesticNames_GA_Text.zip",
+   "httpCodeBasis": "issue-3-source-map.json log (HEAD); cached size 926404",
+   "notes": "Current GNIS (Last-Modified 2026-08-28), modern signal. Derived counts: gnis-signals.json (19192 bytes), gnis-swamp-counts.json (13550 bytes)."
+  },
+  {
+   "key": "nwi",
+   "sourceUrl": "https://www.fws.gov/program/national-wetlands-inventory",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 116323,
+   "licenseQuote": "Not all the information on our site is in the public domain. Some images/graphics are licensed for use under the copyright law , and the use of the Service logo is restricted to official publications (see below).",
+   "cacheFile": "/tmp/issue-3-downloads/nwi-program.html",
+   "httpCodeBasis": "issue-3-source-map.json log; cached size 116322",
+   "notes": "License quote taken from cached fws-disclaimer.html (86470 bytes), \"Copyright Statement\" section; NWI is a MODERN inventory used only as confirmation. Per-county polygon counts from the NWI service in nwi-county-counts.json (23517 bytes; each per-county query logged http 200)."
+  }
+ ],
+ "disagreementCount": 29,
+ "disagreements": [
+  {
+   "repoId": "US-GA-13003",
+   "name": "Atkinson",
+   "existing": "coastal",
+   "proposed": "wetland",
+   "centroidLat": 31.2963,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 11,
+   "nwiPerKm2": 7.53
+  },
+  {
+   "repoId": "US-GA-13009",
+   "name": "Baldwin",
+   "existing": "piedmont",
+   "proposed": "fall-line",
+   "centroidLat": 33.0717,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.536,
+   "coastalPlainFrac": 0.464,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 3.86
+  },
+  {
+   "repoId": "US-GA-13015",
+   "name": "Bartow",
+   "existing": "piedmont",
+   "proposed": "mountain",
+   "centroidLat": 34.2392,
+   "mountainFrac": 0.756,
+   "piedmontFrac": 0.244,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 2,
+   "nwiPerKm2": 2.6
+  },
+  {
+   "repoId": "US-GA-13021",
+   "name": "Bibb",
+   "existing": "coastal",
+   "proposed": "fall-line",
+   "centroidLat": 32.803,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.231,
+   "coastalPlainFrac": 0.769,
+   "gnisSwamp": 1,
+   "nwiPerKm2": 4.21
+  },
+  {
+   "repoId": "US-GA-13033",
+   "name": "Burke",
+   "existing": "piedmont",
+   "proposed": "coastal",
+   "centroidLat": 33.0604,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 3,
+   "nwiPerKm2": 4.97
+  },
+  {
+   "repoId": "US-GA-13073",
+   "name": "Columbia",
+   "existing": "piedmont",
+   "proposed": "fall-line",
+   "centroidLat": 33.5438,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.604,
+   "coastalPlainFrac": 0.396,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 5.3
+  },
+  {
+   "repoId": "US-GA-13079",
+   "name": "Crawford",
+   "existing": "coastal",
+   "proposed": "fall-line",
+   "centroidLat": 32.7175,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.371,
+   "coastalPlainFrac": 0.629,
+   "gnisSwamp": 1,
+   "nwiPerKm2": 3.98
+  },
+  {
+   "repoId": "US-GA-13085",
+   "name": "Dawson",
+   "existing": "mountain",
+   "proposed": "piedmont",
+   "centroidLat": 34.4397,
+   "mountainFrac": 0.22,
+   "piedmontFrac": 0.78,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 1.95
+  },
+  {
+   "repoId": "US-GA-13103",
+   "name": "Effingham",
+   "existing": "coastal",
+   "proposed": "wetland",
+   "centroidLat": 32.3658,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 14,
+   "nwiPerKm2": 8.73
+  },
+  {
+   "repoId": "US-GA-13115",
+   "name": "Floyd",
+   "existing": "piedmont",
+   "proposed": "mountain",
+   "centroidLat": 34.2677,
+   "mountainFrac": 1.0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 3.19
+  },
+  {
+   "repoId": "US-GA-13125",
+   "name": "Glascock",
+   "existing": "piedmont",
+   "proposed": "coastal",
+   "centroidLat": 33.2389,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 3.8
+  },
+  {
+   "repoId": "US-GA-13137",
+   "name": "Habersham",
+   "existing": "mountain",
+   "proposed": "piedmont",
+   "centroidLat": 34.6305,
+   "mountainFrac": 0.102,
+   "piedmontFrac": 0.898,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 2.32
+  },
+  {
+   "repoId": "US-GA-13141",
+   "name": "Hancock",
+   "existing": "piedmont",
+   "proposed": "fall-line",
+   "centroidLat": 33.2744,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.786,
+   "coastalPlainFrac": 0.214,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 3.22
+  },
+  {
+   "repoId": "US-GA-13145",
+   "name": "Harris",
+   "existing": "coastal",
+   "proposed": "piedmont",
+   "centroidLat": 32.7348,
+   "mountainFrac": 0,
+   "piedmontFrac": 1.0,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 4.14
+  },
+  {
+   "repoId": "US-GA-13163",
+   "name": "Jefferson",
+   "existing": "piedmont",
+   "proposed": "coastal",
+   "centroidLat": 33.0565,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 1,
+   "nwiPerKm2": 4.42
+  },
+  {
+   "repoId": "US-GA-13173",
+   "name": "Lanier",
+   "existing": "coastal",
+   "proposed": "wetland",
+   "centroidLat": 31.0377,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 12,
+   "nwiPerKm2": 7.4
+  },
+  {
+   "repoId": "US-GA-13187",
+   "name": "Lumpkin",
+   "existing": "mountain",
+   "proposed": "piedmont",
+   "centroidLat": 34.5706,
+   "mountainFrac": 0.427,
+   "piedmontFrac": 0.573,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 1.51
+  },
+  {
+   "repoId": "US-GA-13189",
+   "name": "McDuffie",
+   "existing": "piedmont",
+   "proposed": "fall-line",
+   "centroidLat": 33.4743,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.562,
+   "coastalPlainFrac": 0.438,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 5.38
+  },
+  {
+   "repoId": "US-GA-13215",
+   "name": "Muscogee",
+   "existing": "coastal",
+   "proposed": "fall-line",
+   "centroidLat": 32.5099,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.226,
+   "coastalPlainFrac": 0.774,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 4.89
+  },
+  {
+   "repoId": "US-GA-13227",
+   "name": "Pickens",
+   "existing": "mountain",
+   "proposed": "piedmont",
+   "centroidLat": 34.4652,
+   "mountainFrac": 0,
+   "piedmontFrac": 1.0,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 1.96
+  },
+  {
+   "repoId": "US-GA-13233",
+   "name": "Polk",
+   "existing": "piedmont",
+   "proposed": "mountain",
+   "centroidLat": 34.004,
+   "mountainFrac": 0.68,
+   "piedmontFrac": 0.32,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 4.08
+  },
+  {
+   "repoId": "US-GA-13245",
+   "name": "Richmond",
+   "existing": "piedmont",
+   "proposed": "coastal",
+   "centroidLat": 33.359,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.002,
+   "coastalPlainFrac": 0.998,
+   "gnisSwamp": 2,
+   "nwiPerKm2": 4.14
+  },
+  {
+   "repoId": "US-GA-13257",
+   "name": "Stephens",
+   "existing": "mountain",
+   "proposed": "piedmont",
+   "centroidLat": 34.5498,
+   "mountainFrac": 0,
+   "piedmontFrac": 1.0,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 1,
+   "nwiPerKm2": 3.48
+  },
+  {
+   "repoId": "US-GA-13263",
+   "name": "Talbot",
+   "existing": "coastal",
+   "proposed": "piedmont",
+   "centroidLat": 32.6988,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.833,
+   "coastalPlainFrac": 0.167,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 3.87
+  },
+  {
+   "repoId": "US-GA-13293",
+   "name": "Upson",
+   "existing": "coastal",
+   "proposed": "piedmont",
+   "centroidLat": 32.8795,
+   "mountainFrac": 0,
+   "piedmontFrac": 1.0,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 4.3
+  },
+  {
+   "repoId": "US-GA-13301",
+   "name": "Warren",
+   "existing": "piedmont",
+   "proposed": "fall-line",
+   "centroidLat": 33.4091,
+   "mountainFrac": 0,
+   "piedmontFrac": 0.726,
+   "coastalPlainFrac": 0.274,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 4.52
+  },
+  {
+   "repoId": "US-GA-13303",
+   "name": "Washington",
+   "existing": "piedmont",
+   "proposed": "coastal",
+   "centroidLat": 32.9717,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 4.55
+  },
+  {
+   "repoId": "US-GA-13305",
+   "name": "Wayne",
+   "existing": "coastal",
+   "proposed": "wetland",
+   "centroidLat": 31.551,
+   "mountainFrac": 0,
+   "piedmontFrac": 0,
+   "coastalPlainFrac": 1.0,
+   "gnisSwamp": 21,
+   "nwiPerKm2": 7.52
+  },
+  {
+   "repoId": "US-GA-13311",
+   "name": "White",
+   "existing": "mountain",
+   "proposed": "piedmont",
+   "centroidLat": 34.6429,
+   "mountainFrac": 0.332,
+   "piedmontFrac": 0.668,
+   "coastalPlainFrac": 0,
+   "gnisSwamp": 0,
+   "nwiPerKm2": 2.04
+  }
+ ],
+ "counties": {
+  "US-GA-13001": {
+   "name": "Appling",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 8384,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.27,
+   "centroidLat": 31.7485
+  },
+  "US-GA-13003": {
+   "name": "Atkinson",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.539,
+   "gnisSwampCount": 11,
+   "nwiCount": 6716,
+   "flag": "mixed-province;wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.53,
+   "centroidLat": 31.2963
+  },
+  "US-GA-13005": {
+   "name": "Bacon",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5614,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.96,
+   "centroidLat": 31.5525
+  },
+  "US-GA-13007": {
+   "name": "Baker",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 5,
+   "nwiCount": 4362,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.78,
+   "centroidLat": 31.3263
+  },
+  "US-GA-13009": {
+   "name": "Baldwin",
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.536,
+   "gnisSwampCount": 0,
+   "nwiCount": 2686,
+   "flag": "mixed-province;disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.536,
+    "coastalPlain": 0.464
+   },
+   "nwiPolygonsPerKm2": 3.86,
+   "centroidLat": 33.0717
+  },
+  "US-GA-13011": {
+   "name": "Banks",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1716,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.14,
+   "centroidLat": 34.3583
+  },
+  "US-GA-13013": {
+   "name": "Barrow",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2235,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 5.2,
+   "centroidLat": 33.9918
+  },
+  "US-GA-13015": {
+   "name": "Bartow",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.756,
+   "gnisSwampCount": 2,
+   "nwiCount": 3115,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0.756,
+    "piedmont": 0.244,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.6,
+   "centroidLat": 34.2392
+  },
+  "US-GA-13017": {
+   "name": "Ben Hill",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.755,
+   "gnisSwampCount": 0,
+   "nwiCount": 5558,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.21,
+   "centroidLat": 31.7621
+  },
+  "US-GA-13019": {
+   "name": "Berrien",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 7,
+   "nwiCount": 10792,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 9.28,
+   "centroidLat": 31.2774
+  },
+  "US-GA-13021": {
+   "name": "Bibb",
+   "terrain": "fall-line",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.543,
+   "gnisSwampCount": 1,
+   "nwiCount": 2789,
+   "flag": "mixed-province;disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.231,
+    "coastalPlain": 0.769
+   },
+   "nwiPolygonsPerKm2": 4.21,
+   "centroidLat": 32.803
+  },
+  "US-GA-13023": {
+   "name": "Bleckley",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.887,
+   "gnisSwampCount": 0,
+   "nwiCount": 3806,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.88,
+   "centroidLat": 32.4368
+  },
+  "US-GA-13025": {
+   "name": "Brantley",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 25,
+   "nwiCount": 9229,
+   "flag": "wetland-from-modern-gnis-nwi-signal",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.95,
+   "centroidLat": 31.1995
+  },
+  "US-GA-13027": {
+   "name": "Brooks",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 5,
+   "nwiCount": 8258,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.35,
+   "centroidLat": 30.8424
+  },
+  "US-GA-13029": {
+   "name": "Bryan",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.971,
+   "gnisSwampCount": 15,
+   "nwiCount": 6495,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.029)",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 0.971
+   },
+   "nwiPolygonsPerKm2": 5.55,
+   "centroidLat": 32.0138
+  },
+  "US-GA-13031": {
+   "name": "Bulloch",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 5,
+   "nwiCount": 14599,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.3,
+   "centroidLat": 32.3952
+  },
+  "US-GA-13033": {
+   "name": "Burke",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 3,
+   "nwiCount": 10584,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.97,
+   "centroidLat": 33.0604
+  },
+  "US-GA-13035": {
+   "name": "Butts",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2004,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.91,
+   "centroidLat": 33.285
+  },
+  "US-GA-13037": {
+   "name": "Calhoun",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5254,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.23,
+   "centroidLat": 31.5281
+  },
+  "US-GA-13039": {
+   "name": "Camden",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.912,
+   "gnisSwampCount": 41,
+   "nwiCount": 13706,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.088)",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 0.912
+   },
+   "nwiPolygonsPerKm2": 7.71,
+   "centroidLat": 30.9293
+  },
+  "US-GA-13043": {
+   "name": "Candler",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5090,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.17,
+   "centroidLat": 32.3983
+  },
+  "US-GA-13045": {
+   "name": "Carroll",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 5394,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.2,
+   "centroidLat": 33.5841
+  },
+  "US-GA-13047": {
+   "name": "Catoosa",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.976,
+   "gnisSwampCount": 0,
+   "nwiCount": 2149,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.9,
+   "centroidLat": 34.8988
+  },
+  "US-GA-13049": {
+   "name": "Charlton",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 27,
+   "nwiCount": 12802,
+   "flag": "wetland-from-modern-gnis-nwi-signal",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.3,
+   "centroidLat": 30.7853
+  },
+  "US-GA-13051": {
+   "name": "Chatham",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.907,
+   "gnisSwampCount": 10,
+   "nwiCount": 9345,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.093)",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 0.907
+   },
+   "nwiPolygonsPerKm2": 7.41,
+   "centroidLat": 32.0035
+  },
+  "US-GA-13053": {
+   "name": "Chattahoochee",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 2643,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.09,
+   "centroidLat": 32.3446
+  },
+  "US-GA-13055": {
+   "name": "Chattooga",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.787,
+   "gnisSwampCount": 0,
+   "nwiCount": 2066,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.54,
+   "centroidLat": 34.4741
+  },
+  "US-GA-13057": {
+   "name": "Cherokee",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2915,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.6,
+   "centroidLat": 34.2418
+  },
+  "US-GA-13059": {
+   "name": "Clarke",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1496,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.82,
+   "centroidLat": 33.952
+  },
+  "US-GA-13061": {
+   "name": "Clay",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 1967,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.46,
+   "centroidLat": 31.626
+  },
+  "US-GA-13063": {
+   "name": "Clayton",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1087,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.3,
+   "centroidLat": 33.5472
+  },
+  "US-GA-13065": {
+   "name": "Clinch",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.565,
+   "gnisSwampCount": 58,
+   "nwiCount": 17986,
+   "flag": "mixed-province;wetland-from-modern-gnis-nwi-signal",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.4,
+   "centroidLat": 30.9137
+  },
+  "US-GA-13067": {
+   "name": "Cobb",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2460,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.81,
+   "centroidLat": 33.9414
+  },
+  "US-GA-13069": {
+   "name": "Coffee",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.858,
+   "gnisSwampCount": 0,
+   "nwiCount": 14553,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 9.2,
+   "centroidLat": 31.5484
+  },
+  "US-GA-13071": {
+   "name": "Colquitt",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 13232,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 9.14,
+   "centroidLat": 31.1889
+  },
+  "US-GA-13073": {
+   "name": "Columbia",
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.604,
+   "gnisSwampCount": 0,
+   "nwiCount": 4218,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.604,
+    "coastalPlain": 0.396
+   },
+   "nwiPolygonsPerKm2": 5.3,
+   "centroidLat": 33.5438
+  },
+  "US-GA-13075": {
+   "name": "Cook",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 7,
+   "nwiCount": 5506,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 9.03,
+   "centroidLat": 31.1587
+  },
+  "US-GA-13077": {
+   "name": "Coweta",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4558,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.88,
+   "centroidLat": 33.3529
+  },
+  "US-GA-13079": {
+   "name": "Crawford",
+   "terrain": "fall-line",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.629,
+   "gnisSwampCount": 1,
+   "nwiCount": 3375,
+   "flag": "disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.371,
+    "coastalPlain": 0.629
+   },
+   "nwiPolygonsPerKm2": 3.98,
+   "centroidLat": 32.7175
+  },
+  "US-GA-13081": {
+   "name": "Crisp",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 6240,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.45,
+   "centroidLat": 31.922
+  },
+  "US-GA-13083": {
+   "name": "Dade",
+   "terrain": "mountain",
+   "physioDominant": "APPALACHIAN PLATEAUS / CUMBERLAND PLATEAU",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1390,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.1,
+   "centroidLat": 34.8578
+  },
+  "US-GA-13085": {
+   "name": "Dawson",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.78,
+   "gnisSwampCount": 0,
+   "nwiCount": 1062,
+   "flag": "partial-mountain-province(0.22);disagrees-with-roster.ts(mountain)",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.22,
+    "piedmont": 0.78,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.95,
+   "centroidLat": 34.4397
+  },
+  "US-GA-13087": {
+   "name": "Decatur",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 5487,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.47,
+   "centroidLat": 30.8778
+  },
+  "US-GA-13089": {
+   "name": "DeKalb",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1761,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.56,
+   "centroidLat": 33.7695
+  },
+  "US-GA-13091": {
+   "name": "Dodge",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.91,
+   "gnisSwampCount": 0,
+   "nwiCount": 8655,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.61,
+   "centroidLat": 32.17
+  },
+  "US-GA-13093": {
+   "name": "Dooly",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 3,
+   "nwiCount": 6043,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.01,
+   "centroidLat": 32.1558
+  },
+  "US-GA-13095": {
+   "name": "Dougherty",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 4583,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 5.37,
+   "centroidLat": 31.5315
+  },
+  "US-GA-13097": {
+   "name": "Douglas",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1698,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.35,
+   "centroidLat": 33.7028
+  },
+  "US-GA-13099": {
+   "name": "Early",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 8245,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.36,
+   "centroidLat": 31.3201
+  },
+  "US-GA-13101": {
+   "name": "Echols",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.996,
+   "gnisSwampCount": 33,
+   "nwiCount": 12006,
+   "flag": "wetland-from-modern-gnis-nwi-signal",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 11.04,
+   "centroidLat": 30.7116
+  },
+  "US-GA-13103": {
+   "name": "Effingham",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 14,
+   "nwiCount": 11246,
+   "flag": "wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.73,
+   "centroidLat": 32.3658
+  },
+  "US-GA-13105": {
+   "name": "Elbert",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3591,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.81,
+   "centroidLat": 34.1153
+  },
+  "US-GA-13107": {
+   "name": "Emanuel",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 12547,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.95,
+   "centroidLat": 32.5901
+  },
+  "US-GA-13109": {
+   "name": "Evans",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3678,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.15,
+   "centroidLat": 32.1568
+  },
+  "US-GA-13111": {
+   "name": "Fannin",
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1098,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.08,
+   "centroidLat": 34.866
+  },
+  "US-GA-13113": {
+   "name": "Fayette",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2085,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.17,
+   "centroidLat": 33.4103
+  },
+  "US-GA-13115": {
+   "name": "Floyd",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4255,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.19,
+   "centroidLat": 34.2677
+  },
+  "US-GA-13117": {
+   "name": "Forsyth",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1745,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.73,
+   "centroidLat": 34.2272
+  },
+  "US-GA-13119": {
+   "name": "Franklin",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 2715,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.9,
+   "centroidLat": 34.3727
+  },
+  "US-GA-13121": {
+   "name": "Fulton",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3933,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.73,
+   "centroidLat": 33.788
+  },
+  "US-GA-13123": {
+   "name": "Gilmer",
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 0.593,
+   "gnisSwampCount": 0,
+   "nwiCount": 1455,
+   "flag": "mixed-province",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.611,
+    "piedmont": 0.389,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.31,
+   "centroidLat": 34.6907
+  },
+  "US-GA-13125": {
+   "name": "Glascock",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1239,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.8,
+   "centroidLat": 33.2389
+  },
+  "US-GA-13127": {
+   "name": "Glynn",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.894,
+   "gnisSwampCount": 38,
+   "nwiCount": 10286,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.106)",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 0.894
+   },
+   "nwiPolygonsPerKm2": 8.43,
+   "centroidLat": 31.2345
+  },
+  "US-GA-13129": {
+   "name": "Gordon",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.991,
+   "gnisSwampCount": 0,
+   "nwiCount": 3550,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.991,
+    "piedmont": 0.009,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.79,
+   "centroidLat": 34.5083
+  },
+  "US-GA-13131": {
+   "name": "Grady",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 6747,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 5.64,
+   "centroidLat": 30.8748
+  },
+  "US-GA-13133": {
+   "name": "Greene",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3133,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.13,
+   "centroidLat": 33.5827
+  },
+  "US-GA-13135": {
+   "name": "Gwinnett",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3865,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.5,
+   "centroidLat": 33.9623
+  },
+  "US-GA-13137": {
+   "name": "Habersham",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.898,
+   "gnisSwampCount": 0,
+   "nwiCount": 1726,
+   "flag": "disagrees-with-roster.ts(mountain)",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.102,
+    "piedmont": 0.898,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.32,
+   "centroidLat": 34.6305
+  },
+  "US-GA-13139": {
+   "name": "Hall",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3004,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.74,
+   "centroidLat": 34.3182
+  },
+  "US-GA-13141": {
+   "name": "Hancock",
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.786,
+   "gnisSwampCount": 0,
+   "nwiCount": 4007,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.786,
+    "coastalPlain": 0.214
+   },
+   "nwiPolygonsPerKm2": 3.22,
+   "centroidLat": 33.2744
+  },
+  "US-GA-13143": {
+   "name": "Haralson",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2584,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.56,
+   "centroidLat": 33.7961
+  },
+  "US-GA-13145": {
+   "name": "Harris",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5021,
+   "flag": "disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.14,
+   "centroidLat": 32.7348
+  },
+  "US-GA-13147": {
+   "name": "Hart",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2768,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.97,
+   "centroidLat": 34.348
+  },
+  "US-GA-13149": {
+   "name": "Heard",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2335,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.03,
+   "centroidLat": 33.2974
+  },
+  "US-GA-13151": {
+   "name": "Henry",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3234,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.74,
+   "centroidLat": 33.4572
+  },
+  "US-GA-13153": {
+   "name": "Houston",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3796,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.77,
+   "centroidLat": 32.4569
+  },
+  "US-GA-13155": {
+   "name": "Irwin",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.972,
+   "gnisSwampCount": 1,
+   "nwiCount": 8968,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 9.95,
+   "centroidLat": 31.604
+  },
+  "US-GA-13157": {
+   "name": "Jackson",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3486,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.88,
+   "centroidLat": 34.1354
+  },
+  "US-GA-13159": {
+   "name": "Jasper",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3289,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.44,
+   "centroidLat": 33.3149
+  },
+  "US-GA-13161": {
+   "name": "Jeff Davis",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5519,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.39,
+   "centroidLat": 31.8049
+  },
+  "US-GA-13163": {
+   "name": "Jefferson",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 6075,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.42,
+   "centroidLat": 33.0565
+  },
+  "US-GA-13165": {
+   "name": "Jenkins",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5458,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.0,
+   "centroidLat": 32.7927
+  },
+  "US-GA-13167": {
+   "name": "Johnson",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4834,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.42,
+   "centroidLat": 32.7086
+  },
+  "US-GA-13169": {
+   "name": "Jones",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.822,
+   "gnisSwampCount": 0,
+   "nwiCount": 3383,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.822,
+    "coastalPlain": 0.178
+   },
+   "nwiPolygonsPerKm2": 3.29,
+   "centroidLat": 33.0234
+  },
+  "US-GA-13171": {
+   "name": "Lamar",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2205,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.37,
+   "centroidLat": 33.0825
+  },
+  "US-GA-13173": {
+   "name": "Lanier",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 12,
+   "nwiCount": 3924,
+   "flag": "wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.4,
+   "centroidLat": 31.0377
+  },
+  "US-GA-13175": {
+   "name": "Laurens",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 2,
+   "nwiCount": 13876,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.58,
+   "centroidLat": 32.4656
+  },
+  "US-GA-13177": {
+   "name": "Lee",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 2,
+   "nwiCount": 5814,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.04,
+   "centroidLat": 31.7816
+  },
+  "US-GA-13179": {
+   "name": "Liberty",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.957,
+   "gnisSwampCount": 13,
+   "nwiCount": 9453,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.043)",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 0.957
+   },
+   "nwiPolygonsPerKm2": 6.63,
+   "centroidLat": 31.824
+  },
+  "US-GA-13181": {
+   "name": "Lincoln",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1910,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.87,
+   "centroidLat": 33.7917
+  },
+  "US-GA-13183": {
+   "name": "Long",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 12,
+   "nwiCount": 6722,
+   "flag": "wetland-from-modern-gnis-nwi-signal",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.39,
+   "centroidLat": 31.7481
+  },
+  "US-GA-13185": {
+   "name": "Lowndes",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 7,
+   "nwiCount": 8357,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.46,
+   "centroidLat": 30.8329
+  },
+  "US-GA-13187": {
+   "name": "Lumpkin",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.573,
+   "gnisSwampCount": 0,
+   "nwiCount": 1071,
+   "flag": "partial-mountain-province(0.43);mixed-province;disagrees-with-roster.ts(mountain)",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.427,
+    "piedmont": 0.573,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.51,
+   "centroidLat": 34.5706
+  },
+  "US-GA-13189": {
+   "name": "McDuffie",
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.562,
+   "gnisSwampCount": 0,
+   "nwiCount": 3629,
+   "flag": "mixed-province;disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.562,
+    "coastalPlain": 0.438
+   },
+   "nwiPolygonsPerKm2": 5.38,
+   "centroidLat": 33.4743
+  },
+  "US-GA-13191": {
+   "name": "McIntosh",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.885,
+   "gnisSwampCount": 20,
+   "nwiCount": 8463,
+   "flag": "wetland-from-modern-gnis-nwi-signal;fenneman-unclassified-fraction(0.115)",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 0.885
+   },
+   "nwiPolygonsPerKm2": 6.97,
+   "centroidLat": 31.4927
+  },
+  "US-GA-13193": {
+   "name": "Macon",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 3760,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.56,
+   "centroidLat": 32.358
+  },
+  "US-GA-13195": {
+   "name": "Madison",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3170,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.26,
+   "centroidLat": 34.1303
+  },
+  "US-GA-13197": {
+   "name": "Marion",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3165,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.26,
+   "centroidLat": 32.3544
+  },
+  "US-GA-13199": {
+   "name": "Meriwether",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4512,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.39,
+   "centroidLat": 33.0399
+  },
+  "US-GA-13201": {
+   "name": "Miller",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 4,
+   "nwiCount": 4561,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.16,
+   "centroidLat": 31.165
+  },
+  "US-GA-13205": {
+   "name": "Mitchell",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 2,
+   "nwiCount": 6546,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.97,
+   "centroidLat": 31.2243
+  },
+  "US-GA-13207": {
+   "name": "Monroe",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3092,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.05,
+   "centroidLat": 33.01
+  },
+  "US-GA-13209": {
+   "name": "Montgomery",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4615,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.37,
+   "centroidLat": 32.173
+  },
+  "US-GA-13211": {
+   "name": "Morgan",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3824,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.08,
+   "centroidLat": 33.5903
+  },
+  "US-GA-13213": {
+   "name": "Murray",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.806,
+   "gnisSwampCount": 0,
+   "nwiCount": 2601,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.97,
+   "centroidLat": 34.7896
+  },
+  "US-GA-13215": {
+   "name": "Muscogee",
+   "terrain": "fall-line",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.774,
+   "gnisSwampCount": 0,
+   "nwiCount": 2783,
+   "flag": "disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.226,
+    "coastalPlain": 0.774
+   },
+   "nwiPolygonsPerKm2": 4.89,
+   "centroidLat": 32.5099
+  },
+  "US-GA-13217": {
+   "name": "Newton",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3471,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.72,
+   "centroidLat": 33.557
+  },
+  "US-GA-13219": {
+   "name": "Oconee",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2219,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.61,
+   "centroidLat": 33.84
+  },
+  "US-GA-13221": {
+   "name": "Oglethorpe",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4378,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.84,
+   "centroidLat": 33.8807
+  },
+  "US-GA-13223": {
+   "name": "Paulding",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.974,
+   "gnisSwampCount": 0,
+   "nwiCount": 2564,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0.026,
+    "piedmont": 0.974,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.21,
+   "centroidLat": 33.92
+  },
+  "US-GA-13225": {
+   "name": "Peach",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1051,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 2.69,
+   "centroidLat": 32.5732
+  },
+  "US-GA-13227": {
+   "name": "Pickens",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1224,
+   "flag": "disagrees-with-roster.ts(mountain)",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.96,
+   "centroidLat": 34.4652
+  },
+  "US-GA-13229": {
+   "name": "Pierce",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 3,
+   "nwiCount": 5241,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.09,
+   "centroidLat": 31.3599
+  },
+  "US-GA-13231": {
+   "name": "Pike",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2009,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.74,
+   "centroidLat": 33.0944
+  },
+  "US-GA-13233": {
+   "name": "Polk",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 0.68,
+   "gnisSwampCount": 0,
+   "nwiCount": 3493,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0.68,
+    "piedmont": 0.32,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.08,
+   "centroidLat": 34.004
+  },
+  "US-GA-13235": {
+   "name": "Pulaski",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.955,
+   "gnisSwampCount": 0,
+   "nwiCount": 4034,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 5.89,
+   "centroidLat": 32.2263
+  },
+  "US-GA-13237": {
+   "name": "Putnam",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2328,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.52,
+   "centroidLat": 33.3249
+  },
+  "US-GA-13239": {
+   "name": "Quitman",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1178,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 2.89,
+   "centroidLat": 31.8655
+  },
+  "US-GA-13241": {
+   "name": "Rabun",
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 0.998,
+   "gnisSwampCount": 0,
+   "nwiCount": 1439,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.998,
+    "piedmont": 0.002,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.47,
+   "centroidLat": 34.8824
+  },
+  "US-GA-13243": {
+   "name": "Randolph",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3144,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 2.84,
+   "centroidLat": 31.7611
+  },
+  "US-GA-13245": {
+   "name": "Richmond",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.998,
+   "gnisSwampCount": 2,
+   "nwiCount": 3531,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.002,
+    "coastalPlain": 0.998
+   },
+   "nwiPolygonsPerKm2": 4.14,
+   "centroidLat": 33.359
+  },
+  "US-GA-13247": {
+   "name": "Rockdale",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1494,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.49,
+   "centroidLat": 33.6517
+  },
+  "US-GA-13249": {
+   "name": "Schley",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1515,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.32,
+   "centroidLat": 32.264
+  },
+  "US-GA-13251": {
+   "name": "Screven",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 8,
+   "nwiCount": 12054,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.02,
+   "centroidLat": 32.7504
+  },
+  "US-GA-13253": {
+   "name": "Seminole",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 2714,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.04,
+   "centroidLat": 30.9405
+  },
+  "US-GA-13255": {
+   "name": "Spalding",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 2224,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.46,
+   "centroidLat": 33.2655
+  },
+  "US-GA-13257": {
+   "name": "Stephens",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 1603,
+   "flag": "disagrees-with-roster.ts(mountain)",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.48,
+   "centroidLat": 34.5498
+  },
+  "US-GA-13259": {
+   "name": "Stewart",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3882,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.29,
+   "centroidLat": 32.0767
+  },
+  "US-GA-13261": {
+   "name": "Sumter",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 6077,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.77,
+   "centroidLat": 32.0403
+  },
+  "US-GA-13263": {
+   "name": "Talbot",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.833,
+   "gnisSwampCount": 0,
+   "nwiCount": 3942,
+   "flag": "disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.833,
+    "coastalPlain": 0.167
+   },
+   "nwiPolygonsPerKm2": 3.87,
+   "centroidLat": 32.6988
+  },
+  "US-GA-13265": {
+   "name": "Taliaferro",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1515,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.87,
+   "centroidLat": 33.5676
+  },
+  "US-GA-13267": {
+   "name": "Tattnall",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 5,
+   "nwiCount": 8602,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.75,
+   "centroidLat": 32.0438
+  },
+  "US-GA-13269": {
+   "name": "Taylor",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 0.886,
+   "gnisSwampCount": 1,
+   "nwiCount": 4037,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.114,
+    "coastalPlain": 0.886
+   },
+   "nwiPolygonsPerKm2": 4.21,
+   "centroidLat": 32.5573
+  },
+  "US-GA-13271": {
+   "name": "Telfair",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.991,
+   "gnisSwampCount": 4,
+   "nwiCount": 7194,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.24,
+   "centroidLat": 31.9313
+  },
+  "US-GA-13273": {
+   "name": "Terrell",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4208,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.89,
+   "centroidLat": 31.7745
+  },
+  "US-GA-13275": {
+   "name": "Thomas",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 4,
+   "nwiCount": 8526,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.0,
+   "centroidLat": 30.8639
+  },
+  "US-GA-13277": {
+   "name": "Tift",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 8433,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 12.3,
+   "centroidLat": 31.4582
+  },
+  "US-GA-13279": {
+   "name": "Toombs",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 6588,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.9,
+   "centroidLat": 32.1193
+  },
+  "US-GA-13281": {
+   "name": "Towns",
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 651,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.54,
+   "centroidLat": 34.9149
+  },
+  "US-GA-13283": {
+   "name": "Treutlen",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3850,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.19,
+   "centroidLat": 32.4028
+  },
+  "US-GA-13285": {
+   "name": "Troup",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4782,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.21,
+   "centroidLat": 33.033
+  },
+  "US-GA-13287": {
+   "name": "Turner",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 1,
+   "nwiCount": 7120,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 9.28,
+   "centroidLat": 31.7136
+  },
+  "US-GA-13289": {
+   "name": "Twiggs",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 0.93,
+   "gnisSwampCount": 2,
+   "nwiCount": 3344,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.68,
+   "centroidLat": 32.6657
+  },
+  "US-GA-13291": {
+   "name": "Union",
+   "terrain": "mountain",
+   "physioDominant": "BLUE RIDGE / SOUTHERN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1213,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 1.4,
+   "centroidLat": 34.8291
+  },
+  "US-GA-13293": {
+   "name": "Upson",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3686,
+   "flag": "disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.3,
+   "centroidLat": 32.8795
+  },
+  "US-GA-13295": {
+   "name": "Walker",
+   "terrain": "mountain",
+   "physioDominant": "APPALACHIAN PLATEAUS / CUMBERLAND PLATEAU",
+   "physioFraction": 0.624,
+   "gnisSwampCount": 0,
+   "nwiCount": 3988,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 3.45,
+   "centroidLat": 34.7343
+  },
+  "US-GA-13297": {
+   "name": "Walton",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4084,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.75,
+   "centroidLat": 33.7797
+  },
+  "US-GA-13299": {
+   "name": "Ware",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 38,
+   "nwiCount": 17526,
+   "flag": "wetland-from-modern-gnis-nwi-signal",
+   "existingRosterTerrain": "wetland",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.47,
+   "centroidLat": 31.0587
+  },
+  "US-GA-13301": {
+   "name": "Warren",
+   "terrain": "fall-line",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.726,
+   "gnisSwampCount": 0,
+   "nwiCount": 3223,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0.726,
+    "coastalPlain": 0.274
+   },
+   "nwiPolygonsPerKm2": 4.52,
+   "centroidLat": 33.4091
+  },
+  "US-GA-13303": {
+   "name": "Washington",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 8393,
+   "flag": "disagrees-with-roster.ts(piedmont)",
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 4.55,
+   "centroidLat": 32.9717
+  },
+  "US-GA-13305": {
+   "name": "Wayne",
+   "terrain": "wetland",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 21,
+   "nwiCount": 12226,
+   "flag": "wetland-from-modern-gnis-nwi-signal;disagrees-with-roster.ts(coastal)",
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 7.52,
+   "centroidLat": 31.551
+  },
+  "US-GA-13307": {
+   "name": "Webster",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 1885,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.48,
+   "centroidLat": 32.0448
+  },
+  "US-GA-13309": {
+   "name": "Wheeler",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 5095,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 6.41,
+   "centroidLat": 32.1228
+  },
+  "US-GA-13311": {
+   "name": "White",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 0.668,
+   "gnisSwampCount": 0,
+   "nwiCount": 1256,
+   "flag": "partial-mountain-province(0.33);disagrees-with-roster.ts(mountain)",
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 0.332,
+    "piedmont": 0.668,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.04,
+   "centroidLat": 34.6429
+  },
+  "US-GA-13313": {
+   "name": "Whitfield",
+   "terrain": "mountain",
+   "physioDominant": "VALLEY AND RIDGE / TENNESSEE",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3517,
+   "flag": null,
+   "existingRosterTerrain": "mountain",
+   "provinceFractions": {
+    "mountain": 1.0,
+    "piedmont": 0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 4.86,
+   "centroidLat": 34.8133
+  },
+  "US-GA-13315": {
+   "name": "Wilcox",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 3,
+   "nwiCount": 8345,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.91,
+   "centroidLat": 31.9688
+  },
+  "US-GA-13317": {
+   "name": "Wilkes",
+   "terrain": "piedmont",
+   "physioDominant": "PIEDMONT / PIEDMONT UPLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 3491,
+   "flag": null,
+   "existingRosterTerrain": "piedmont",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 1.0,
+    "coastalPlain": 0
+   },
+   "nwiPolygonsPerKm2": 2.83,
+   "centroidLat": 33.7796
+  },
+  "US-GA-13319": {
+   "name": "Wilkinson",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / SEA ISLAND",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 4073,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 3.5,
+   "centroidLat": 32.8025
+  },
+  "US-GA-13321": {
+   "name": "Worth",
+   "terrain": "coastal",
+   "physioDominant": "COASTAL PLAIN / EAST GULF COASTAL PLAIN",
+   "physioFraction": 1.0,
+   "gnisSwampCount": 0,
+   "nwiCount": 12248,
+   "flag": null,
+   "existingRosterTerrain": "coastal",
+   "provinceFractions": {
+    "mountain": 0,
+    "piedmont": 0,
+    "coastalPlain": 1.0
+   },
+   "nwiPolygonsPerKm2": 8.35,
+   "centroidLat": 31.5493
+  }
+ }
+}

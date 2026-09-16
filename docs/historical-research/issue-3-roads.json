@@ -1,0 +1,1544 @@
+{
+ "issue": "CC-03",
+ "facet": "roads",
+ "generated": "2026-09-16",
+ "licenseCaveat": "License caveat (applies to every Georgia-archive-derived, Rumsey, and NGE source in this file). Quoted from docs/historical-research/issue-1-newberry-audit.md via issue-3-source-map.md: \"The strongest open statement is the Download pages' \"reused for any lawful purpose, commercial or non-commercial, without licensing or permission fees to the library\" together with the instruction that files containing \"the original, out-of-date copyright license … can be ignored\". That is a permission statement by the copyright holder, not a CC0 dedication.\" and \"Do not relicense. Do not mark Newberry-derived data as CC0 or public domain.\" Extension (issue-3-source-map.md): the Rumsey/IA road and rail maps carry an explicit CC BY-NC-SA 3.0 string with a separate \"contact … for commercial use\" instruction; NGE text is fair-use-only for non-commercial purposes. None of these is CC0; treat all three regimes (Newberry BY-NC-SA 2.5 or \"any lawful purpose\", Rumsey BY-NC-SA 3.0, NGE non-commercial fair use) as incompatible with commercial distribution until written confirmation is obtained. Modern FIPS codes (US-GA-<fips>) are a crosswalk key only; FIPS codes did not exist in 1942.",
+ "verificationStatus": "Bracketed evidence from 1940 sheet + 1944 sheet only. No road segment is verified for 1942-02-01.",
+ "citations": [
+  {
+   "key": "rm1940",
+   "sourceUrl": "https://archive.org/details/dr_rand-mcnally-road-map-georgia-copyright-by-rand-mcnally--company-chicag-5969027",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 5430,
+   "licenseQuote": "Images may be downloaded and used following Creative Commons CC BY-NC-SA 3.0 license. Image credit should be given to \"David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries.\"  Please contact the David Rumsey Map Collection for commercial use.",
+   "cacheFile": "/tmp/issue-3-downloads/dr_rand-mcnally-road-map-georgia-copyright-by-rand-mcnally--company-chicag-5969027.meta.json",
+   "httpCodeBasis": "issue-3-source-map.json log",
+   "notes": "Item metadata date \"1940\". Sheet image rm1940-5969027.jpg (928021 bytes) plus crops rm1940-corridor*.jpg, rm1940-legend.jpg, t40-r{0..3}c{0..2}.jpg; IIIF info iiif-info-5969027.json (1032x1536 IA derivative), luna-iiif-1940.json (7930x11803 Luna master)."
+  },
+  {
+   "key": "rm1944",
+   "sourceUrl": "https://archive.org/details/dr_state-farm-road-map-georgia-copyright-by-rand-mcnally--company-chicago-4246020",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 4681,
+   "licenseQuote": "Images may be downloaded and used following Creative Commons CC BY-NC-SA 3.0 license. Image credit should be given to \"David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries.\"  Please contact the David Rumsey Map Collection for commercial use.",
+   "cacheFile": "/tmp/issue-3-downloads/dr_state-farm-road-map-georgia-copyright-by-rand-mcnally--company-chicago-4246020.meta.json",
+   "httpCodeBasis": "issue-3-source-map.json log",
+   "notes": "Item metadata date \"1944\". Sheet images rm1944-4246020.jpg (1804633 bytes), rm1944-4246020.jp2 (9993256 bytes) plus crops rm1944-corridor*.jpg, rm1944-legend.jpg, t44-r{0..3}c{0..2}.jpg."
+  },
+  {
+   "key": "nge-bell",
+   "sourceUrl": "https://www.georgiaencyclopedia.org/articles/government-politics/bell-bomber/",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 245289,
+   "licenseQuote": "Fair use of copyrighted material includes the use of protected materials for noncommercial educational purposes. The use of text and images from the NGE website for such purposes does not require express permission from the NGE.",
+   "cacheFile": "/tmp/issue-3-downloads/nge-bell-bomber.html",
+   "httpCodeBasis": "issue-3-source-map.json log",
+   "notes": "Last edited 2020-11-03."
+  },
+  {
+   "key": "nge-terms",
+   "sourceUrl": "https://www.georgiaencyclopedia.org/terms-of-use/",
+   "retrievalDate": "2026-09-16",
+   "httpCode": 200,
+   "byteSize": 123815,
+   "licenseQuote": "Fair use of copyrighted material includes the use of protected materials for noncommercial educational purposes. The use of text and images from the NGE website for such purposes does not require express permission from the NGE.",
+   "cacheFile": "/tmp/issue-3-downloads/nge-terms.html",
+   "httpCodeBasis": "cache body is the live Terms of Use page (status not separately logged)",
+   "notes": "URL path inferred from page title \"Terms of Use\"; not recorded by the prior worker."
+  }
+ ],
+ "cobbFultonCorridor": {
+  "scope": "Cobb (US-GA-13067) - Fulton (US-GA-13121) corridor, Marietta-Smyrna-Atlanta",
+  "routesToCheck": {
+   "US 41": "Documented in NGE Bell Bomber text as a four-lane highway \"then under construction\" serving Marietta (Dec 1941/early 1942 context). Sheet classification (Super Highway vs Paved first class vs Under Construction) on 1940 and 1944 crops: NOT transcribed.",
+   "US 41 Alt": "NOT evidenced. Both sheet legends define the \"ALT.\" shield abbreviation, but no ALT. shield reading was obtained from the corridor crops. Do not assume an Alt route existed in 1940-1944.",
+   "State Route 3": "NOT evidenced from cache. OCR of the corridor crops returned no legible SR 3 shield; any US 41/SR 3 concurrency is unverified here.",
+   "Dixie Highway": "Documented by name only in NGE Bell Bomber; no route number attached in the text."
+  },
+  "bracket1940": {
+   "crop": "rm1940-corridor.jpg (547711 bytes), rm1940-corridor-zoom.jpg (900x900, 234150 bytes)",
+   "ocrPlaceNamesConfirmingCoverage": [
+    "Woodstock",
+    "Allatoona",
+    "Acworth",
+    "Kennesaw",
+    "Roswell",
+    "MARIETTA",
+    "KENNESAW MOUNTAIN",
+    "Dunwoody",
+    "Norcross",
+    "Smyrna",
+    "Austell",
+    "Mableton",
+    "Chamblee",
+    "East Point",
+    "Hapeville",
+    "GEORGIA SCHOOL OF TECHNOLOGY"
+   ],
+   "legendOcr": "INTERSTATE HIGHWAYS SHOWN IN RED. ... Super Highways 4 lane pavement and over; Paved Roads first class all weather; Improved Roads—second class; Graded Roads; Dirt Roads; Roads Under Construction or contemplated; State Highways; U. S. Interstate Highways; Abbreviations in shield indicate: ALT. = Alternate Route ... Speed Law=55 M.P.H."
+  },
+  "bracket1944": {
+   "crop": "rm1944-corridor.jpg (1110049 bytes), rm1944-corridor-zoom.jpg (900x900, 478826 bytes)",
+   "ocrPlaceNamesConfirmingCoverage": [
+    "Allatoona",
+    "Woodstock",
+    "Acworth",
+    "Huntsville",
+    "Dunwoody",
+    "MOUNTAIN (Kennesaw)",
+    "Austell",
+    "Hiram",
+    "Mableton area",
+    "FORT McPHERSON",
+    "College Park",
+    "Riverdale",
+    "AIRPORT ATLANTA"
+   ],
+   "legendOcr": "U.S. INTERSTATE AND PRINCIPAL STATE HIGHWAYS SHOWN IN RED; Super Highways- 4 lanes or over; Paved Roads first class—all weather; Improved Roads— second class; Graded Roads; Dirt Roads; Roads Under Construction or contemplated; State Highways; U. S. Interstate Highways; ALT. = Alternate; State Forests; Speed Law = 58 m.p.h. (prima facie limit)"
+  },
+  "finding": "Both sheets cover the corridor and both legends distinguish Super Highways (4-lane), Paved first class, Improved second class, Graded, Dirt, and Under Construction. The difference between the two brackets for US 41 could not be read from cache in this call; this is bracketing evidence only, not 1942-02-01 verification."
+ },
+ "transcriptionStatus": {
+  "documented": [
+   "US-GA-13067"
+  ],
+  "routeFieldsNonNull": 1,
+  "reason": "route shields not OCR-legible; image viewing unavailable in this call"
+ },
+ "roads": {
+  "US-GA-13001": {
+   "name": "Appling",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13003": {
+   "name": "Atkinson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13005": {
+   "name": "Bacon",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13007": {
+   "name": "Baker",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13009": {
+   "name": "Baldwin",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13011": {
+   "name": "Banks",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13013": {
+   "name": "Barrow",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13015": {
+   "name": "Bartow",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13017": {
+   "name": "Ben Hill",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13019": {
+   "name": "Berrien",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13021": {
+   "name": "Bibb",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13023": {
+   "name": "Bleckley",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13025": {
+   "name": "Brantley",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13027": {
+   "name": "Brooks",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13029": {
+   "name": "Bryan",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13031": {
+   "name": "Bulloch",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13033": {
+   "name": "Burke",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13035": {
+   "name": "Butts",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13037": {
+   "name": "Calhoun",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13039": {
+   "name": "Camden",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13043": {
+   "name": "Candler",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13045": {
+   "name": "Carroll",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13047": {
+   "name": "Catoosa",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13049": {
+   "name": "Charlton",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13051": {
+   "name": "Chatham",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13053": {
+   "name": "Chattahoochee",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13055": {
+   "name": "Chattooga",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13057": {
+   "name": "Cherokee",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13059": {
+   "name": "Clarke",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13061": {
+   "name": "Clay",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13063": {
+   "name": "Clayton",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13065": {
+   "name": "Clinch",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13067": {
+   "name": "Cobb",
+   "bracketedRange": "1940-1944",
+   "confidence": "documented",
+   "primaryUSRoute": "US 41",
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "NGE Bell Bomber (secondary, text): Marietta \"was connected by streetcar, by the Dixie Highway , and by the state’s first four-lane highway, U.S. 41, then under construction.\" Context is the Dec 1941-Feb 1942 site-selection period. Surface class on 1940/1944 sheets not transcribed; paved left null. State-route number not transcribed."
+  },
+  "US-GA-13069": {
+   "name": "Coffee",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13071": {
+   "name": "Colquitt",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13073": {
+   "name": "Columbia",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13075": {
+   "name": "Cook",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13077": {
+   "name": "Coweta",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13079": {
+   "name": "Crawford",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13081": {
+   "name": "Crisp",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13083": {
+   "name": "Dade",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13085": {
+   "name": "Dawson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13087": {
+   "name": "Decatur",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13089": {
+   "name": "DeKalb",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13091": {
+   "name": "Dodge",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13093": {
+   "name": "Dooly",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13095": {
+   "name": "Dougherty",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13097": {
+   "name": "Douglas",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13099": {
+   "name": "Early",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13101": {
+   "name": "Echols",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13103": {
+   "name": "Effingham",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13105": {
+   "name": "Elbert",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13107": {
+   "name": "Emanuel",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13109": {
+   "name": "Evans",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13111": {
+   "name": "Fannin",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13113": {
+   "name": "Fayette",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13115": {
+   "name": "Floyd",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13117": {
+   "name": "Forsyth",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13119": {
+   "name": "Franklin",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13121": {
+   "name": "Fulton",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Cobb-Fulton corridor county. US 41 link from Marietta toward Atlanta is implied by NGE Bell Bomber (\"Less than twenty miles from downtown Atlanta ... U.S. 41, then under construction\") but the text does not name Fulton segments; route/surface not transcribed from sheets."
+  },
+  "US-GA-13123": {
+   "name": "Gilmer",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13125": {
+   "name": "Glascock",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13127": {
+   "name": "Glynn",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13129": {
+   "name": "Gordon",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13131": {
+   "name": "Grady",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13133": {
+   "name": "Greene",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13135": {
+   "name": "Gwinnett",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13137": {
+   "name": "Habersham",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13139": {
+   "name": "Hall",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13141": {
+   "name": "Hancock",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13143": {
+   "name": "Haralson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13145": {
+   "name": "Harris",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13147": {
+   "name": "Hart",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13149": {
+   "name": "Heard",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13151": {
+   "name": "Henry",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13153": {
+   "name": "Houston",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13155": {
+   "name": "Irwin",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13157": {
+   "name": "Jackson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13159": {
+   "name": "Jasper",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13161": {
+   "name": "Jeff Davis",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13163": {
+   "name": "Jefferson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13165": {
+   "name": "Jenkins",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13167": {
+   "name": "Johnson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13169": {
+   "name": "Jones",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13171": {
+   "name": "Lamar",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13173": {
+   "name": "Lanier",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13175": {
+   "name": "Laurens",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13177": {
+   "name": "Lee",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13179": {
+   "name": "Liberty",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13181": {
+   "name": "Lincoln",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13183": {
+   "name": "Long",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13185": {
+   "name": "Lowndes",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13187": {
+   "name": "Lumpkin",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13189": {
+   "name": "McDuffie",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13191": {
+   "name": "McIntosh",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13193": {
+   "name": "Macon",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13195": {
+   "name": "Madison",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13197": {
+   "name": "Marion",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13199": {
+   "name": "Meriwether",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13201": {
+   "name": "Miller",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13205": {
+   "name": "Mitchell",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13207": {
+   "name": "Monroe",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13209": {
+   "name": "Montgomery",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13211": {
+   "name": "Morgan",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13213": {
+   "name": "Murray",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13215": {
+   "name": "Muscogee",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13217": {
+   "name": "Newton",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13219": {
+   "name": "Oconee",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13221": {
+   "name": "Oglethorpe",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13223": {
+   "name": "Paulding",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13225": {
+   "name": "Peach",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13227": {
+   "name": "Pickens",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13229": {
+   "name": "Pierce",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13231": {
+   "name": "Pike",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13233": {
+   "name": "Polk",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13235": {
+   "name": "Pulaski",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13237": {
+   "name": "Putnam",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13239": {
+   "name": "Quitman",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13241": {
+   "name": "Rabun",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13243": {
+   "name": "Randolph",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13245": {
+   "name": "Richmond",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13247": {
+   "name": "Rockdale",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13249": {
+   "name": "Schley",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13251": {
+   "name": "Screven",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13253": {
+   "name": "Seminole",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13255": {
+   "name": "Spalding",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13257": {
+   "name": "Stephens",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13259": {
+   "name": "Stewart",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13261": {
+   "name": "Sumter",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13263": {
+   "name": "Talbot",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13265": {
+   "name": "Taliaferro",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13267": {
+   "name": "Tattnall",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13269": {
+   "name": "Taylor",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13271": {
+   "name": "Telfair",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13273": {
+   "name": "Terrell",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13275": {
+   "name": "Thomas",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13277": {
+   "name": "Tift",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13279": {
+   "name": "Toombs",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13281": {
+   "name": "Towns",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13283": {
+   "name": "Treutlen",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13285": {
+   "name": "Troup",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13287": {
+   "name": "Turner",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13289": {
+   "name": "Twiggs",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13291": {
+   "name": "Union",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13293": {
+   "name": "Upson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13295": {
+   "name": "Walker",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13297": {
+   "name": "Walton",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13299": {
+   "name": "Ware",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13301": {
+   "name": "Warren",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13303": {
+   "name": "Washington",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13305": {
+   "name": "Wayne",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13307": {
+   "name": "Webster",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13309": {
+   "name": "Wheeler",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13311": {
+   "name": "White",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13313": {
+   "name": "Whitfield",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13315": {
+   "name": "Wilcox",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13317": {
+   "name": "Wilkes",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13319": {
+   "name": "Wilkinson",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  },
+  "US-GA-13321": {
+   "name": "Worth",
+   "bracketedRange": "1940-1944",
+   "confidence": "bracketed",
+   "primaryUSRoute": null,
+   "primaryStateRoute": null,
+   "paved": null,
+   "notes": "Per-county route and surface class NOT transcribed: county falls on the cached 1940 (t40-*) and 1944 (t44-*) sheet tiles, but route shields were not machine-readable (tesseract) and image viewing was not available in this synthesis call. Nulls mean \"not transcribed\", not \"no road\"."
+  }
+ }
+}

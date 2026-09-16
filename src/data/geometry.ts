@@ -32,3 +32,10 @@ export function countyIdByName(name: string): string {
 export function neighborsOf(id: string): readonly string[] {
   return ADJACENCY[id] ?? [];
 }
+
+/** Geographic adjacency: a shared boundary segment. Corner-only contacts are excluded. */
+export function isAdjacencyEdge(a: string, b: string, sharedSegmentCount?: number): boolean {
+  if (a === b) return false;
+  if (sharedSegmentCount !== undefined) return sharedSegmentCount > 0;
+  return (ADJACENCY[a] ?? []).includes(b);
+}

@@ -1,6 +1,7 @@
 // County seats and terrain classes for the 159-county board.
-// Seats are modern seats used as a placeholder pending historical verification
-// (GDD §3.2, issue #1). Terrain is a county-level strategic abstraction (§3.1).
+// Seats are modern seats used as placeholders pending historical verification (Issue #3/#4 work).
+// Roster identities verified 2026-09-14 against Newberry AHCBP and 1940 Census
+// (see docs/historical-research/issue-1-roster.json). Terrain is a county-level strategic abstraction (§3.1).
 
 export const SEATS: Readonly<Record<string, string>> = {
   Appling: "Baxley", Atkinson: "Pearson", Bacon: "Alma", Baker: "Newton", Baldwin: "Milledgeville",
