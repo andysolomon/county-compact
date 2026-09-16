@@ -69,7 +69,7 @@ items:
     checkpoint:
       state: ready
       updated_at: 2026-09-16T21:50:00.000Z
-      evidence_ref: "PR #30 delivered roads, terrain classes, federal facilities, and the unresolved log; acceptance item 2 (passable 1942 movement edges and crossing tags) and rail corridors remain open. See docs/historical-research/issue-3-unresolved.md."
+      evidence_ref: "PR #30 delivered roads (bracketed 1940-1944), terrain classes, federal facilities, unresolved log. Movement pass (feat/cc-03-routes-crossings): src/data/movement-edges.json has 417 passable movement edges (scenario abstraction) with 75 river-crossing tags derived from public-domain Natural Earth 10m hydrography via scripts/prepare-movement.mjs; tests/movement.test.ts. Open: rail corridors, road-route transcription, seat verification, operator questions U3-4/U3-5 (docs/cc-03-movement-edges/unresolved.md)."
   - id: CC-04
     kind: leaf
     title: Author complete starting data for all 159 counties

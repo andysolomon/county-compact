@@ -23,6 +23,8 @@ export declare const HISTORICAL_STATUS: {
   readonly noChange: "no-recorded-change-1942-modern-polygon";
 };
 
+export declare const CORNER_ONLY_CONTACTS: readonly (readonly [string, string])[];
+
 export declare function addCentroidsAndBboxes<T extends FixtureCounty>(counties: T[]): void;
 export declare function assignHistoricalStatus<T extends FixtureCounty>(counties: T[]): T[];
 export declare function validateCoverage(counties: readonly FixtureCounty[]): CheckResult;
