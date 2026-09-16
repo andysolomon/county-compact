@@ -12,7 +12,7 @@ items:
     dependencies: []
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-01
     kind: leaf
     title: Verify the 1942 Georgia county roster and geographic provenance
@@ -28,8 +28,9 @@ items:
     dependencies: []
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
-      state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      state: completed
+      updated_at: 2026-09-16T21:50:00.000Z
+      evidence_ref: "Acceptance review 2026-09-16 (arc-orchestrator verify): all four criteria met; docs/historical-research/issue-1-roster.json (159 records, 1942-02-01, per-record citations, modern-FIPS crosswalk policy), issue-1-newberry-audit.md, issue-1-former-counties.md, issue-1-unresolved.md; npm test 19/19. Seats and undated boundary changes remain open under CC-02/CC-03/CC-04."
   - id: CC-02
     kind: leaf
     title: Prepare county geometry and validate geographic adjacency
@@ -47,7 +48,8 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: ready
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
+      evidence_ref: "PR #30 (9f33fe0) delivered prepare-geometry.mjs, georgia-counties.json, symmetric shared-boundary adjacency with corner-only exclusion, and tests/geometry.test.ts. Open: acceptance item 2 has no overlap or gap checks (validateCoverage is bbox-only), and the atlanticCoast check tests the western bbox edge (minX -85.6) rather than the coast (maxX)."
   - id: CC-03
     kind: leaf
     title: Research period transport, terrain, settlements, and federal facilities
@@ -66,7 +68,8 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: ready
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
+      evidence_ref: "PR #30 delivered roads, terrain classes, federal facilities, and the unresolved log; acceptance item 2 (passable 1942 movement edges and crossing tags) and rail corridors remain open. See docs/historical-research/issue-3-unresolved.md."
   - id: CC-04
     kind: leaf
     title: Author complete starting data for all 159 counties
@@ -85,7 +88,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: gate-b
     kind: group
     title: B — Economic vertical slice
@@ -94,7 +97,7 @@ items:
     dependencies: []
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-05
     kind: leaf
     title: Establish the local browser project and bundled-asset baseline
@@ -103,15 +106,16 @@ items:
     outcome: "Issue #5 (P1): Establish the local browser project and bundled-asset baseline. Source: https://github.com/andysolomon/county-compact/issues/5"
     scope: Georgia only; local browser application; bundled runtime data/assets. Do not add later-roadmap systems to this issue.
     acceptance_criteria:
-      - Create a Vite application using strict TypeScript, Three.js, and HTML/CSS UI.
+      - Create a Vite application using strict TypeScript and HTML/CSS UI with an SVG strategic map behind a replaceable renderer interface (src/ui/map.ts); Three.js/WebGL is reconsidered only if CC-27 performance measurements require it (renderer decision amended 2026-09-16).
       - Choose and document module boundaries for scenario data, simulation, renderer, UI, and persistence.
       - Bundle runtime assets and fonts with attribution; require no backend, paid service, API key, or outside asset download.
       - Provide reproducible local development/build commands and a build/typecheck CI gate.
     dependencies: []
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
-      state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      state: completed
+      updated_at: 2026-09-16T21:50:00.000Z
+      evidence_ref: "PR #31 (c606c2b): CI run 35155343142 green (npm ci, typecheck, 23/23 tests, build); bundled OFL fonts, docs/ASSETS.md, docs/architecture.md, tests/architecture.test.ts; renderer criterion amended to SVG."
   - id: CC-06
     kind: leaf
     title: Specify and implement deterministic campaign state and calendar
@@ -130,7 +134,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-07
     kind: leaf
     title: Render the Georgia strategic map and accessible county selection
@@ -150,7 +154,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-08
     kind: leaf
     title: Implement workforce allocation and the monthly county budget
@@ -168,7 +172,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-09
     kind: leaf
     title: Implement construction, procurement, debt, and arrears
@@ -187,7 +191,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-10
     kind: leaf
     title: Add versioned local saves, export/import, and recovery
@@ -205,7 +209,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: gate-c
     kind: group
     title: C — Peaceful regional game
@@ -214,7 +218,7 @@ items:
     dependencies: []
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-11
     kind: leaf
     title: Implement public support, administrative reach, and territorial integration
@@ -234,7 +238,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-12
     kind: leaf
     title: Implement treaties and explainable diplomatic acceptance
@@ -254,7 +258,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-13
     kind: leaf
     title: Implement coalitions, voting, common budgets, and delegated authority
@@ -273,7 +277,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-14
     kind: leaf
     title: Implement dependency, negotiated union, and expansion alarm
@@ -293,7 +297,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-15
     kind: leaf
     title: Implement constrained AI planning and visible priorities
@@ -315,7 +319,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: gate-d
     kind: group
     title: D — Limited conflict
@@ -324,7 +328,7 @@ items:
     dependencies: []
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-16
     kind: leaf
     title: Implement recruitment, formations, movement, and supply
@@ -344,7 +348,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-17
     kind: leaf
     title: Implement simultaneous county battles and occupation
@@ -363,7 +367,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-18
     kind: leaf
     title: Implement war goals, Federal Standing, exhaustion, and intervention
@@ -383,7 +387,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-19
     kind: leaf
     title: Implement peace negotiation, arbitration, and cession rules
@@ -403,7 +407,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: gate-e
     kind: group
     title: E — Historical campaign
@@ -412,7 +416,7 @@ items:
     dependencies: []
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-20
     kind: leaf
     title: Build the historical and dynamic event framework
@@ -432,7 +436,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-21
     kind: leaf
     title: Author and validate the Bell industrial transformation chain
@@ -453,7 +457,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-22
     kind: leaf
     title: Author statewide events, coastal contracts, and postwar adjustment
@@ -473,7 +477,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: gate-f
     kind: group
     title: F — Complete first playable
@@ -482,7 +486,7 @@ items:
     dependencies: []
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-23
     kind: leaf
     title: Create campaign selection, ambitions, and six opening profiles
@@ -503,7 +507,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-24
     kind: leaf
     title: Build the strategic UI, map modes, and consequential-action flows
@@ -526,7 +530,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-25
     kind: leaf
     title: Implement Cobb onboarding and an isolated optional combat tutorial
@@ -547,7 +551,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-26
     kind: leaf
     title: Implement victory, defeat, campaign summary, and sandbox continuation
@@ -569,7 +573,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-27
     kind: leaf
     title: Validate keyboard accessibility, responsive layouts, and performance
@@ -589,7 +593,7 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z
   - id: CC-28
     kind: leaf
     title: Run all-county correctness gates and campaign playtests
@@ -612,4 +616,4 @@ items:
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
       state: planned
-      updated_at: 2026-09-16T17:00:00.000Z
+      updated_at: 2026-09-16T21:50:00.000Z

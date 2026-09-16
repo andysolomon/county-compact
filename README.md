@@ -10,10 +10,13 @@ Early development. A local browser application now covers the first interaction 
 
 ```sh
 npm install
-npm run dev     # local app at http://localhost:5173
-npm test        # rule tests replaying the design's first-year ledger
-npm run build   # strict typecheck and production bundle
+npm run dev        # local app at http://localhost:5173
+npm test           # rule tests replaying the design's first-year ledger
+npm run typecheck  # strict TypeScript, no emit
+npm run build      # typecheck and production bundle
 ```
+
+Pushes and pull requests to `main` run the same typecheck, tests, and build in CI (`.github/workflows/ci.yml`).
 
 - [Game design document](docs/game-design.md)
 - [Implementation notes](docs/implementation-notes.md)
@@ -32,7 +35,7 @@ npm run build   # strict typecheck and production bundle
 
 ## Intended technology
 
-Strict TypeScript, Vite, Three.js, HTML/CSS panels, local saves, and bundled data/assets. No required backend, paid services, API keys, or runtime asset downloads.
+Strict TypeScript, Vite, an SVG strategic map behind a replaceable renderer interface, HTML/CSS panels, local saves, and bundled data/fonts. No required backend, paid services, API keys, or runtime asset downloads. See [docs/architecture.md](docs/architecture.md) for the module layers and [docs/ASSETS.md](docs/ASSETS.md) for bundled asset provenance.
 
 ## Data and rights
 
