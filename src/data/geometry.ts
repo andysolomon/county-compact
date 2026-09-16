@@ -1,5 +1,11 @@
 import raw from "./georgia-counties.json";
 
+/** How far a county's modern polygon is known to differ from its 1942-02-01 boundary. */
+export type HistoricalStatus =
+  | "boundary-change-undated-1915-1952"
+  | "census-1940-footnote-change-not-in-newberry"
+  | "no-recorded-change-1942-modern-polygon";
+
 export interface CountyGeometry {
   readonly id: string;
   readonly fips: string;
@@ -7,6 +13,7 @@ export interface CountyGeometry {
   readonly polygons: readonly (readonly (readonly (readonly [number, number])[])[])[];
   readonly centroid: readonly [number, number];
   readonly bbox: readonly [number, number, number, number];
+  readonly historicalStatus: HistoricalStatus;
 }
 
 interface GeometryFile {

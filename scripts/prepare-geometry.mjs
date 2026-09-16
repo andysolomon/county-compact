@@ -26,7 +26,12 @@
 // Adjacency rule (unchanged): shared boundary segment; corner-only contacts
 // excluded. This is MODERN geometry used as the crosswalk/mockup base
 // (GDD §3.2). February 1, 1942 historical polygons remain Issue #2 work.
+//
+// The pure build/validate functions are exported so tests can run them on
+// synthetic fixtures; main() runs only when this file is executed directly.
+import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 
 const EXPECTED_COUNT = 159;
 const COORD_PRECISION = 4;
@@ -37,6 +42,27 @@ const RAN_AT = "2026-09-16T00:00:00.000Z";
 const HISTORICAL_VERIFICATION =
   "Roster verified for 1942-02-01 against Newberry AHCBP and 1940 Census (see docs/historical-research/issue-1-roster.md). Geometry remains modern Census cartographic boundary file; 1942-dated polygons are Issue #2 work. Newberry license regime: CC BY-NC-SA 2.5 (bundled deed) or \"any lawful purpose, commercial or non-commercial\" per current download pages; not CC0 as docs/game-design.md §3.2 [S6] previously claimed (corrected in this pass).";
 const ROSTER_REFERENCE = "docs/historical-research/issue-1-roster.json";
+const SOURCE_VINTAGE =
+  "unrecorded in plotly/datasets; Census cartographic boundary file, modern (post-2010) county set";
+
+// Per-county historical status for the modern polygons (GDD §3.2: each
+// difference from 1942 geometry is resolved or visibly documented).
+export const HISTORICAL_STATUS = Object.freeze({
+  undated: "boundary-change-undated-1915-1952",
+  censusFootnote: "census-1940-footnote-change-not-in-newberry",
+  noChange: "no-recorded-change-1942-modern-polygon",
+});
+// U-1: Newberry records a boundary change between 1915 and 1952 without a date
+// that places it before or after 1942-02-01.
+const U1_UNDATED_CHANGE = [
+  "Baker", "Bartow", "Berrien", "Butts", "Calhoun", "Catoosa", "Clinch", "Colquitt",
+  "Crawford", "Echols", "Gilmer", "Gordon", "Greene", "Haralson", "Henry", "Houston",
+  "Irwin", "Jasper", "Long", "Lowndes", "Macon", "Monroe", "Newton", "Pickens", "Pike",
+  "Polk", "Pulaski", "Randolph", "Spalding", "Stewart", "Taliaferro", "Tattnall",
+  "Thomas", "Upson", "Walton", "Ware", "Webster", "Whitfield", "Wilcox",
+];
+// U-2: 1940 Census footnotes a change that Newberry does not record.
+const U2_CENSUS_FOOTNOTE = ["Floyd", "Gordon", "Marion", "Talbot"];
 
 // Corner-only contacts: share a vertex but no boundary segment. Intentionally
 // absent from adjacency. Inspected against the modern Census extract.
@@ -79,7 +105,7 @@ function checkResult(name, pass, details) {
   return details === undefined ? { name, pass } : { name, pass, details };
 }
 
-function validateCount(actual, expected = EXPECTED_COUNT) {
+export function validateCount(actual, expected = EXPECTED_COUNT) {
   const pass = actual === expected;
   const details = { expected, actual };
   if (!pass) details.message = JSON.stringify({ error: "unexpected-county-count", expected, actual });
@@ -91,7 +117,7 @@ function polygonsOf(geometry) {
   return geometry.type === "Polygon" ? [geometry.coordinates] : geometry.coordinates;
 }
 
-function buildCounties(features) {
+export function buildCounties(features) {
   return features
     .map((f) => {
       const fips = `13${f.properties.COUNTY}`;
@@ -112,12 +138,27 @@ function buildCounties(features) {
 }
 
 function stripSourceType(counties) {
-  return counties.map(({ id, fips, name, polygons, centroid, bbox }) => ({
-    id, fips, name, polygons, centroid, bbox,
+  return counties.map(({ id, fips, name, polygons, centroid, bbox, historicalStatus }) => ({
+    id, fips, name, polygons, centroid, bbox, historicalStatus,
   }));
 }
 
-function buildSegmentOwnership(counties) {
+export function assignHistoricalStatus(counties) {
+  const names = new Set(counties.map((c) => c.name));
+  const missing = [...U1_UNDATED_CHANGE, ...U2_CENSUS_FOOTNOTE].filter((n) => !names.has(n));
+  if (missing.length) throw new Error(`historicalStatus names match no county: ${missing.join(", ")}`);
+  const u1 = new Set(U1_UNDATED_CHANGE);
+  const u2 = new Set(U2_CENSUS_FOOTNOTE);
+  for (const c of counties) {
+    // U-2 is checked first: Gordon is in both U-1 and U-2 and takes the U-2 flag.
+    if (u2.has(c.name)) c.historicalStatus = HISTORICAL_STATUS.censusFootnote;
+    else if (u1.has(c.name)) c.historicalStatus = HISTORICAL_STATUS.undated;
+    else c.historicalStatus = HISTORICAL_STATUS.noChange;
+  }
+  return counties;
+}
+
+export function buildSegmentOwnership(counties) {
   const segOwners = new Map();
   for (const c of counties) {
     for (const poly of c.polygons) {
@@ -136,7 +177,7 @@ function buildSegmentOwnership(counties) {
   return segOwners;
 }
 
-function buildVertexOwnership(counties) {
+export function buildVertexOwnership(counties) {
   const vertexOwners = new Map();
   for (const c of counties) {
     for (const poly of c.polygons) {
@@ -153,7 +194,7 @@ function buildVertexOwnership(counties) {
   return vertexOwners;
 }
 
-function buildAdjacencyByCounty(segOwners, countyIds) {
+export function buildAdjacencyByCounty(segOwners, countyIds) {
   const adjacency = Object.fromEntries(countyIds.map((id) => [id, new Set()]));
   const segmentCounts = new Map();
   for (const owners of segOwners.values()) {
@@ -175,7 +216,7 @@ function buildAdjacencyByCounty(segOwners, countyIds) {
   return { adjacency: lists, segmentCounts };
 }
 
-function addCentroidsAndBboxes(counties) {
+export function addCentroidsAndBboxes(counties) {
   for (const c of counties) {
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
     let area = 0, cx = 0, cy = 0;
@@ -200,7 +241,7 @@ function addCentroidsAndBboxes(counties) {
   }
 }
 
-function validatePolygons(counties) {
+export function validatePolygons(counties) {
   let unclosed = 0, short = 0, empty = 0, outside = 0, collapsed = 0;
   for (const c of counties) {
     if (!c.polygons.length) { empty++; continue; }
@@ -230,7 +271,7 @@ function validatePolygons(counties) {
   });
 }
 
-function validateCoverage(counties) {
+export function validateCoverage(counties) {
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   for (const c of counties) {
     const [a, b, c2, d] = c.bbox;
@@ -239,17 +280,18 @@ function validateCoverage(counties) {
     if (c2 > maxX) maxX = c2;
     if (d > maxY) maxY = d;
   }
-  const atlanticCoast = minX <= -81.5;
+  // The Atlantic coast is Georgia's eastern extent (about -80.84).
+  const atlanticCoast = maxX >= -81.0;
   const outlineTouches = minY <= 30.7 && maxY >= 35.0;
   return checkResult("coverage", atlanticCoast && outlineTouches, {
-    atlanticCoastMinX: minX,
+    atlanticCoastMaxX: maxX,
     atlanticCoast: atlanticCoast,
     stateOutlineTouchesNonPlayable: outlineTouches,
-    minY, maxY, maxX,
+    minX, minY, maxY,
   });
 }
 
-function validateAdjacency(adjacency, countyIds) {
+export function validateAdjacency(adjacency, countyIds) {
   const issues = [];
   let selfLoops = 0;
   let duplicates = 0;
@@ -309,7 +351,7 @@ function inspectCornerOnly(vertexOwners, segmentCounts, nameById) {
   });
 }
 
-function validateSharedBoundaryRule(adjacency, vertexOwners, segmentCounts, nameById) {
+export function validateSharedBoundaryRule(adjacency, vertexOwners, segmentCounts, nameById) {
   const documented = CORNER_ONLY_CONTACTS.map(([a, b]) => pairKey(a, b));
   const documentedSet = new Set(documented);
   const present = [];
@@ -333,6 +375,338 @@ function validateSharedBoundaryRule(adjacency, vertexOwners, segmentCounts, name
   });
 }
 
+// ---------------------------------------------------------------------------
+// Geometry validity, topology, overlaps and gaps.
+//
+// All three checks work on integer coordinates (degrees × 1e4). Coordinates are
+// already rounded to 4 decimals, so the conversion is exact and orientation
+// tests and shoelace areas are exact in doubles (values stay far below 2^53).
+// No floating tolerance is needed.
+const SCALE = 1e4;
+const GRID_CELL = 500; // 0.05 degrees in integer units
+const SAMPLE = 8;
+const AREA_REL_TOLERANCE = 1e-4; // 0.01 %
+
+const toInt = (v) => Math.round(v * SCALE);
+const ptKey = (x, y) => `${x},${y}`;
+const segKey = (ax, ay, bx, by) =>
+  ax < bx || (ax === bx && ay < by) ? `${ax},${ay}|${bx},${by}` : `${bx},${by}|${ax},${ay}`;
+const toDegrees = (x, y) => [x / SCALE, y / SCALE];
+const areaToDegrees = (a) => a / (SCALE * SCALE);
+
+function intRing(ring) {
+  return ring.map(([x, y]) => [toInt(x), toInt(y)]);
+}
+
+function signedArea(ring) {
+  let s = 0;
+  for (let i = 0; i < ring.length - 1; i++) {
+    s += ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1];
+  }
+  return s / 2;
+}
+
+function orient(ax, ay, bx, by, cx, cy) {
+  return (bx - ax) * (cy - ay) - (by - ay) * (cx - ax);
+}
+
+const opposite = (p, q) => (p > 0 && q < 0) || (p < 0 && q > 0);
+
+// Proper crossing: the segments meet at one point interior to both. Shared
+// endpoints, T-junctions and collinear overlaps are not proper crossings.
+function properCross(e, f) {
+  return (
+    opposite(orient(e.ax, e.ay, e.bx, e.by, f.ax, f.ay), orient(e.ax, e.ay, e.bx, e.by, f.bx, f.by)) &&
+    opposite(orient(f.ax, f.ay, f.bx, f.by, e.ax, e.ay), orient(f.ax, f.ay, f.bx, f.by, e.bx, e.by))
+  );
+}
+
+function collectEdges(counties) {
+  const edges = [];
+  let ringId = 0;
+  counties.forEach((c, ci) => {
+    for (const poly of c.polygons) {
+      for (const ring of poly) {
+        const r = intRing(ring);
+        const n = r.length - 1;
+        for (let i = 0; i < n; i++) {
+          const [ax, ay] = r[i];
+          const [bx, by] = r[i + 1];
+          edges.push({
+            ci, ringId, i, n, ax, ay, bx, by,
+            minX: Math.min(ax, bx), minY: Math.min(ay, by),
+            maxX: Math.max(ax, bx), maxY: Math.max(ay, by),
+          });
+        }
+        ringId++;
+      }
+    }
+  });
+  return edges;
+}
+
+const crossingCache = new WeakMap();
+
+// Grid spatial hash. Each candidate pair is tested once: in the cell holding
+// the lower-left corner of the two edges' bbox intersection.
+function findProperCrossings(counties) {
+  const cached = crossingCache.get(counties);
+  if (cached) return cached;
+  const edges = collectEdges(counties);
+  const cell = (v) => Math.floor(v / GRID_CELL);
+  const grid = new Map();
+  for (const e of edges) {
+    for (let gx = cell(e.minX); gx <= cell(e.maxX); gx++) {
+      for (let gy = cell(e.minY); gy <= cell(e.maxY); gy++) {
+        const k = `${gx},${gy}`;
+        const list = grid.get(k);
+        if (list) list.push(e);
+        else grid.set(k, [e]);
+      }
+    }
+  }
+  const result = { selfIntersections: [], sameCountyRingCrossings: [], crossCounty: [] };
+  const counts = { selfIntersections: 0, sameCountyRingCrossings: 0, crossCounty: 0 };
+  for (const [k, list] of grid) {
+    const [gx, gy] = k.split(",").map(Number);
+    for (let a = 0; a < list.length; a++) {
+      const e = list[a];
+      for (let b = a + 1; b < list.length; b++) {
+        const f = list[b];
+        const ix = Math.max(e.minX, f.minX);
+        const iy = Math.max(e.minY, f.minY);
+        if (ix > Math.min(e.maxX, f.maxX) || iy > Math.min(e.maxY, f.maxY)) continue;
+        if (cell(ix) !== gx || cell(iy) !== gy) continue;
+        if (e.ringId === f.ringId) {
+          const d = Math.abs(e.i - f.i);
+          if (d === 1 || d === e.n - 1) continue; // adjacent edges of the ring
+        }
+        if (!properCross(e, f)) continue;
+        const kind =
+          e.ci !== f.ci ? "crossCounty" : e.ringId === f.ringId ? "selfIntersections" : "sameCountyRingCrossings";
+        counts[kind]++;
+        if (result[kind].length < SAMPLE) {
+          result[kind].push({
+            a: counties[e.ci].id,
+            b: counties[f.ci].id,
+            edgeA: [toDegrees(e.ax, e.ay), toDegrees(e.bx, e.by)],
+            edgeB: [toDegrees(f.ax, f.ay), toDegrees(f.bx, f.by)],
+          });
+        }
+      }
+    }
+  }
+  const out = { counts, samples: result, edgeCount: edges.length };
+  crossingCache.set(counties, out);
+  return out;
+}
+
+export function validateGeometryValidity(counties) {
+  let rings = 0;
+  const zeroArea = [];
+  for (const c of counties) {
+    c.polygons.forEach((poly, pi) => {
+      poly.forEach((ring, ri) => {
+        rings++;
+        if (signedArea(intRing(ring)) === 0) zeroArea.push({ id: c.id, polygon: pi, ring: ri });
+      });
+    });
+  }
+  const { counts, samples } = findProperCrossings(counties);
+  const pass = zeroArea.length === 0 && counts.selfIntersections === 0 && counts.sameCountyRingCrossings === 0;
+  return checkResult("geometryValidity", pass, {
+    rings,
+    zeroAreaRings: zeroArea.length,
+    selfIntersections: counts.selfIntersections,
+    sameCountyRingCrossings: counts.sameCountyRingCrossings,
+    zeroAreaSample: zeroArea.slice(0, SAMPLE),
+    selfIntersectionSample: samples.selfIntersections,
+    sameCountyRingCrossingSample: samples.sameCountyRingCrossings,
+  });
+}
+
+// Undirected segment -> occurrences. Zero-length segments (repeated vertices)
+// carry no boundary and are skipped. Rings are oriented shell CCW / hole CW so
+// single-owner segments keep a consistent direction for loop stitching.
+function buildSegmentOccurrences(counties) {
+  const segs = new Map();
+  let zeroLength = 0;
+  for (const c of counties) {
+    for (const poly of c.polygons) {
+      poly.forEach((ring, ri) => {
+        let r = intRing(ring);
+        const area = signedArea(r);
+        if ((ri === 0 && area < 0) || (ri > 0 && area > 0)) r = [...r].reverse();
+        for (let i = 0; i < r.length - 1; i++) {
+          const [ax, ay] = r[i];
+          const [bx, by] = r[i + 1];
+          if (ax === bx && ay === by) { zeroLength++; continue; }
+          const k = segKey(ax, ay, bx, by);
+          const entry = segs.get(k);
+          if (entry) entry.owners.push(c.id);
+          else segs.set(k, { owners: [c.id], ax, ay, bx, by });
+        }
+      });
+    }
+  }
+  return { segs, zeroLength };
+}
+
+export function validateTopology(counties) {
+  const { segs, zeroLength } = buildSegmentOccurrences(counties);
+  let maxOwners = 0;
+  let overTwo = 0;
+  let duplicates = 0;
+  const overTwoSample = [];
+  const duplicateSample = [];
+  for (const [k, { owners }] of segs) {
+    const distinct = new Set(owners);
+    if (distinct.size > maxOwners) maxOwners = distinct.size;
+    if (distinct.size > 2) {
+      overTwo++;
+      if (overTwoSample.length < SAMPLE) overTwoSample.push({ segment: k, owners: [...distinct] });
+    }
+    if (distinct.size !== owners.length) {
+      duplicates++;
+      if (duplicateSample.length < SAMPLE) duplicateSample.push({ segment: k, owners });
+    }
+  }
+  const { counts, samples, edgeCount: edges } = findProperCrossings(counties);
+  const pass = overTwo === 0 && duplicates === 0 && counts.crossCounty === 0;
+  return checkResult("topology", pass, {
+    edges,
+    uniqueSegments: segs.size,
+    zeroLengthEdges: zeroLength,
+    maxOwnersPerSegment: maxOwners,
+    segmentsOverTwoOwners: overTwo,
+    duplicateSegmentsWithinCounty: duplicates,
+    crossCountyCrossings: counts.crossCounty,
+    overTwoOwnersSample: overTwoSample,
+    duplicateSegmentSample: duplicateSample,
+    crossCountyCrossingSample: samples.crossCounty,
+  });
+}
+
+// Stitch directed single-owner segments into closed loops.
+function stitchLoops(single) {
+  const out = new Map();
+  for (const s of single) {
+    const k = ptKey(s.ax, s.ay);
+    const list = out.get(k);
+    if (list) list.push(s);
+    else out.set(k, [s]);
+  }
+  const loops = [];
+  let openChains = 0;
+  for (const s of single) {
+    if (s.used) continue;
+    s.used = true;
+    const startKey = ptKey(s.ax, s.ay);
+    const ring = [[s.ax, s.ay], [s.bx, s.by]];
+    let cur = ptKey(s.bx, s.by);
+    let closed = cur === startKey;
+    while (!closed) {
+      const next = (out.get(cur) ?? []).find((t) => !t.used);
+      if (!next) break;
+      next.used = true;
+      ring.push([next.bx, next.by]);
+      cur = ptKey(next.bx, next.by);
+      closed = cur === startKey;
+    }
+    if (closed) loops.push(ring);
+    else openChains++;
+  }
+  return { loops, openChains };
+}
+
+function onSegment(px, py, ax, ay, bx, by) {
+  return (
+    orient(ax, ay, bx, by, px, py) === 0 &&
+    px >= Math.min(ax, bx) && px <= Math.max(ax, bx) &&
+    py >= Math.min(ay, by) && py <= Math.max(ay, by)
+  );
+}
+
+// 1 strictly inside, -1 strictly outside, 0 on the boundary.
+function pointInRing(px, py, ring) {
+  let inside = false;
+  for (let i = 0; i < ring.length - 1; i++) {
+    const [ax, ay] = ring[i];
+    const [bx, by] = ring[i + 1];
+    if (onSegment(px, py, ax, ay, bx, by)) return 0;
+    if ((ay > py) !== (by > py)) {
+      const t = orient(ax, ay, bx, by, px, py);
+      // Crossing to the right of p: sign of orient depends on edge direction.
+      if (by > ay ? t > 0 : t < 0) inside = !inside;
+    }
+  }
+  return inside ? 1 : -1;
+}
+
+function countyArea(c) {
+  let total = 0;
+  for (const poly of c.polygons) {
+    poly.forEach((ring, ri) => {
+      const a = Math.abs(signedArea(intRing(ring)));
+      total += ri === 0 ? a : -a;
+    });
+  }
+  return total;
+}
+
+export function validateOverlapsAndGaps(counties) {
+  const { segs } = buildSegmentOccurrences(counties);
+  const single = [...segs.values()]
+    .filter((s) => s.owners.length === 1)
+    .map((s) => ({ ax: s.ax, ay: s.ay, bx: s.bx, by: s.by, used: false }));
+  const { loops, openChains } = stitchLoops(single);
+  const withArea = loops.map((ring) => ({ ring, area: Math.abs(signedArea(ring)) }));
+  withArea.sort((a, b) => b.area - a.area);
+  const mainland = withArea[0];
+  const gaps = [];
+  let islandArea = 0;
+  let islands = 0;
+  for (const loop of withArea.slice(1)) {
+    // A loop is inside the outline if any vertex or edge midpoint is strictly
+    // inside it; islands touch the outline at most on its boundary.
+    let inside = false;
+    for (let i = 0; i < loop.ring.length - 1 && !inside; i++) {
+      const [ax, ay] = loop.ring[i];
+      const [bx, by] = loop.ring[i + 1];
+      inside =
+        pointInRing(ax, ay, mainland.ring) === 1 ||
+        pointInRing((ax + bx) / 2, (ay + by) / 2, mainland.ring) === 1;
+    }
+    if (inside) gaps.push(loop);
+    else { islands++; islandArea += loop.area; }
+  }
+  const countyTotal = counties.reduce((s, c) => s + countyArea(c), 0);
+  const outlineTotal = (mainland?.area ?? 0) + islandArea;
+  const relativeError = outlineTotal === 0 ? Infinity : Math.abs(countyTotal - outlineTotal) / outlineTotal;
+  const areaBalanced = relativeError <= AREA_REL_TOLERANCE;
+  const pass = mainland !== undefined && openChains === 0 && gaps.length === 0 && areaBalanced;
+  return checkResult("overlapsAndGaps", pass, {
+    singleOwnerSegments: single.length,
+    loops: loops.length,
+    openChains,
+    mainlandOutlineArea: areaToDegrees(mainland?.area ?? 0),
+    mainlandOutlineVertices: mainland ? mainland.ring.length - 1 : 0,
+    islands,
+    islandArea: areaToDegrees(islandArea),
+    gaps: gaps.length,
+    gapSample: gaps.slice(0, SAMPLE).map((g) => ({
+      area: areaToDegrees(g.area),
+      firstVertex: toDegrees(g.ring[0][0], g.ring[0][1]),
+      vertices: g.ring.length - 1,
+    })),
+    countyAreaSum: areaToDegrees(countyTotal),
+    outlinePlusIslandArea: areaToDegrees(outlineTotal),
+    areaRelativeError: relativeError,
+    areaRelativeTolerance: AREA_REL_TOLERANCE,
+    areaBalanced,
+  });
+}
+
 function edgeCount(adjacency) {
   return Object.values(adjacency).reduce((s, n) => s + n.length, 0) / 2;
 }
@@ -341,7 +715,7 @@ function isolatedIds(adjacency) {
   return Object.entries(adjacency).filter(([, n]) => n.length === 0).map(([id]) => id);
 }
 
-function buildReport(checks, counties, adjacency, multipart) {
+export function buildReport(checks, counties, adjacency, multipart) {
   const ok = checks.every((c) => c.pass);
   return {
     ok,
@@ -368,8 +742,11 @@ function main() {
   }
 
   let all;
+  let sourceSha256;
   try {
-    all = JSON.parse(readFileSync(parsed.src, "utf8"));
+    const bytes = readFileSync(parsed.src);
+    sourceSha256 = createHash("sha256").update(bytes).digest("hex");
+    all = JSON.parse(bytes.toString("utf8"));
   } catch (err) {
     console.error(JSON.stringify({ ok: false, error: "parse", message: String(err.message ?? err) }));
     process.exit(2);
@@ -381,7 +758,7 @@ function main() {
 
   const ga = all.features.filter((f) => f.properties.STATE === "13");
   const countCheck = validateCount(ga.length);
-  const counties = buildCounties(ga);
+  const counties = assignHistoricalStatus(buildCounties(ga));
   const sourceTypes = counties.map((c) => c.sourceType);
   const multipart = sourceTypes.filter((t) => t === "MultiPolygon").length;
   addCentroidsAndBboxes(counties);
@@ -399,6 +776,9 @@ function main() {
     validateCoverage(counties),
     validateAdjacency(adjacency, counties.map((c) => c.id)),
     validateSharedBoundaryRule(adjacency, vertexOwners, segmentCounts, nameById),
+    validateGeometryValidity(counties),
+    validateTopology(counties),
+    validateOverlapsAndGaps(counties),
   ];
   const report = buildReport(checks, counties, adjacency, multipart);
 
@@ -416,6 +796,8 @@ function main() {
     provenance: {
       source: "U.S. Census Bureau cartographic boundary file via plotly/datasets geojson-counties-fips.json",
       sourceUrl: "https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json",
+      sourceSha256,
+      sourceVintage: SOURCE_VINTAGE,
       rights: "Public-domain U.S. federal data; retain Census notices.",
       referenceDate: "1942-02-01",
       historicalVerification: HISTORICAL_VERIFICATION,
@@ -432,4 +814,4 @@ function main() {
   console.log(`wrote ${counties.length} counties, ${report.counts.edges} adjacency edges`);
 }
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
