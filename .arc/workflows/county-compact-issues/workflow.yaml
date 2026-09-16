@@ -113,9 +113,9 @@ items:
     dependencies: []
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
-      state: ready
+      state: completed
       updated_at: 2026-09-16T21:50:00.000Z
-      evidence_ref: "Branch feat/cc-01-cc-05-foundations (uncommitted): .github/workflows/ci.yml, src/styles/fonts.css + src/assets/fonts (OFL, verified loading in Chrome with no external requests), docs/ASSETS.md, docs/architecture.md, tests/architecture.test.ts (mutation-checked). Local typecheck, 23/23 tests, and build pass. Stays ready until the CI workflow has run green on GitHub."
+      evidence_ref: "PR #31 (c606c2b): CI run 35155343142 green (npm ci, typecheck, 23/23 tests, build); bundled OFL fonts, docs/ASSETS.md, docs/architecture.md, tests/architecture.test.ts; renderer criterion amended to SVG."
   - id: CC-06
     kind: leaf
     title: Specify and implement deterministic campaign state and calendar
