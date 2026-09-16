@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "prepare-geometry": "node scripts/prepare-geometry.mjs"
+    "prepare-geometry": "node scripts/prepare-geometry.mjs",
+    "prepare-movement": "node scripts/prepare-movement.mjs"
   },
   "devDependencies": {
     "typescript": "^5.6.0",

@@ -66,7 +66,7 @@ const U2_CENSUS_FOOTNOTE = ["Floyd", "Gordon", "Marion", "Talbot"];
 
 // Corner-only contacts: share a vertex but no boundary segment. Intentionally
 // absent from adjacency. Inspected against the modern Census extract.
-const CORNER_ONLY_CONTACTS = [
+export const CORNER_ONLY_CONTACTS = [
   ["US-GA-13013", "US-GA-13059"], // Barrow–Clarke
   ["US-GA-13013", "US-GA-13139"], // Barrow–Hall
   ["US-GA-13015", "US-GA-13227"], // Bartow–Pickens
