@@ -47,9 +47,9 @@ items:
       - CC-01
     preserved_behavior: Preserve the existing browser application, tests, README, planning/backlog.md, and planning/issues.json; no GitHub mutation, synthetic dependency, or deployment.
     checkpoint:
-      state: ready
+      state: completed
       updated_at: 2026-09-16T21:50:00.000Z
-      evidence_ref: "PR #30 (9f33fe0) delivered prepare-geometry.mjs, georgia-counties.json, symmetric shared-boundary adjacency with corner-only exclusion, and tests/geometry.test.ts. Open: acceptance item 2 has no overlap or gap checks (validateCoverage is bbox-only), and the atlanticCoast check tests the western bbox edge (minX -85.6) rather than the coast (maxX)."
+      evidence_ref: "Branch feat/cc-02-geometry-validation: prepare-geometry.mjs adds geometryValidity, topology (no crossings, at most 2 owners per segment) and overlapsAndGaps (1 outline loop, 0 gaps, area error 0) checks; Atlantic coast check fixed to maxX; sourceSha256 and per-county historicalStatus (38 undated, 4 census-footnote, 117 no recorded change); mutation tests in tests/geometry-validation.test.ts; npm test 33/33. True 1942 polygons and Sea Islands remain documented in docs/cc-02-geometry-validation/unresolved.md."
   - id: CC-03
     kind: leaf
     title: Research period transport, terrain, settlements, and federal facilities
