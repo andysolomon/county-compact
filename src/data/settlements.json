@@ -1,0 +1,2053 @@
+{
+  "provenance": {
+    "preparedBy": "scripts/prepare-settlements.mjs",
+    "ranAt": "2026-09-16T00:00:00.000Z",
+    "source": {
+      "name": "1940 Census of Population, Volume I, Georgia chapter, Table 5",
+      "url": "https://www2.census.gov/library/publications/decennial/1940/population-volume-1/33973538v1ch04.pdf",
+      "sha256": "0340f343692ea40b52e83009ca058c2c5a4194d104addff03d2972935ab3238f",
+      "bytes": 23390865,
+      "licence": "US Government work, public domain"
+    },
+    "method": "400 dpi 1-bit scans of PDF pages 21–23 cropped per Table 5 panel and field; tesseract --psm 6 TSV word boxes for place and county fields; each population row re-OCRed alone (tesseract --psm 7, digit whitelist) at 1×/2×/3× and accepted only when at least two reads agree; populations paired to place lines by vertical position (±14 px, unique nearest), never by list order; seat matched on place name + county only, populations taken from that row only; 0.33×–3× 1940/1930 sanity check; values the PDF text layer contradicts on a place+county line, duplicate 1940 values across different places and seat populations under 100 are nulled; 1940 values corroborated against the PDF's own text layer (pdftotext -layout)",
+    "validationReport": {
+      "ok": true,
+      "ranAt": "2026-09-16T00:00:00.000Z",
+      "checks": [
+        {
+          "name": "oneRowPerCounty",
+          "pass": true,
+          "details": {
+            "expected": 159,
+            "actual": 159
+          }
+        },
+        {
+          "name": "unmatchedUseUnverifiedBasis",
+          "pass": true,
+          "details": {
+            "count": 0,
+            "sample": []
+          }
+        },
+        {
+          "name": "matchedUseConfirmedBasis",
+          "pass": true,
+          "details": {
+            "count": 0
+          }
+        },
+        {
+          "name": "spotChecksExact",
+          "pass": true,
+          "details": {
+            "spot": [
+              {
+                "county": "Fulton",
+                "seat": "Atlanta",
+                "population1940": 302288,
+                "note": "p.254 Atlanta* {De Kalb / Fulton} 302,288 / 270,366",
+                "matchedPlace": "Atlanta",
+                "parsed": 302288,
+                "pass": true
+              },
+              {
+                "county": "Bibb",
+                "seat": "Macon",
+                "population1940": 57865,
+                "note": "p.255 Macon* Bibb 57,865 / 53,829",
+                "matchedPlace": "Macon",
+                "parsed": 57865,
+                "pass": true
+              },
+              {
+                "county": "Chatham",
+                "seat": "Savannah",
+                "population1940": 95996,
+                "note": "p.256 Savannah* Chatham 95,996 / 85,024",
+                "matchedPlace": "Savannah",
+                "parsed": 95996,
+                "pass": true
+              },
+              {
+                "county": "Richmond",
+                "seat": "Augusta",
+                "population1940": 65919,
+                "note": "p.254 Augusta* Richmond 65,919 / 60,342",
+                "matchedPlace": "Augusta",
+                "parsed": 65919,
+                "pass": true
+              },
+              {
+                "county": "Muscogee",
+                "seat": "Columbus",
+                "population1940": 53280,
+                "note": "p.255 Columbus* Muscogee 53,280 / 43,131",
+                "matchedPlace": "Columbus",
+                "parsed": 53280,
+                "pass": true
+              },
+              {
+                "county": "Cobb",
+                "seat": "Marietta",
+                "population1940": 8667,
+                "note": "p.255 Marietta* Cobb 8,667 / 7,638",
+                "matchedPlace": "Marietta",
+                "parsed": 8667,
+                "pass": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "noDuplicatePopulation1940",
+          "pass": true,
+          "details": {
+            "duplicates": []
+          }
+        },
+        {
+          "name": "seatPopulationAtLeast100",
+          "pass": true,
+          "details": {
+            "seats": []
+          }
+        },
+        {
+          "name": "corroboratedNullIffPopulationNull",
+          "pass": true,
+          "details": {
+            "count": 0
+          }
+        }
+      ],
+      "counts": {
+        "seats": 159,
+        "matched": 144,
+        "unmatched": 15,
+        "population1940NonNull": 117,
+        "population1940Corroborated": 70,
+        "matchedNullPopulation1940": 27,
+        "nulledByIntegrityChecks": 9
+      },
+      "unmatchedSeats": [
+        "Clayton: Jonesboro",
+        "Columbia: Appling",
+        "Crawford: Knoxville",
+        "Echols: Statenville",
+        "Forsyth: Cumming",
+        "Gilmer: Ellijay",
+        "Glascock: Gibson",
+        "Irwin: Ocilla",
+        "Jackson: Jefferson",
+        "Jones: Gray",
+        "Lee: Leesburg",
+        "Telfair: McRae",
+        "Tift: Tifton",
+        "Troup: LaGrange",
+        "Twiggs: Jeffersonville"
+      ],
+      "nulledPopulations": [
+        {
+          "county": "Bartow",
+          "seat": "Cartersville",
+          "population1940": 8141,
+          "textLayer": 6141,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Bryan",
+          "seat": "Pembroke",
+          "population1940": 1039,
+          "textLayer": 2579,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Lumpkin",
+          "seat": "Dahlonega",
+          "population1940": 1204,
+          "textLayer": 1294,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Oconee",
+          "seat": "Watkinsville",
+          "population1940": 568,
+          "textLayer": 558,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Paulding",
+          "seat": "Dallas",
+          "population1940": 1022,
+          "textLayer": 1922,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Pickens",
+          "seat": "Jasper",
+          "population1940": 676,
+          "textLayer": 576,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Toombs",
+          "seat": "Lyons",
+          "population1940": 1800,
+          "textLayer": 1900,
+          "reason": "contradicted-by-text-layer"
+        },
+        {
+          "county": "Hart",
+          "seat": "Hartwell",
+          "population1940": 2372,
+          "reason": "duplicate-population1940"
+        },
+        {
+          "county": "Monroe",
+          "seat": "Forsyth",
+          "population1940": 2372,
+          "reason": "duplicate-population1940"
+        }
+      ],
+      "matchedNullPopulationSeats": [
+        "Bartow: Cartersville",
+        "Brooks: Quitman",
+        "Bryan: Pembroke",
+        "Clay: Fort Gaines",
+        "Emanuel: Swainsboro",
+        "Fannin: Blue Ridge",
+        "Grady: Cairo",
+        "Habersham: Clarkesville",
+        "Harris: Hamilton",
+        "Hart: Hartwell",
+        "Lincoln: Lincolnton",
+        "Lowndes: Valdosta",
+        "Lumpkin: Dahlonega",
+        "McDuffie: Thomson",
+        "Monroe: Forsyth",
+        "Oconee: Watkinsville",
+        "Oglethorpe: Lexington",
+        "Paulding: Dallas",
+        "Pickens: Jasper",
+        "Pike: Zebulon",
+        "Pulaski: Hawkinsville",
+        "Putnam: Eatonton",
+        "Schley: Ellaville",
+        "Taylor: Butler",
+        "Toombs: Lyons",
+        "Walker: LaFayette",
+        "Wilkinson: Irwinton"
+      ],
+      "spotChecks": [
+        {
+          "county": "Fulton",
+          "seat": "Atlanta",
+          "population1940": 302288,
+          "note": "p.254 Atlanta* {De Kalb / Fulton} 302,288 / 270,366",
+          "matchedPlace": "Atlanta",
+          "parsed": 302288,
+          "pass": true
+        },
+        {
+          "county": "Bibb",
+          "seat": "Macon",
+          "population1940": 57865,
+          "note": "p.255 Macon* Bibb 57,865 / 53,829",
+          "matchedPlace": "Macon",
+          "parsed": 57865,
+          "pass": true
+        },
+        {
+          "county": "Chatham",
+          "seat": "Savannah",
+          "population1940": 95996,
+          "note": "p.256 Savannah* Chatham 95,996 / 85,024",
+          "matchedPlace": "Savannah",
+          "parsed": 95996,
+          "pass": true
+        },
+        {
+          "county": "Richmond",
+          "seat": "Augusta",
+          "population1940": 65919,
+          "note": "p.254 Augusta* Richmond 65,919 / 60,342",
+          "matchedPlace": "Augusta",
+          "parsed": 65919,
+          "pass": true
+        },
+        {
+          "county": "Muscogee",
+          "seat": "Columbus",
+          "population1940": 53280,
+          "note": "p.255 Columbus* Muscogee 53,280 / 43,131",
+          "matchedPlace": "Columbus",
+          "parsed": 53280,
+          "pass": true
+        },
+        {
+          "county": "Cobb",
+          "seat": "Marietta",
+          "population1940": 8667,
+          "note": "p.255 Marietta* Cobb 8,667 / 7,638",
+          "matchedPlace": "Marietta",
+          "parsed": 8667,
+          "pass": true
+        }
+      ],
+      "sourceSha256": "0340f343692ea40b52e83009ca058c2c5a4194d104addff03d2972935ab3238f",
+      "sourceBytes": 23390865
+    }
+  },
+  "seats": [
+    {
+      "countyId": "US-GA-13001",
+      "county": "Appling",
+      "seat": "Baxley",
+      "matchedPlace": "Baxley",
+      "population1940": 2916,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13003",
+      "county": "Atkinson",
+      "seat": "Pearson",
+      "matchedPlace": "Pearson",
+      "population1940": 1057,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13005",
+      "county": "Bacon",
+      "seat": "Alma",
+      "matchedPlace": "Alma",
+      "population1940": 1840,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13007",
+      "county": "Baker",
+      "seat": "Newton",
+      "matchedPlace": "Newton",
+      "population1940": 514,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13009",
+      "county": "Baldwin",
+      "seat": "Milledgeville",
+      "matchedPlace": "Milledgeville",
+      "population1940": 8778,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13011",
+      "county": "Banks",
+      "seat": "Homer",
+      "matchedPlace": "Homer",
+      "population1940": 283,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13013",
+      "county": "Barrow",
+      "seat": "Winder",
+      "matchedPlace": "Winder",
+      "population1940": 3974,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13015",
+      "county": "Bartow",
+      "seat": "Cartersville",
+      "matchedPlace": "Cartersville",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13017",
+      "county": "Ben Hill",
+      "seat": "Fitzgerald",
+      "matchedPlace": "Fitzgerald",
+      "population1940": 7388,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13019",
+      "county": "Berrien",
+      "seat": "Nashville",
+      "matchedPlace": "Nashville",
+      "population1940": 2449,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13021",
+      "county": "Bibb",
+      "seat": "Macon",
+      "matchedPlace": "Macon",
+      "population1940": 57865,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13023",
+      "county": "Bleckley",
+      "seat": "Cochran",
+      "matchedPlace": "Cochran",
+      "population1940": 2464,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13025",
+      "county": "Brantley",
+      "seat": "Nahunta",
+      "matchedPlace": "Nahunta",
+      "population1940": 561,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13027",
+      "county": "Brooks",
+      "seat": "Quitman",
+      "matchedPlace": "Quitman",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13029",
+      "county": "Bryan",
+      "seat": "Pembroke",
+      "matchedPlace": "Pembroke",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13031",
+      "county": "Bulloch",
+      "seat": "Statesboro",
+      "matchedPlace": "Statesboro",
+      "population1940": 5028,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13033",
+      "county": "Burke",
+      "seat": "Waynesboro",
+      "matchedPlace": "Waynesboro",
+      "population1940": 3703,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13035",
+      "county": "Butts",
+      "seat": "Jackson",
+      "matchedPlace": "Jackson",
+      "population1940": 1917,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13037",
+      "county": "Calhoun",
+      "seat": "Morgan",
+      "matchedPlace": "MOrgan",
+      "population1940": 282,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13039",
+      "county": "Camden",
+      "seat": "Woodbine",
+      "matchedPlace": "Woodbine",
+      "population1940": 373,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13043",
+      "county": "Candler",
+      "seat": "Metter",
+      "matchedPlace": "Metter",
+      "population1940": 1823,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13045",
+      "county": "Carroll",
+      "seat": "Carrollton",
+      "matchedPlace": "Carrollton",
+      "population1940": 6214,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13047",
+      "county": "Catoosa",
+      "seat": "Ringgold",
+      "matchedPlace": "Ringgold",
+      "population1940": 882,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13049",
+      "county": "Charlton",
+      "seat": "Folkston",
+      "matchedPlace": "Folkston",
+      "population1940": 1024,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13051",
+      "county": "Chatham",
+      "seat": "Savannah",
+      "matchedPlace": "Savannah",
+      "population1940": 95996,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13053",
+      "county": "Chattahoochee",
+      "seat": "Cusseta",
+      "matchedPlace": "Cusseta",
+      "population1940": 357,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13055",
+      "county": "Chattooga",
+      "seat": "Summerville",
+      "matchedPlace": "Summerville",
+      "population1940": 1358,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13057",
+      "county": "Cherokee",
+      "seat": "Canton",
+      "matchedPlace": "Canton",
+      "population1940": 2651,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13059",
+      "county": "Clarke",
+      "seat": "Athens",
+      "matchedPlace": "Athens",
+      "population1940": 20650,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13061",
+      "county": "Clay",
+      "seat": "Fort Gaines",
+      "matchedPlace": "Fort Gaines",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13063",
+      "county": "Clayton",
+      "seat": "Jonesboro",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13065",
+      "county": "Clinch",
+      "seat": "Homerville",
+      "matchedPlace": "Homerville",
+      "population1940": 1522,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13067",
+      "county": "Cobb",
+      "seat": "Marietta",
+      "matchedPlace": "Marietta",
+      "population1940": 8667,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13069",
+      "county": "Coffee",
+      "seat": "Douglas",
+      "matchedPlace": "Douglas",
+      "population1940": 5175,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13071",
+      "county": "Colquitt",
+      "seat": "Moultrie",
+      "matchedPlace": "Moultrie",
+      "population1940": 10147,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13073",
+      "county": "Columbia",
+      "seat": "Appling",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13075",
+      "county": "Cook",
+      "seat": "Adel",
+      "matchedPlace": "Adel",
+      "population1940": 2134,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13077",
+      "county": "Coweta",
+      "seat": "Newnan",
+      "matchedPlace": "Newnan",
+      "population1940": 7182,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13079",
+      "county": "Crawford",
+      "seat": "Knoxville",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13081",
+      "county": "Crisp",
+      "seat": "Cordele",
+      "matchedPlace": "Cordele",
+      "population1940": 7929,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13083",
+      "county": "Dade",
+      "seat": "Trenton",
+      "matchedPlace": "Trenton",
+      "population1940": 570,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13085",
+      "county": "Dawson",
+      "seat": "Dawsonville",
+      "matchedPlace": "Dawsonville",
+      "population1940": 319,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13087",
+      "county": "Decatur",
+      "seat": "Bainbridge",
+      "matchedPlace": "Bainbridge",
+      "population1940": 6352,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13089",
+      "county": "DeKalb",
+      "seat": "Decatur",
+      "matchedPlace": "Decatur",
+      "population1940": 16561,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13091",
+      "county": "Dodge",
+      "seat": "Eastman",
+      "matchedPlace": "Bastman",
+      "population1940": 3311,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13093",
+      "county": "Dooly",
+      "seat": "Vienna",
+      "matchedPlace": "Vienna",
+      "population1940": 2063,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13095",
+      "county": "Dougherty",
+      "seat": "Albany",
+      "matchedPlace": "Albany",
+      "population1940": 19055,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13097",
+      "county": "Douglas",
+      "seat": "Douglasville",
+      "matchedPlace": "Douglasville",
+      "population1940": 2555,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13099",
+      "county": "Early",
+      "seat": "Blakely",
+      "matchedPlace": "Blakely",
+      "population1940": 2774,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13101",
+      "county": "Echols",
+      "seat": "Statenville",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13103",
+      "county": "Effingham",
+      "seat": "Springfield",
+      "matchedPlace": "Springfleld",
+      "population1940": 458,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13105",
+      "county": "Elbert",
+      "seat": "Elberton",
+      "matchedPlace": "Elberton",
+      "population1940": 6188,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13107",
+      "county": "Emanuel",
+      "seat": "Swainsboro",
+      "matchedPlace": "Swainsboro",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13109",
+      "county": "Evans",
+      "seat": "Claxton",
+      "matchedPlace": "Claxton",
+      "population1940": 1808,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13111",
+      "county": "Fannin",
+      "seat": "Blue Ridge",
+      "matchedPlace": "Blue Ridge",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13113",
+      "county": "Fayette",
+      "seat": "Fayetteville",
+      "matchedPlace": "Fayetteville",
+      "population1940": 832,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13115",
+      "county": "Floyd",
+      "seat": "Rome",
+      "matchedPlace": "Rome",
+      "population1940": 26282,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13117",
+      "county": "Forsyth",
+      "seat": "Cumming",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13119",
+      "county": "Franklin",
+      "seat": "Carnesville",
+      "matchedPlace": "Carnesville",
+      "population1940": 361,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13121",
+      "county": "Fulton",
+      "seat": "Atlanta",
+      "matchedPlace": "Atlanta",
+      "population1940": 302288,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13123",
+      "county": "Gilmer",
+      "seat": "Ellijay",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13125",
+      "county": "Glascock",
+      "seat": "Gibson",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13127",
+      "county": "Glynn",
+      "seat": "Brunswick",
+      "matchedPlace": "Brunswick",
+      "population1940": 15035,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13129",
+      "county": "Gordon",
+      "seat": "Calhoun",
+      "matchedPlace": "Calhoun",
+      "population1940": 2955,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13131",
+      "county": "Grady",
+      "seat": "Cairo",
+      "matchedPlace": "Cairo",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13133",
+      "county": "Greene",
+      "seat": "Greensboro",
+      "matchedPlace": "GreensborQ",
+      "population1940": 2459,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13135",
+      "county": "Gwinnett",
+      "seat": "Lawrenceville",
+      "matchedPlace": "Lawrenceville",
+      "population1940": 2223,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13137",
+      "county": "Habersham",
+      "seat": "Clarkesville",
+      "matchedPlace": "Clarksville",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13139",
+      "county": "Hall",
+      "seat": "Gainesville",
+      "matchedPlace": "Gainesville",
+      "population1940": 10243,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13141",
+      "county": "Hancock",
+      "seat": "Sparta",
+      "matchedPlace": "Sparta",
+      "population1940": 1872,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13143",
+      "county": "Haralson",
+      "seat": "Buchanan",
+      "matchedPlace": "Buchanan",
+      "population1940": 504,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13145",
+      "county": "Harris",
+      "seat": "Hamilton",
+      "matchedPlace": "Hamilton",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13147",
+      "county": "Hart",
+      "seat": "Hartwell",
+      "matchedPlace": "Hartwell",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13149",
+      "county": "Heard",
+      "seat": "Franklin",
+      "matchedPlace": "Franklin",
+      "population1940": 390,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13151",
+      "county": "Henry",
+      "seat": "McDonough",
+      "matchedPlace": "McDonough",
+      "population1940": 1232,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13153",
+      "county": "Houston",
+      "seat": "Perry",
+      "matchedPlace": "Perry",
+      "population1940": 1542,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13155",
+      "county": "Irwin",
+      "seat": "Ocilla",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13157",
+      "county": "Jackson",
+      "seat": "Jefferson",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13159",
+      "county": "Jasper",
+      "seat": "Monticello",
+      "matchedPlace": "Monticello",
+      "population1940": 1746,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13161",
+      "county": "Jeff Davis",
+      "seat": "Hazlehurst",
+      "matchedPlace": "Hazlehurst",
+      "population1940": 1732,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13163",
+      "county": "Jefferson",
+      "seat": "Louisville",
+      "matchedPlace": "Louisville",
+      "population1940": 1803,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13165",
+      "county": "Jenkins",
+      "seat": "Millen",
+      "matchedPlace": "Millen",
+      "population1940": 2820,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13167",
+      "county": "Johnson",
+      "seat": "Wrightsville",
+      "matchedPlace": "Wrightsville",
+      "population1940": 1760,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13169",
+      "county": "Jones",
+      "seat": "Gray",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13171",
+      "county": "Lamar",
+      "seat": "Barnesville",
+      "matchedPlace": "Barnesville",
+      "population1940": 3535,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13173",
+      "county": "Lanier",
+      "seat": "Lakeland",
+      "matchedPlace": "Lakeland",
+      "population1940": 1502,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13175",
+      "county": "Laurens",
+      "seat": "Dublin",
+      "matchedPlace": "Dublin",
+      "population1940": 7814,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13177",
+      "county": "Lee",
+      "seat": "Leesburg",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13179",
+      "county": "Liberty",
+      "seat": "Hinesville",
+      "matchedPlace": "Hinesville",
+      "population1940": 630,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13181",
+      "county": "Lincoln",
+      "seat": "Lincolnton",
+      "matchedPlace": "Lincolnton",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13183",
+      "county": "Long",
+      "seat": "Ludowici",
+      "matchedPlace": "Tudowiel",
+      "population1940": 866,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13185",
+      "county": "Lowndes",
+      "seat": "Valdosta",
+      "matchedPlace": "Valdosta",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13187",
+      "county": "Lumpkin",
+      "seat": "Dahlonega",
+      "matchedPlace": "Dahlonega",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13189",
+      "county": "McDuffie",
+      "seat": "Thomson",
+      "matchedPlace": "Thomson",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13191",
+      "county": "McIntosh",
+      "seat": "Darien",
+      "matchedPlace": "Darien",
+      "population1940": 1015,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13193",
+      "county": "Macon",
+      "seat": "Oglethorpe",
+      "matchedPlace": "Oglethorpe",
+      "population1940": 1048,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13195",
+      "county": "Madison",
+      "seat": "Danielsville",
+      "matchedPlace": "Danjelsville",
+      "population1940": 333,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13197",
+      "county": "Marion",
+      "seat": "Buena Vista",
+      "matchedPlace": "Bueng Vista",
+      "population1940": 1161,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13199",
+      "county": "Meriwether",
+      "seat": "Greenville",
+      "matchedPlace": "Greenville",
+      "population1940": 683,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13201",
+      "county": "Miller",
+      "seat": "Colquitt",
+      "matchedPlace": "Colquitt",
+      "population1940": 1416,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13205",
+      "county": "Mitchell",
+      "seat": "Camilla",
+      "matchedPlace": "Camilla",
+      "population1940": 2588,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13207",
+      "county": "Monroe",
+      "seat": "Forsyth",
+      "matchedPlace": "Forsyth",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13209",
+      "county": "Montgomery",
+      "seat": "Mount Vernon",
+      "matchedPlace": "Mount Vernon",
+      "population1940": 900,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13211",
+      "county": "Morgan",
+      "seat": "Madison",
+      "matchedPlace": "Madison",
+      "population1940": 2045,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13213",
+      "county": "Murray",
+      "seat": "Chatsworth",
+      "matchedPlace": "Chatsworth",
+      "population1940": 1001,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13215",
+      "county": "Muscogee",
+      "seat": "Columbus",
+      "matchedPlace": "Columbus",
+      "population1940": 53280,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13217",
+      "county": "Newton",
+      "seat": "Covington",
+      "matchedPlace": "Covington",
+      "population1940": 3900,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13219",
+      "county": "Oconee",
+      "seat": "Watkinsville",
+      "matchedPlace": "Watkinsville",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13221",
+      "county": "Oglethorpe",
+      "seat": "Lexington",
+      "matchedPlace": "Lexington",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13223",
+      "county": "Paulding",
+      "seat": "Dallas",
+      "matchedPlace": "Dallas",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13225",
+      "county": "Peach",
+      "seat": "Fort Valley",
+      "matchedPlace": "Fort Valley",
+      "population1940": 4953,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13227",
+      "county": "Pickens",
+      "seat": "Jasper",
+      "matchedPlace": "Jasper",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13229",
+      "county": "Pierce",
+      "seat": "Blackshear",
+      "matchedPlace": "Blackshear",
+      "population1940": 2010,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13231",
+      "county": "Pike",
+      "seat": "Zebulon",
+      "matchedPlace": "Zebulon",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13233",
+      "county": "Polk",
+      "seat": "Cedartown",
+      "matchedPlace": "Cedartown",
+      "population1940": 9025,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13235",
+      "county": "Pulaski",
+      "seat": "Hawkinsville",
+      "matchedPlace": "Hawkinsville",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13237",
+      "county": "Putnam",
+      "seat": "Eatonton",
+      "matchedPlace": "Eatonton",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13239",
+      "county": "Quitman",
+      "seat": "Georgetown",
+      "matchedPlace": "Georgetown",
+      "population1940": 367,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13241",
+      "county": "Rabun",
+      "seat": "Clayton",
+      "matchedPlace": "Clayton",
+      "population1940": 1088,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13243",
+      "county": "Randolph",
+      "seat": "Cuthbert",
+      "matchedPlace": "Cuthbert",
+      "population1940": 3447,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13245",
+      "county": "Richmond",
+      "seat": "Augusta",
+      "matchedPlace": "Augusta",
+      "population1940": 65919,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13247",
+      "county": "Rockdale",
+      "seat": "Conyers",
+      "matchedPlace": "Conyers",
+      "population1940": 1619,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13249",
+      "county": "Schley",
+      "seat": "Ellaville",
+      "matchedPlace": "Elaville",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13251",
+      "county": "Screven",
+      "seat": "Sylvania",
+      "matchedPlace": "Sylvania",
+      "population1940": 2531,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13253",
+      "county": "Seminole",
+      "seat": "Donalsonville",
+      "matchedPlace": "Donalsonville",
+      "population1940": 1718,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13255",
+      "county": "Spalding",
+      "seat": "Griffin",
+      "matchedPlace": "Griffin",
+      "population1940": 13222,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13257",
+      "county": "Stephens",
+      "seat": "Toccoa",
+      "matchedPlace": "Toccoa",
+      "population1940": 5494,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13259",
+      "county": "Stewart",
+      "seat": "Lumpkin",
+      "matchedPlace": "Tumpkin",
+      "population1940": 1210,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13261",
+      "county": "Sumter",
+      "seat": "Americus",
+      "matchedPlace": "Americus",
+      "population1940": 9281,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13263",
+      "county": "Talbot",
+      "seat": "Talbotton",
+      "matchedPlace": "Talbotton",
+      "population1940": 1060,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13265",
+      "county": "Taliaferro",
+      "seat": "Crawfordville",
+      "matchedPlace": "Crawfordville",
+      "population1940": 1056,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13267",
+      "county": "Tattnall",
+      "seat": "Reidsville",
+      "matchedPlace": "Reidsville",
+      "population1940": 805,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13269",
+      "county": "Taylor",
+      "seat": "Butler",
+      "matchedPlace": "Butler",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13271",
+      "county": "Telfair",
+      "seat": "McRae",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13273",
+      "county": "Terrell",
+      "seat": "Dawson",
+      "matchedPlace": "Dawson",
+      "population1940": 3681,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13275",
+      "county": "Thomas",
+      "seat": "Thomasville",
+      "matchedPlace": "Thomasville",
+      "population1940": 12683,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13277",
+      "county": "Tift",
+      "seat": "Tifton",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13279",
+      "county": "Toombs",
+      "seat": "Lyons",
+      "matchedPlace": "Lyon",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13281",
+      "county": "Towns",
+      "seat": "Hiawassee",
+      "matchedPlace": "Hiawassea",
+      "population1940": 163,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13283",
+      "county": "Treutlen",
+      "seat": "Soperton",
+      "matchedPlace": "Soperton",
+      "population1940": 1339,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13285",
+      "county": "Troup",
+      "seat": "LaGrange",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13287",
+      "county": "Turner",
+      "seat": "Ashburn",
+      "matchedPlace": "Ashburn",
+      "population1940": 2268,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13289",
+      "county": "Twiggs",
+      "seat": "Jeffersonville",
+      "matchedPlace": null,
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "unverified: seat not found in 1940 Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13291",
+      "county": "Union",
+      "seat": "Blairsville",
+      "matchedPlace": "Blairsville",
+      "population1940": 358,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13293",
+      "county": "Upson",
+      "seat": "Thomaston",
+      "matchedPlace": "Thomaston",
+      "population1940": 6396,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13295",
+      "county": "Walker",
+      "seat": "LaFayette",
+      "matchedPlace": "Lafayatte",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": true,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13297",
+      "county": "Walton",
+      "seat": "Monroe",
+      "matchedPlace": "Monroe",
+      "population1940": 4168,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13299",
+      "county": "Ware",
+      "seat": "Waycross",
+      "matchedPlace": "Waycross",
+      "population1940": 16763,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13301",
+      "county": "Warren",
+      "seat": "Warrenton",
+      "matchedPlace": "Warrenton",
+      "population1940": 1284,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13303",
+      "county": "Washington",
+      "seat": "Sandersville",
+      "matchedPlace": "Sandersville",
+      "population1940": 3566,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13305",
+      "county": "Wayne",
+      "seat": "Jesup",
+      "matchedPlace": "Jesup",
+      "population1940": 2903,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13307",
+      "county": "Webster",
+      "seat": "Preston",
+      "matchedPlace": "Preston",
+      "population1940": 349,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13309",
+      "county": "Wheeler",
+      "seat": "Alamo",
+      "matchedPlace": "Alamo",
+      "population1940": 646,
+      "population1940Corroborated": true,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13311",
+      "county": "White",
+      "seat": "Cleveland",
+      "matchedPlace": "Cleveland",
+      "population1940": 471,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13313",
+      "county": "Whitfield",
+      "seat": "Dalton",
+      "matchedPlace": "Dalton",
+      "population1940": 10448,
+      "population1940Corroborated": true,
+      "urban1940": true,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13315",
+      "county": "Wilcox",
+      "seat": "Abbeville",
+      "matchedPlace": "Abheville",
+      "population1940": 1010,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "clean",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13317",
+      "county": "Wilkes",
+      "seat": "Washington",
+      "matchedPlace": "Washington",
+      "population1940": 3637,
+      "population1940Corroborated": false,
+      "urban1940": true,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13319",
+      "county": "Wilkinson",
+      "seat": "Irwinton",
+      "matchedPlace": "Irwinton",
+      "population1940": null,
+      "population1940Corroborated": null,
+      "urban1940": null,
+      "ocrConfidence": "unparsed",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    },
+    {
+      "countyId": "US-GA-13321",
+      "county": "Worth",
+      "seat": "Sylvester",
+      "matchedPlace": "Sylvester",
+      "population1940": 2101,
+      "population1940Corroborated": false,
+      "urban1940": null,
+      "ocrConfidence": "corrected",
+      "seatStatusBasis": "modern seat assumed; incorporation in 1940 confirmed by Census Table 5"
+    }
+  ]
+}

@@ -23,7 +23,8 @@ files with the application.
 | Asset | Path | Source | License / rights |
 | --- | --- | --- | --- |
 | Georgia county polygons, adjacency, provenance | `src/data/georgia-counties.json` | U.S. Census Bureau cartographic boundary file, filtered to STATE 13 from plotly/datasets `geojson-counties-fips.json` (per `scripts/prepare-geometry.mjs` and the file's `provenance` block) | Public-domain U.S. federal data; retain Census notices |
-| County movement edges and river-crossing tags | `src/data/movement-edges.json` | Derived by `scripts/prepare-movement.mjs` from the county adjacency above and Natural Earth 10m `rivers_lake_centerlines` plus `rivers_north_america` (source URLs and sha256 in the file's `provenance` block); river data is not bundled | Natural Earth: "All versions of Natural Earth raster + vector map data found on this website are in the public domain." |
+| County movement edges and river-crossing tags | `src/data/movement-edges.json` | Derived by `scripts/prepare-movement.mjs` from the county adjacency above, Natural Earth 10m `rivers_lake_centerlines` plus `rivers_north_america`, and U.S. Census Bureau TIGER/Line 2023 LINEARWATER and AREAWATER for all 159 Georgia counties (source URLs, combined sha256 and file counts in the file's `provenance` block); river data is not bundled | Natural Earth: "All versions of Natural Earth raster + vector map data found on this website are in the public domain." TIGER/Line: U.S. Government work, public domain |
+| 1940 county-seat evidence | `src/data/settlements.json` | Derived by `scripts/prepare-settlements.mjs` from OCR of Table 5 in the 1940 Census of Population, Vol. I, Georgia chapter (source URL and sha256 in `provenance`); the PDF and OCR text are not bundled | U.S. Government work, public domain |
 
 Regeneration and validation are reproducible via `scripts/prepare-geometry.mjs`
 (`npm run prepare-geometry`). Modern Census geometry is used as the

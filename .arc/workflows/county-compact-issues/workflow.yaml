@@ -69,7 +69,7 @@ items:
     checkpoint:
       state: ready
       updated_at: 2026-09-16T21:50:00.000Z
-      evidence_ref: "PR #30 delivered roads (bracketed 1940-1944), terrain classes, federal facilities, unresolved log. Movement pass (feat/cc-03-routes-crossings): src/data/movement-edges.json has 417 passable movement edges (scenario abstraction) with 75 river-crossing tags derived from public-domain Natural Earth 10m hydrography via scripts/prepare-movement.mjs; tests/movement.test.ts. Open: rail corridors, road-route transcription, seat verification, operator questions U3-4/U3-5 (docs/cc-03-movement-edges/unresolved.md)."
+      evidence_ref: "PR #30 delivered roads (bracketed 1940-1944), terrain classes, federal facilities, unresolved log. PR #33: 417 passable movement edges (scenario abstraction). Crossings/seats pass (feat/cc-03-crossings-settlements): river-crossing tags corroborated with public-domain TIGER/Line 2023 linear+area water (109 tagged: 72 both sources, 34 TIGER-only, 3 Natural Earth-only; Glynn-McIntosh and Dougherty-Lee resolved); src/data/settlements.json checks all 159 seats against 1940 Census Table 5 OCR (144 matched, 117 with 1940 population, 70 corroborated); npm test 73/73. Open: rail corridors, road-route transcription, 15 unmatched seats, disputed tags, operator questions U3-4/U3-5 (docs/cc-03-crossings-settlements/unresolved.md)."
   - id: CC-04
     kind: leaf
     title: Author complete starting data for all 159 counties
