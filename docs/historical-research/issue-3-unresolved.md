@@ -27,6 +27,8 @@ LOC Sanborn Marietta search (https://www.loc.gov/collections/sanborn-maps/?q=mar
 
 ## U3-4 OPERATOR QUESTION: what is the "Savannah PN depot"?
 
+**Decided 2026-09-16:** label dropped; not in the 1942-02-01 roster. See docs/cc-03-crossings-settlements/closeout.md.
+
 The label "Savannah PN depot" does not match anything in the cached sources (issue-3-source-map.json: "'Savannah PN depot' label unmatched"). **This worker does not pick a candidate.** Candidates for operator decision:
 
 | # | Candidate | Cached evidence | Status on 1942-02-01 per cache |
@@ -39,6 +41,8 @@ The label "Savannah PN depot" does not match anything in the cached sources (iss
 Licenses: NGE rows carry "Fair use of copyrighted material includes the use of protected materials for noncommercial educational purposes. The use of text and images from the NGE website for such purposes does not require express permission from the NGE." LOC rows carry "You should determine for yourself whether or not an item is protected by copyright or in the public domain, and then satisfy any copyright or use restrictions when publishing or distributing materials from our collections."
 
 ## U3-5 OPERATOR QUESTION: Marietta airfield 1942 designation contradicts brief
+
+**Decided 2026-09-16:** follow the NGE chronology; no Marietta airfield on 1942-02-01. See docs/cc-03-crossings-settlements/closeout.md.
 
 The brief treats "Marietta Army Air Field" as the 1942 designation and "Rickenbacker" as a post-war rename. The cached NGE Dobbins article says the reverse order ("Cobb County Army Air Field, then as Rickenbacker Field, and finally as Marietta Army Air Field, was established in June 1943"). The NGE Bell Bomber article says Rickenbacker Field was a CAA-program airstrip accepted by the Army Air Corps in May 1943. The facilities file leaves name1942 UNRESOLVED.
 
