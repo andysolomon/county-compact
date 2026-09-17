@@ -10,7 +10,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "prepare-geometry": "node scripts/prepare-geometry.mjs",
-    "prepare-movement": "node scripts/prepare-movement.mjs"
+    "prepare-movement": "node scripts/prepare-movement.mjs",
+    "prepare-settlements": "node scripts/prepare-settlements.mjs"
   },
   "devDependencies": {
     "typescript": "^5.6.0",

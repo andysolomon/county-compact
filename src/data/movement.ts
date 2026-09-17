@@ -1,12 +1,29 @@
 import raw from "./movement-edges.json";
 
+export type RiverCrossingBasis =
+  | "derived: Natural Earth 10m hydrography"
+  | "derived: TIGER/Line 2023 linear water"
+  | "derived: Natural Earth 10m and TIGER/Line 2023 linear water"
+  | "derived: TIGER/Line 2023 linear and area water"
+  | "derived: Natural Earth 10m and TIGER/Line 2023 linear and area water";
+
+export interface RiverCrossingSource {
+  readonly river: string;
+  readonly boundaryFraction: number;
+}
+
 /** A derived river-crossing tag on a movement edge. */
 export interface RiverCrossing {
   readonly kind: "river";
   readonly river: string;
   /** Fraction (4 dp) of the shared boundary length lying along the river. */
   readonly boundaryFraction: number;
-  readonly basis: "derived: Natural Earth 10m hydrography";
+  readonly basis: RiverCrossingBasis;
+  /** Each source's best river when its fraction is >= 0.3, even if that source did not tag the edge. */
+  readonly sources: {
+    readonly naturalEarth: RiverCrossingSource | null;
+    readonly tiger: RiverCrossingSource | null;
+  };
 }
 
 /** One undirected movement edge between adjacent counties, with a < b. */
